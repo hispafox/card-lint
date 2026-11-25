@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.22.0"/>
+    <errors>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="c/src/comando.c">
+            <location file="c/src/comando.c" line="0" column="0"/>
+        </error>
+        <error id="invalidTestForOverflow" severity="warning" msg="Invalid test for overflow &apos;total+100&lt;total&apos;; signed integer overflow is undefined behavior. Some mainstream compilers remove such overflow tests when optimising the code and assume it&apos;s always false." verbose="Invalid test for overflow &apos;total+100&lt;total&apos;; signed integer overflow is undefined behavior. Some mainstream compilers remove such overflow tests when optimising the code and assume it&apos;s always false." cwe="391" hash="3381612045410366489" file0="c/src/ejemplos.c">
+            <location file="c/src/ejemplos.c" line="7" column="21"/>
+        </error>
+        <error id="nullPointerRedundantCheck" severity="warning" msg="Either the condition &apos;p==NULL&apos; is redundant or there is possible null pointer dereference: p." verbose="Either the condition &apos;p==NULL&apos; is redundant or there is possible null pointer dereference: p." cwe="476" hash="4007294623201768490" file0="c/src/ejemplos.c">
+            <location file="c/src/ejemplos.c" line="15" column="18" info="Null pointer dereference"/>
+            <location file="c/src/ejemplos.c" line="16" column="11" info="Assuming that condition &apos;p==NULL&apos; is not redundant"/>
+            <symbol>p</symbol>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="c/src/pin.c">
+            <location file="c/src/pin.c" line="0" column="0"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;pin_guardado&apos; can be reduced." verbose="The scope of the variable &apos;pin_guardado&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" hash="3897076424815538862" file0="c/src/pin.c">
+            <location file="c/src/pin.c" line="40" column="20"/>
+            <symbol>pin_guardado</symbol>
+        </error>
+        <error id="uninitvar" severity="warning" msg="Uninitialized variable: estado" verbose="Uninitialized variable: estado" cwe="457" hash="15806814733680658733" file0="c/src/registro.c">
+            <location file="c/src/registro.c" line="102" column="12"/>
+            <location file="c/src/registro.c" line="99" column="26" info="Assuming condition is false"/>
+            <symbol>estado</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;comando_procesar&apos; is never used." verbose="The function &apos;comando_procesar&apos; is never used." cwe="561" hash="17836251588720442232">
+            <location file="c/src/comando.c" line="326" column="10"/>
+            <symbol>comando_procesar</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;comando_ultima_respuesta&apos; is never used." verbose="The function &apos;comando_ultima_respuesta&apos; is never used." cwe="561" hash="11202478364974596492">
+            <location file="c/src/comando.c" line="348" column="16"/>
+            <symbol>comando_ultima_respuesta</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;leer_primero&apos; is never used." verbose="The function &apos;leer_primero&apos; is never used." cwe="561" hash="7547430327656466868">
+            <location file="c/src/ejemplos.c" line="13" column="9"/>
+            <symbol>leer_primero</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;memoria_fallar_escritura_en&apos; is never used." verbose="The function &apos;memoria_fallar_escritura_en&apos; is never used." cwe="561" hash="1129271021385001344">
+            <location file="c/src/memoria.c" line="87" column="6"/>
+            <symbol>memoria_fallar_escritura_en</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;memoria_fallar_siguiente_escritura&apos; is never used." verbose="The function &apos;memoria_fallar_siguiente_escritura&apos; is never used." cwe="561" hash="4586047219423541092">
+            <location file="c/src/memoria.c" line="82" column="6"/>
+            <symbol>memoria_fallar_siguiente_escritura</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;memoria_huella&apos; is never used." verbose="The function &apos;memoria_huella&apos; is never used." cwe="561" hash="1317131803572932932">
+            <location file="c/src/memoria.c" line="92" column="10"/>
+            <symbol>memoria_huella</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;memoria_inicializar&apos; is never used." verbose="The function &apos;memoria_inicializar&apos; is never used." cwe="561" hash="4476244072440049960">
+            <location file="c/src/memoria.c" line="19" column="6"/>
+            <symbol>memoria_inicializar</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;registro_contar&apos; is never used." verbose="The function &apos;registro_contar&apos; is never used." cwe="561" hash="11954817337191468678">
+            <location file="c/src/registro.c" line="95" column="16"/>
+            <symbol>registro_contar</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;sumar_cien&apos; is never used." verbose="The function &apos;sumar_cien&apos; is never used." cwe="561" hash="17801816275077802083">
+            <location file="c/src/ejemplos.c" line="5" column="9"/>
+            <symbol>sumar_cien</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;util_fallos&apos; is never used." verbose="The function &apos;util_fallos&apos; is never used." cwe="561" hash="6178941047033096248">
+            <location file="c/src/utilidades.c" line="14" column="10"/>
+            <symbol>util_fallos</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;util_minimo&apos; is never used." verbose="The function &apos;util_minimo&apos; is never used." cwe="561" hash="418908400571397169">
+            <location file="c/include/utilidades.h" line="16" column="23"/>
+            <symbol>util_minimo</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;util_reiniciar_fallos&apos; is never used." verbose="The function &apos;util_reiniciar_fallos&apos; is never used." cwe="561" hash="15590306885460179791">
+            <location file="c/src/utilidades.c" line="24" column="6"/>
+            <symbol>util_reiniciar_fallos</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;util_ultimo_fallo_linea&apos; is never used." verbose="The function &apos;util_ultimo_fallo_linea&apos; is never used." cwe="561" hash="5126530327654845642">
+            <location file="c/src/utilidades.c" line="19" column="10"/>
+            <symbol>util_ultimo_fallo_linea</symbol>
+        </error>
+        <error id="unmatchedSuppression" severity="information" msg="Unmatched suppression: missingIncludeSystem" verbose="Unmatched suppression: missingIncludeSystem"/>
+        <error id="checkersReport" severity="information" msg="Active checkers: 115/189 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 115/189 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>

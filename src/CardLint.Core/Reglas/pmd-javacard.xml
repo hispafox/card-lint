@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="card-lint para Java Card"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>Las reglas de PMD que usa card-lint sobre el código Java Card.</description>
+
+    <!-- Métricas (1.2) y tamaño (2.2, 4.2) -->
+    <rule ref="category/java/design.xml/CognitiveComplexity"/>
+    <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+    <rule ref="category/java/design.xml/NcssCount"/>
+    <rule ref="category/java/design.xml/ExcessiveParameterList"/>
+    <rule ref="category/java/design.xml/TooManyMethods"/>
+    <rule ref="category/java/design.xml/TooManyFields"/>
+
+    <!-- Campo temporal (libro; 4.3 en Java Card) -->
+    <rule ref="category/java/design.xml/SingularField"/>
+
+    <!-- Código muerto y generalidad especulativa (libro) -->
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod"/>
+    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable"/>
+    <rule ref="category/java/bestpractices.xml/UnusedFormalParameter"/>
+
+    <!-- Reglas propias de Java Card -->
+
+    <rule name="JavaCardTipoNoDisponible" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Tipo que Java Card no tiene: usa short o byte">
+        <description>long, float, double y char no existen en Java Card (4.1).</description>
+        <priority>2</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[ //PrimitiveType[@Kind = ('long', 'float', 'double', 'char')] ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardInt" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="int es opcional en Java Card y ocupa el doble que short: usa short o byte">
+        <description>Los tipos habituales de Java Card son short y byte (4.1).</description>
+        <priority>3</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[ //PrimitiveType[@Kind = 'int'] ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardCadena" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Java Card no tiene cadenas: los textos van como arrays de bytes">
+        <description>Sin String ni literales de texto (4.1).</description>
+        <priority>2</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[ //ClassType[@SimpleName = ('String', 'StringBuilder', 'StringBuffer')] | //StringLiteral ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardBibliotecaEstandar" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Java Card no tiene la biblioteca estándar de Java (java.util, java.io)">
+        <description>Sin biblioteca estándar (4.1).</description>
+        <priority>2</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[ //ImportDeclaration[starts-with(@ImportedName, 'java.util') or starts-with(@ImportedName, 'java.io')] ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardObjetoFueraDeInstalar" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install">
+        <description>Cada new fuera de la instalación gasta memoria persistente que no se recupera (4.1, 4.2).</description>
+        <priority>2</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[
+//(ConstructorCall | ArrayAllocation)
+    [not(ancestor::ConstructorDeclaration)]
+    [not(ancestor::MethodDeclaration[@Name = 'install'])]
+    [not(ancestor::FieldDeclaration)]
+                ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardCodigoComoNumero" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)">
+        <description>Constantes con nombre para instrucciones y códigos de estado (4.4).</description>
+        <priority>3</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[
+//MethodCall[@MethodName = 'throwIt']/ArgumentList/*[1][self::NumericLiteral or self::CastExpression/NumericLiteral]
+| //SwitchLabel[NumericLiteral or CastExpression/NumericLiteral]
+                ]]></value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="JavaCardCadenaDeMensajes" language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+          message="Cadena de tres llamadas o más: quien la escribe tiene que conocer todos los objetos del camino">
+        <description>Cadenas de mensajes (libro).</description>
+        <priority>4</priority>
+        <properties>
+            <property name="xpath">
+                <value><![CDATA[ //MethodCall[*[1][self::MethodCall[*[1][self::MethodCall]]]][not(parent::MethodCall)] ]]></value>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

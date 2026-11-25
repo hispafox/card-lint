@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><title>card-lint · informe</title>
+<style>body { font-family: Segoe UI, Arial, sans-serif; margin: 2rem; color: #1f2328; max-width: 70rem; }
+h1 { margin-bottom: .2rem; }
+.datos { color: #59636e; margin-top: 0; }
+.gate { display: inline-block; padding: .4rem .9rem; border-radius: .4rem; font-weight: 600; color: #fff; }
+.pasa { background: #1a7f37; }
+.falla { background: #cf222e; }
+table { border-collapse: collapse; width: 100%; margin: .5rem 0 1.5rem; }
+th, td { border-bottom: 1px solid #d1d9e0; padding: .35rem .5rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+th { background: #f6f8fa; }
+code { font-family: Consolas, monospace; }
+.nota { color: #59636e; }
+.detalle { color: #59636e; font-size: .85em; margin-top: .2rem; }</style></head>
+<body>
+<h1>card-lint · informe</h1>
+<p class="datos">F:\w\repos\card-lint\herramientas\_muestras\ejemplo-manual · 25-11-2026 20:13</p>
+<p><span class="gate falla">Quality gate: no pasa</span></p>
+<p>91 avisos sin justificar · 2 justificados · falla a partir de la gravedad «fallo».</p>
+<h2>Analizadores</h2>
+<p>Cppcheck y reglas de C &#183; PMD &#183; CPD</p>
+<h2>Resumen por regla</h2>
+<table><tr><th>Regla</th><th>Gravedad</th><th>Avisos</th><th>Se explica en</th></tr>
+<tr><td>pmd:JavaCardObjetoFueraDeInstalar</td><td>fallo</td><td>21</td><td>4.1, 4.2</td></tr>
+<tr><td>pmd:JavaCardCadena</td><td>fallo</td><td>2</td><td>4.1</td></tr>
+<tr><td>pmd:JavaCardBibliotecaEstandar</td><td>fallo</td><td>1</td><td>4.1</td></tr>
+<tr><td>pmd:JavaCardInt</td><td>advertencia</td><td>27</td><td>4.1</td></tr>
+<tr><td>cppcheck:unusedFunction</td><td>advertencia</td><td>13</td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>pmd:JavaCardCodigoComoNumero</td><td>advertencia</td><td>8</td><td>4.4</td></tr>
+<tr><td>cpd:duplicado</td><td>advertencia</td><td>2</td><td>1.2, 5.1</td></tr>
+<tr><td>pmd:CognitiveComplexity</td><td>advertencia</td><td>1</td><td>1.2</td></tr>
+<tr><td>pmd:CyclomaticComplexity</td><td>advertencia</td><td>1</td><td>1.2</td></tr>
+<tr><td>pmd:NcssCount</td><td>advertencia</td><td>1</td><td>1.2, 2.2</td></tr>
+<tr><td>c:numero-magico</td><td>información</td><td>12</td><td>2.1</td></tr>
+<tr><td>c:campo-temporal</td><td>información</td><td>1</td><td>olor: campo temporal</td></tr>
+<tr><td>cppcheck:variableScope</td><td>información</td><td>1</td><td></td></tr>
+</table>
+<h2>Avisos sin justificar</h2>
+<table><tr><th>Gravedad</th><th>Regla</th><th>Dónde</th><th>Mensaje</th><th>Se explica en</th></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:16</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardBibliotecaEstandar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:3</code></td><td>Java Card no tiene la biblioteca est&#225;ndar de Java (java.util, java.io)</td><td>4.1</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardCadena</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:32</code></td><td>Java Card no tiene cadenas: los textos van como arrays de bytes</td><td>4.1</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardCadena</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:32</code></td><td>Java Card no tiene cadenas: los textos van como arrays de bytes</td><td>4.1</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:37</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:41</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:43</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:52</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:54</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:64</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:66</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:74</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:78</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:82</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:85</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:93</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:97</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:101</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:108</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:117</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:125</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:131</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:138</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>fallo</td><td>pmd:JavaCardObjetoFueraDeInstalar</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:142</code></td><td>Objeto creado fuera de la instalaci&#243;n: en Java Card se crean en el constructor o en install</td><td>4.1, 4.2</td></tr>
+<tr><td>advertencia</td><td>cppcheck:unusedFunction</td><td><code>c/src/utilidades.c:19</code></td><td>Funci&#243;n sin usar: util_ultimo_fallo_linea<div class="detalle">The function &#39;util_ultimo_fallo_linea&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Limite.java:6</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Limite.java:8</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Limite.java:12</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Registro.java:6</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Registro.java:8</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Registro.java:8</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:8</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:9</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:12</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:14</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:18</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:25</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:25</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/RegistroOperaciones.java:26</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Saldo.java:6</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Saldo.java:8</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/Saldo.java:12</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:19</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:NcssCount</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:26</code></td><td>process(APDU) tiene 83 instrucciones (NCSS)<div class="detalle">The method &#39;process(APDU)&#39; has a NCSS line count of 83.</div></td><td>1.2, 2.2</td></tr>
+<tr><td>advertencia</td><td>pmd:CognitiveComplexity</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:26</code></td><td>Complejidad cognitiva de process(APDU): 31 (umbral 15)<div class="detalle">The method &#39;process(APDU)&#39; has a cognitive complexity of 31, current threshold is 15</div></td><td>1.2</td></tr>
+<tr><td>advertencia</td><td>pmd:CyclomaticComplexity</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:26</code></td><td>Complejidad ciclom&#225;tica de process(APDU): 40<div class="detalle">The method &#39;process(APDU)&#39; has a cyclomatic complexity of 40.</div></td><td>1.2</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:31</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:35</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:39</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:49</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:50</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:61</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:62</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:72</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>cpd:duplicado</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:72</code></td><td>C&#243;digo duplicado: 10 l&#237;neas (72 tokens), igual que en javacard/src/cardcode/tarjeta/TarjetaApplet.java:91</td><td>1.2, 5.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:76</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:80</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:91</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>cpd:duplicado</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:91</code></td><td>C&#243;digo duplicado: 10 l&#237;neas (72 tokens), igual que en javacard/src/cardcode/tarjeta/TarjetaApplet.java:72</td><td>1.2, 5.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:95</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:99</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:107</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:115</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardInt</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:119</code></td><td>int es opcional en Java Card y ocupa el doble que short: usa short o byte</td><td>4.1</td></tr>
+<tr><td>advertencia</td><td>pmd:JavaCardCodigoComoNumero</td><td><code>javacard/src/cardcode/tarjeta/TarjetaApplet.java:123</code></td><td>C&#243;digo de estado o de instrucci&#243;n escrito como n&#250;mero: dale nombre con una constante (ISO7816 o static final)</td><td>4.4</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/include/utilidades.h:16</code></td><td>Funci&#243;n que solo usan las pruebas: util_minimo<div class="detalle">The function &#39;util_minimo&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/comando.c:336</code></td><td>Funci&#243;n que solo usan las pruebas: comando_procesar<div class="detalle">The function &#39;comando_procesar&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/comando.c:358</code></td><td>Funci&#243;n que solo usan las pruebas: comando_ultima_respuesta<div class="detalle">The function &#39;comando_ultima_respuesta&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/crc.c:44</code></td><td>N&#250;mero escrito a pelo: 0xFFFFu. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/crc.c:47</code></td><td>N&#250;mero escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/ejemplos.c:5</code></td><td>Funci&#243;n que solo usan las pruebas: sumar_cien<div class="detalle">The function &#39;sumar_cien&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/ejemplos.c:7</code></td><td>N&#250;mero escrito a pelo: 100. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/ejemplos.c:10</code></td><td>N&#250;mero escrito a pelo: 100. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/ejemplos.c:13</code></td><td>Funci&#243;n que solo usan las pruebas: leer_primero<div class="detalle">The function &#39;leer_primero&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/memoria.c:19</code></td><td>Funci&#243;n que solo usan las pruebas: memoria_inicializar<div class="detalle">The function &#39;memoria_inicializar&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/memoria.c:82</code></td><td>Funci&#243;n que solo usan las pruebas: memoria_fallar_siguiente_escritura<div class="detalle">The function &#39;memoria_fallar_siguiente_escritura&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/memoria.c:87</code></td><td>Funci&#243;n que solo usan las pruebas: memoria_fallar_escritura_en<div class="detalle">The function &#39;memoria_fallar_escritura_en&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/memoria.c:92</code></td><td>Funci&#243;n que solo usan las pruebas: memoria_huella<div class="detalle">The function &#39;memoria_huella&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>c:campo-temporal</td><td><code>c/src/operaciones.c:9</code></td><td>La variable operaciones_totales es de todo el fichero, pero solo la usa operaciones_contar: puede ser una variable static dentro de esa funci&#243;n</td><td>olor: campo temporal</td></tr>
+<tr><td>información</td><td>cppcheck:variableScope</td><td><code>c/src/pin.c:39</code></td><td>El &#225;mbito de la variable se puede reducir<div class="detalle">The scope of the variable &#39;pin_guardado&#39; can be reduced.</div></td><td></td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:24</code></td><td>N&#250;mero escrito a pelo: 3. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:41</code></td><td>N&#250;mero escrito a pelo: 2u. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:47</code></td><td>N&#250;mero escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:48</code></td><td>N&#250;mero escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:60</code></td><td>N&#250;mero escrito a pelo: 2u. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:69</code></td><td>N&#250;mero escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:70</code></td><td>N&#250;mero escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>c:numero-magico</td><td><code>c/src/registro.c:83</code></td><td>N&#250;mero escrito a pelo: 3. Dale un nombre con un enum, un static const o un #define</td><td>2.1</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/registro.c:95</code></td><td>Funci&#243;n que solo usan las pruebas: registro_contar<div class="detalle">The function &#39;registro_contar&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/utilidades.c:14</code></td><td>Funci&#243;n que solo usan las pruebas: util_fallos<div class="detalle">The function &#39;util_fallos&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+<tr><td>información</td><td>cppcheck:unusedFunction</td><td><code>c/src/utilidades.c:24</code></td><td>Funci&#243;n que solo usan las pruebas: util_reiniciar_fallos<div class="detalle">The function &#39;util_reiniciar_fallos&#39; is never used.</div></td><td>olor: c&#243;digo muerto</td></tr>
+</table>
+<h2>Avisos justificados por una contramedida</h2>
+<table><tr><th>Regla</th><th>Dónde</th><th>Mensaje</th><th>Contramedida</th></tr>
+<tr><td>cppcheck:identicalConditionAfterEarlyExit</td><td><code>c/src/comando.c:125</code></td><td>Condici&#243;n repetida: si es a prop&#243;sito, m&#225;rcala como CONTRAMEDIDA<div class="detalle">Identical condition &#39;resultado!=0xA5C3u&#39;, second condition is always false</div></td><td>fallos provocados, l&#237;neas 125–128</td></tr>
+<tr><td>c:numero-magico</td><td><code>c/src/pin.c:79</code></td><td>N&#250;mero escrito a pelo: 0xFFu. Dale un nombre con un enum, un static const o un #define</td><td>canal lateral, l&#237;neas 73–85</td></tr>
+</table>
+<h2>Contramedidas del código</h2>
+<table><tr><th>Fichero</th><th>Líneas</th><th>Contra qué protege</th></tr>
+<tr><td><code>c/include/seguridad.h</code></td><td>18–18</td><td>fallos provocados</td></tr>
+<tr><td><code>c/include/seguridad.h</code></td><td>21–21</td><td>canal lateral</td></tr>
+<tr><td><code>c/include/seguridad.h</code></td><td>24–24</td><td>datos sensibles en memoria</td></tr>
+<tr><td><code>c/src/comando.c</code></td><td>125–128</td><td>fallos provocados</td></tr>
+<tr><td><code>c/src/pin.c</code></td><td>73–85</td><td>canal lateral</td></tr>
+<tr><td><code>c/src/seguridad.c</code></td><td>6–14</td><td>canal lateral</td></tr>
+<tr><td><code>c/src/seguridad.c</code></td><td>17–24</td><td>datos sensibles en memoria</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.29.0" timestamp="2026-11-25T19:29:05.240">
+<file name="cardcode\tarjeta\TarjetaApplet.java">
+<violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'process(APDU)' has a NCSS line count of 77.
+</violation>
+<violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="CognitiveComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cognitivecomplexity" priority="3">
+The method 'process(APDU)' has a cognitive complexity of 31, current threshold is 15
+</violation>
+<violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'process(APDU)' has a cyclomatic complexity of 26.
+</violation>
+</file>
+</pmd>

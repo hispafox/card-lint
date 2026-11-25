@@ -1,0 +1,1482 @@
+<?xml version="1.0"?>
+<dumps language="c">
+  <platform name="native" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" float_bit="32" double_bit="64" long_double_bit="64" pointer_bit="64" wchar_t_bit="16" size_t_bit="64"/>
+<dump cfg="">
+  <standards>
+    <c version="c99"/>
+    <cpp version="c++26"/>
+  </standards>
+  <macro-usage>
+    <macro name="MODULO_H" file="c/include/modulo.h" line="2" column="9" usefile="c/include/modulo.h" useline="1" usecolumn="9" is-known-value="true"/>
+    <macro name="CICLO_A_H" file="c/include/ciclo_a.h" line="2" column="9" usefile="c/include/ciclo_a.h" useline="1" usecolumn="9" is-known-value="true"/>
+    <macro name="CICLO_A_H" file="c/include/ciclo_a.h" line="2" column="9" usefile="c/include/ciclo_a.h" useline="1" usecolumn="9" is-known-value="true"/>
+    <macro name="CICLO_B_H" file="c/include/ciclo_b.h" line="2" column="9" usefile="c/include/ciclo_b.h" useline="1" usecolumn="9" is-known-value="true"/>
+    <macro name="ELEMENTOS" file="c/src/reglas.c" line="7" column="9" usefile="c/src/reglas.c" useline="44" usecolumn="19" is-known-value="true"/>
+  </macro-usage>
+  <simplecpp-if-cond>
+    <if-cond file="c/include/modulo.h" line="1" column="2" E="1" result="1"/>
+    <if-cond file="c/include/ciclo_a.h" line="1" column="2" E="1" result="1"/>
+    <if-cond file="c/include/ciclo_b.h" line="1" column="2" E="1" result="1"/>
+    <if-cond file="c/include/ciclo_a.h" line="1" column="2" E="0" result="0"/>
+  </simplecpp-if-cond>
+  <directivelist>
+    <directive file="c/src/reglas.c" linenr="1" str="#include &lt;stdlib.h&gt;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&lt;stdlib.h&gt;"/>
+    </directive>
+    <directive file="c/src/reglas.c" linenr="2" str="#include &lt;stdint.h&gt;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&lt;stdint.h&gt;"/>
+    </directive>
+    <directive file="c/src/reglas.c" linenr="3" str="#include &quot;modulo.h&quot;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&quot;modulo.h&quot;"/>
+    </directive>
+    <directive file="c/src/reglas.c" linenr="4" str="#include &quot;ciclo_a.h&quot;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&quot;ciclo_a.h&quot;"/>
+    </directive>
+    <directive file="c/src/reglas.c" linenr="6" str="#define CUADRADO(x) ((x) * (x))">
+      <token column="1" str="#"/>
+      <token column="2" str="define"/>
+      <token column="9" str="CUADRADO"/>
+      <token column="17" str="("/>
+      <token column="18" str="x"/>
+      <token column="19" str=")"/>
+      <token column="21" str="("/>
+      <token column="22" str="("/>
+      <token column="23" str="x"/>
+      <token column="24" str=")"/>
+      <token column="26" str="*"/>
+      <token column="28" str="("/>
+      <token column="29" str="x"/>
+      <token column="30" str=")"/>
+      <token column="31" str=")"/>
+    </directive>
+    <directive file="c/src/reglas.c" linenr="7" str="#define ELEMENTOS(a) (sizeof(a) / sizeof((a)[0]))">
+      <token column="1" str="#"/>
+      <token column="2" str="define"/>
+      <token column="9" str="ELEMENTOS"/>
+      <token column="18" str="("/>
+      <token column="19" str="a"/>
+      <token column="20" str=")"/>
+      <token column="22" str="("/>
+      <token column="23" str="sizeof"/>
+      <token column="29" str="("/>
+      <token column="30" str="a"/>
+      <token column="31" str=")"/>
+      <token column="33" str="/"/>
+      <token column="35" str="sizeof"/>
+      <token column="41" str="("/>
+      <token column="42" str="("/>
+      <token column="43" str="a"/>
+      <token column="44" str=")"/>
+      <token column="45" str="["/>
+      <token column="46" str="0"/>
+      <token column="47" str="]"/>
+      <token column="48" str=")"/>
+      <token column="49" str=")"/>
+    </directive>
+    <directive file="c/include/modulo.h" linenr="1" str="#ifndef MODULO_H">
+      <token column="1" str="#"/>
+      <token column="2" str="ifndef"/>
+      <token column="9" str="MODULO_H"/>
+    </directive>
+    <directive file="c/include/modulo.h" linenr="2" str="#define MODULO_H">
+      <token column="1" str="#"/>
+      <token column="2" str="define"/>
+      <token column="9" str="MODULO_H"/>
+    </directive>
+    <directive file="c/include/modulo.h" linenr="5" str="#endif">
+      <token column="1" str="#"/>
+      <token column="2" str="endif"/>
+    </directive>
+    <directive file="c/include/ciclo_a.h" linenr="1" str="#ifndef CICLO_A_H">
+      <token column="1" str="#"/>
+      <token column="2" str="ifndef"/>
+      <token column="9" str="CICLO_A_H"/>
+    </directive>
+    <directive file="c/include/ciclo_a.h" linenr="2" str="#define CICLO_A_H">
+      <token column="1" str="#"/>
+      <token column="2" str="define"/>
+      <token column="9" str="CICLO_A_H"/>
+    </directive>
+    <directive file="c/include/ciclo_a.h" linenr="3" str="#include &quot;ciclo_b.h&quot;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&quot;ciclo_b.h&quot;"/>
+    </directive>
+    <directive file="c/include/ciclo_a.h" linenr="4" str="#endif">
+      <token column="1" str="#"/>
+      <token column="2" str="endif"/>
+    </directive>
+    <directive file="c/include/ciclo_b.h" linenr="1" str="#ifndef CICLO_B_H">
+      <token column="1" str="#"/>
+      <token column="2" str="ifndef"/>
+      <token column="9" str="CICLO_B_H"/>
+    </directive>
+    <directive file="c/include/ciclo_b.h" linenr="2" str="#define CICLO_B_H">
+      <token column="1" str="#"/>
+      <token column="2" str="define"/>
+      <token column="9" str="CICLO_B_H"/>
+    </directive>
+    <directive file="c/include/ciclo_b.h" linenr="3" str="#include &quot;ciclo_a.h&quot;">
+      <token column="1" str="#"/>
+      <token column="2" str="include"/>
+      <token column="10" str="&quot;ciclo_a.h&quot;"/>
+    </directive>
+    <directive file="c/include/ciclo_b.h" linenr="4" str="#endif">
+      <token column="1" str="#"/>
+      <token column="2" str="endif"/>
+    </directive>
+  </directivelist>
+  <tokenlist>
+    <token id="1799e2378c0" file="c/include/modulo.h" linenr="3" column="1" str="extern" scope="1799ddf4720" type="name"/>
+    <token id="1799e2368c0" file="c/include/modulo.h" linenr="3" column="8" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e237e40" file="c/include/modulo.h" linenr="3" column="12" str="modulo_estado" scope="1799ddf4720" type="name" varId="1" exprId="1" variable="1799e259920" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e238340" file="c/include/modulo.h" linenr="3" column="25" str=";" scope="1799ddf4720"/>
+    <token id="1799e2383c0" file="c/include/modulo.h" linenr="4" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e237140" file="c/include/modulo.h" linenr="4" column="5" str="modulo_cuenta" scope="1799ddf4720" type="name" function="1799ddf4900"/>
+    <token id="1799e236d40" file="c/include/modulo.h" linenr="4" column="18" str="(" scope="1799ddf4720" link="1799e2373c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2366c0" file="c/include/modulo.h" linenr="4" column="19" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e237940" file="c/include/modulo.h" linenr="4" column="23" str="a" scope="1799ddf4720" type="name" varId="2" exprId="2" variable="1799e259140" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e237840" file="c/include/modulo.h" linenr="4" column="24" str="," scope="1799ddf4720"/>
+    <token id="1799e236c40" file="c/include/modulo.h" linenr="4" column="26" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e237040" file="c/include/modulo.h" linenr="4" column="30" str="b" scope="1799ddf4720" type="name" varId="3" exprId="3" variable="1799e2597d0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2373c0" file="c/include/modulo.h" linenr="4" column="31" str=")" scope="1799ddf4720" link="1799e236d40"/>
+    <token id="1799e236840" file="c/include/modulo.h" linenr="4" column="32" str=";" scope="1799ddf4720"/>
+    <token id="1799e237340" file="c/src/reglas.c" linenr="9" column="1" str="struct" scope="1799ddf4720" type="name"/>
+    <token id="1799e2371c0" file="c/src/reglas.c" linenr="9" column="8" str="nodo" scope="1799ddf4720" type="name" type-scope="1799ddf49a0"/>
+    <token id="1799e2367c0" file="c/src/reglas.c" linenr="9" column="13" str="{" scope="1799ddf49a0" link="1799e2375c0" valueType-type="record" valueType-bits="0" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799e2376c0" file="c/src/reglas.c" linenr="9" column="15" str="struct" scope="1799ddf49a0" type="name"/>
+    <token id="1799e236740" file="c/src/reglas.c" linenr="9" column="22" str="nodo" scope="1799ddf49a0" type="name" type-scope="1799ddf49a0"/>
+    <token id="1799e237540" file="c/src/reglas.c" linenr="9" column="27" str="*" scope="1799ddf49a0" type="op" isArithmeticalOp="true"/>
+    <token id="1799e237240" file="c/src/reglas.c" linenr="9" column="28" str="siguiente" scope="1799ddf49a0" type="name" varId="4" exprId="4" variable="1799e258f10" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799e238040" file="c/src/reglas.c" linenr="9" column="37" str=";" scope="1799ddf49a0"/>
+    <token id="1799e237b40" file="c/src/reglas.c" linenr="9" column="39" str="int" scope="1799ddf49a0" type="name"/>
+    <token id="1799e236540" file="c/src/reglas.c" linenr="9" column="43" str="valor" scope="1799ddf49a0" type="name" varId="5" exprId="5" variable="1799e2588f0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e236f40" file="c/src/reglas.c" linenr="9" column="48" str=";" scope="1799ddf49a0"/>
+    <token id="1799e2375c0" file="c/src/reglas.c" linenr="9" column="50" str="}" scope="1799ddf49a0" link="1799e2367c0"/>
+    <token id="1799e237740" file="c/src/reglas.c" linenr="9" column="51" str=";" scope="1799ddf4720"/>
+    <token id="1799e238140" file="c/src/reglas.c" linenr="11" column="1" str="static" scope="1799ddf4720" type="name"/>
+    <token id="1799e2369c0" file="c/src/reglas.c" linenr="11" column="8" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e238240" file="c/src/reglas.c" linenr="11" column="12" str="veces" scope="1799ddf4720" type="name" varId="6" exprId="6" variable="1799e258d50" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2377c0" file="c/src/reglas.c" linenr="11" column="17" str=";" scope="1799ddf4720"/>
+    <token id="1799e236cc0" file="c/src/reglas.c" linenr="12" column="1" str="static" scope="1799ddf4720" type="name"/>
+    <token id="1799e236fc0" file="c/src/reglas.c" linenr="12" column="8" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e2379c0" file="c/src/reglas.c" linenr="12" column="12" str="solo_una" scope="1799ddf4720" type="name" varId="7" exprId="7" variable="1799e259990" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e236940" file="c/src/reglas.c" linenr="12" column="20" str=";" scope="1799ddf4720"/>
+    <token id="1799e2380c0" file="c/src/reglas.c" linenr="13" column="1" str="extern" scope="1799ddf4720" type="name"/>
+    <token id="1799e237ec0" file="c/src/reglas.c" linenr="13" column="8" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e236dc0" file="c/src/reglas.c" linenr="13" column="12" str="otro_global" scope="1799ddf4720" type="name" varId="8" exprId="8" variable="1799e258ea0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2365c0" file="c/src/reglas.c" linenr="13" column="23" str=";" scope="1799ddf4720"/>
+    <token id="1799e2381c0" file="c/src/reglas.c" linenr="15" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e236640" file="c/src/reglas.c" linenr="15" column="5" str="reglas_cognitiva" scope="1799ddf4720" type="name" function="1799ddf4b80"/>
+    <token id="1799e237a40" file="c/src/reglas.c" linenr="15" column="21" str="(" scope="1799ddf4720" link="1799e236ac0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2382c0" file="c/src/reglas.c" linenr="15" column="22" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e238440" file="c/src/reglas.c" linenr="15" column="26" str="a" scope="1799ddf4720" type="name" varId="9" exprId="9" variable="1799e259ae0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e236a40" file="c/src/reglas.c" linenr="15" column="27" str="," scope="1799ddf4720"/>
+    <token id="1799e237f40" file="c/src/reglas.c" linenr="15" column="29" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e2364c0" file="c/src/reglas.c" linenr="15" column="33" str="b" scope="1799ddf4720" type="name" varId="10" exprId="10" variable="1799e2591b0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e236ac0" file="c/src/reglas.c" linenr="15" column="34" str=")" scope="1799ddf4720" link="1799e237a40"/>
+    <token id="1799e236b40" file="c/src/reglas.c" linenr="16" column="1" str="{" scope="1799ddf4c20" link="1799e238cc0"/>
+    <token id="1799e236ec0" file="c/src/reglas.c" linenr="17" column="5" str="if" scope="1799ddf4c20" type="name" astParent="1799e236bc0"/>
+    <token id="1799e236bc0" file="c/src/reglas.c" linenr="17" column="8" str="(" scope="1799ddf4c20" link="1799e239d40" astOperand1="1799e236ec0" astOperand2="1799e237cc0"/>
+    <token id="1799e237ac0" file="c/src/reglas.c" linenr="17" column="9" str="a" scope="1799ddf4c20" type="name" varId="9" exprId="9" variable="1799e259ae0" values="1799de10520" astParent="1799e2370c0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2370c0" file="c/src/reglas.c" linenr="17" column="11" str="&gt;" scope="1799ddf4c20" type="op" isComparisonOp="true" exprId="1073741863" values="1799de0fa30" astParent="1799e2372c0" astOperand1="1799e237ac0" astOperand2="1799e236e40" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e236e40" file="c/src/reglas.c" linenr="17" column="13" str="0" scope="1799ddf4c20" type="number" isInt="true" values="1799de0b760" astParent="1799e2370c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2372c0" file="c/src/reglas.c" linenr="17" column="15" str="&amp;&amp;" scope="1799ddf4c20" type="op" isLogicalOp="true" exprId="1073741865" values="1799de0f9f0" astParent="1799e237cc0" astOperand1="1799e2370c0" astOperand2="1799e237bc0" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e237440" file="c/src/reglas.c" linenr="17" column="18" str="b" scope="1799ddf4c20" type="name" varId="10" exprId="10" variable="1799e2591b0" astParent="1799e237bc0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e237bc0" file="c/src/reglas.c" linenr="17" column="20" str="&gt;" scope="1799ddf4c20" type="op" isComparisonOp="true" exprId="1073741864" values="1799de0fd70" astParent="1799e2372c0" astOperand1="1799e237440" astOperand2="1799e237c40" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e237c40" file="c/src/reglas.c" linenr="17" column="22" str="0" scope="1799ddf4c20" type="number" isInt="true" values="1799de0b9a0" astParent="1799e237bc0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e237cc0" file="c/src/reglas.c" linenr="17" column="24" str="||" scope="1799ddf4c20" type="op" isLogicalOp="true" exprId="1073741867" values="1799de0fe90" astParent="1799e236bc0" astOperand1="1799e2372c0" astOperand2="1799e237dc0" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e237d40" file="c/src/reglas.c" linenr="17" column="27" str="a" scope="1799ddf4c20" type="name" varId="9" exprId="9" variable="1799e259ae0" values="1799de10480" astParent="1799e237dc0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e237dc0" file="c/src/reglas.c" linenr="17" column="29" str="&lt;" scope="1799ddf4c20" type="op" isComparisonOp="true" exprId="1073741866" values="1799de0fbd0" astParent="1799e237cc0" astOperand1="1799e237d40" astOperand2="1799e238540" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238540" file="c/src/reglas.c" linenr="17" column="31" str="0" scope="1799ddf4c20" type="number" isInt="true" values="1799de0b820" astParent="1799e237dc0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239d40" file="c/src/reglas.c" linenr="17" column="32" str=")" scope="1799ddf4c20" link="1799e236bc0"/>
+    <token id="1799e23a140" file="c/src/reglas.c" linenr="17" column="34" str="{" scope="1799ddf4e00" link="1799e2393c0"/>
+    <token id="1799e239c40" file="c/src/reglas.c" linenr="18" column="9" str="return" scope="1799ddf4e00" type="name" astOperand1="1799e2391c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2391c0" file="c/src/reglas.c" linenr="18" column="16" str="1" scope="1799ddf4e00" type="number" isInt="true" values="1799de0be40" astParent="1799e239c40" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2395c0" file="c/src/reglas.c" linenr="18" column="17" str=";" scope="1799ddf4e00"/>
+    <token id="1799e2393c0" file="c/src/reglas.c" linenr="19" column="5" str="}" scope="1799ddf4e00" link="1799e23a140"/>
+    <token id="1799e238a40" file="c/src/reglas.c" linenr="19" column="7" str="else" scope="1799ddf4c20" type="name"/>
+    <token id="1799ddedda0" file="c/src/reglas.c" linenr="19" column="0" str="{" scope="1799ddf6c20" isInsertedBrace="true" link="1799dded7a0"/>
+    <token id="1799e238fc0" file="c/src/reglas.c" linenr="19" column="12" str="if" scope="1799ddf6c20" type="name" astParent="1799e238640"/>
+    <token id="1799e238640" file="c/src/reglas.c" linenr="19" column="15" str="(" scope="1799ddf6c20" link="1799e239540" astOperand1="1799e238fc0" astOperand2="1799e2399c0"/>
+    <token id="1799e23a040" file="c/src/reglas.c" linenr="19" column="16" str="a" scope="1799ddf6c20" type="name" varId="9" exprId="9" variable="1799e259ae0" values="1799de109a0" astParent="1799e2399c0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2399c0" file="c/src/reglas.c" linenr="19" column="18" str="==" scope="1799ddf6c20" type="op" isComparisonOp="true" exprId="1073741869" values="1799de0fbf0" astParent="1799e238640" astOperand1="1799e23a040" astOperand2="1799e238c40" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238c40" file="c/src/reglas.c" linenr="19" column="21" str="0" scope="1799ddf6c20" type="number" isInt="true" values="1799de0ba80" astParent="1799e2399c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239540" file="c/src/reglas.c" linenr="19" column="22" str=")" scope="1799ddf6c20" link="1799e238640"/>
+    <token id="1799e239940" file="c/src/reglas.c" linenr="19" column="24" str="{" scope="1799ddf6720" link="1799e2389c0"/>
+    <token id="1799e239040" file="c/src/reglas.c" linenr="20" column="9" str="return" scope="1799ddf6720" type="name" astOperand1="1799e239240" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238d40" file="c/src/reglas.c" linenr="20" column="16" str="a" scope="1799ddf6720" type="name" varId="9" exprId="9" variable="1799e259ae0" values="1799de104e0" astParent="1799e239240" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e239240" file="c/src/reglas.c" linenr="20" column="18" str="?" scope="1799ddf6720" exprId="1073741873" values="1799de0b800" astParent="1799e239040" astOperand1="1799e238d40" astOperand2="1799e2385c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238dc0" file="c/src/reglas.c" linenr="20" column="20" str="2" scope="1799ddf6720" type="number" isInt="true" values="1799de0bd60" astParent="1799e2385c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2385c0" file="c/src/reglas.c" linenr="20" column="22" str=":" scope="1799ddf6720" exprId="1073741872" values="1799de0bbe0" astParent="1799e239240" astOperand1="1799e238dc0" astOperand2="1799e239740" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239740" file="c/src/reglas.c" linenr="20" column="24" str="3" scope="1799ddf6720" type="number" isInt="true" values="1799de0b780" astParent="1799e2385c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e2397c0" file="c/src/reglas.c" linenr="20" column="25" str=";" scope="1799ddf6720"/>
+    <token id="1799e2389c0" file="c/src/reglas.c" linenr="21" column="5" str="}" scope="1799ddf6720" link="1799e239940"/>
+    <token id="1799e239fc0" file="c/src/reglas.c" linenr="21" column="7" str="else" scope="1799ddf6c20" type="name"/>
+    <token id="1799e2394c0" file="c/src/reglas.c" linenr="21" column="12" str="{" scope="1799ddf6860" link="1799e239bc0"/>
+    <token id="1799e23a0c0" file="c/src/reglas.c" linenr="22" column="9" str="for" scope="1799ddf6860" type="name" astParent="1799e2398c0"/>
+    <token id="1799e2398c0" file="c/src/reglas.c" linenr="22" column="13" str="(" scope="1799ddf6860" link="1799e239ac0" astOperand1="1799e23a0c0" astOperand2="1799e239f40"/>
+    <token id="1799e23a1c0" file="c/src/reglas.c" linenr="22" column="14" str="int" scope="1799ddf6860" type="name"/>
+    <token id="1799e23a340" file="c/src/reglas.c" linenr="22" column="18" str="i" scope="1799ddf6860" type="name" varId="11" exprId="11" variable="1799e258180" astParent="1799e2386c0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2386c0" file="c/src/reglas.c" linenr="22" column="20" str="=" scope="1799ddf6860" type="op" isAssignmentOp="true" values="1799de0bae0" astParent="1799e239f40" astOperand1="1799e23a340" astOperand2="1799e239e40" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e239e40" file="c/src/reglas.c" linenr="22" column="22" str="0" scope="1799ddf6860" type="number" isInt="true" values="1799de0bd00" astParent="1799e2386c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239f40" file="c/src/reglas.c" linenr="22" column="23" str=";" scope="1799ddf6860" astParent="1799e2398c0" astOperand1="1799e2386c0" astOperand2="1799e2388c0"/>
+    <token id="1799e2384c0" file="c/src/reglas.c" linenr="22" column="25" str="i" scope="1799ddf6860" type="name" varId="11" exprId="11" variable="1799e258180" values="1799de108a0" astParent="1799e23a240" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e23a240" file="c/src/reglas.c" linenr="22" column="27" str="&lt;" scope="1799ddf6860" type="op" isComparisonOp="true" exprId="1073741874" values="1799de0fb10" astParent="1799e2388c0" astOperand1="1799e2384c0" astOperand2="1799e238ec0" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238ec0" file="c/src/reglas.c" linenr="22" column="29" str="b" scope="1799ddf6860" type="name" varId="10" exprId="10" variable="1799e2591b0" astParent="1799e23a240" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e2388c0" file="c/src/reglas.c" linenr="22" column="30" str=";" scope="1799ddf6860" exprId="1073741876" astParent="1799e239f40" astOperand1="1799e23a240" astOperand2="1799e238ac0"/>
+    <token id="1799e239640" file="c/src/reglas.c" linenr="22" column="32" str="i" scope="1799ddf6860" type="name" varId="11" exprId="11" variable="1799e258180" values="1799de109e0" astParent="1799e238ac0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e238ac0" file="c/src/reglas.c" linenr="22" column="33" str="++" scope="1799ddf6860" type="op" exprId="1073741875" values="1799de10960" astParent="1799e2388c0" astOperand1="1799e239640" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239ac0" file="c/src/reglas.c" linenr="22" column="35" str=")" scope="1799ddf6860" link="1799e2398c0"/>
+    <token id="1799e239ec0" file="c/src/reglas.c" linenr="22" column="37" str="{" scope="1799ddf64a0" link="1799e239840"/>
+    <token id="1799e239dc0" file="c/src/reglas.c" linenr="23" column="13" str="if" scope="1799ddf64a0" type="name" astParent="1799e238840"/>
+    <token id="1799e238840" file="c/src/reglas.c" linenr="23" column="16" str="(" scope="1799ddf64a0" link="1799e238f40" astOperand1="1799e239dc0" astOperand2="1799e239a40"/>
+    <token id="1799e239440" file="c/src/reglas.c" linenr="23" column="17" str="i" scope="1799ddf64a0" type="name" varId="11" exprId="11" variable="1799e258180" values="1799de10800" astParent="1799e239a40" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799e239a40" file="c/src/reglas.c" linenr="23" column="19" str="==" scope="1799ddf64a0" type="op" isComparisonOp="true" exprId="1073741878" values="1799de0fa10" astParent="1799e238840" astOperand1="1799e239440" astOperand2="1799e238e40" valueType-type="bool" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238e40" file="c/src/reglas.c" linenr="23" column="22" str="7" scope="1799ddf64a0" type="number" isInt="true" values="1799de0bb00" astParent="1799e239a40" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238f40" file="c/src/reglas.c" linenr="23" column="23" str=")" scope="1799ddf64a0" link="1799e238840"/>
+    <token id="1799e23a2c0" file="c/src/reglas.c" linenr="23" column="25" str="{" scope="1799ddf6360" link="1799e2392c0"/>
+    <token id="1799e239b40" file="c/src/reglas.c" linenr="24" column="17" str="goto" scope="1799ddf6360" type="name"/>
+    <token id="1799e2390c0" file="c/src/reglas.c" linenr="24" column="22" str="fin" scope="1799ddf6360" type="name"/>
+    <token id="1799e2396c0" file="c/src/reglas.c" linenr="24" column="25" str=";" scope="1799ddf6360"/>
+    <token id="1799e2392c0" file="c/src/reglas.c" linenr="25" column="13" str="}" scope="1799ddf6360" link="1799e23a2c0"/>
+    <token id="1799e239840" file="c/src/reglas.c" linenr="26" column="9" str="}" scope="1799ddf64a0" link="1799e239ec0"/>
+    <token id="1799e239bc0" file="c/src/reglas.c" linenr="27" column="5" str="}" scope="1799ddf6860" link="1799e2394c0"/>
+    <token id="1799dded7a0" file="c/src/reglas.c" linenr="27" column="0" str="}" scope="1799ddf6c20" isInsertedBrace="true" link="1799ddedda0"/>
+    <token id="1799e238b40" file="c/src/reglas.c" linenr="28" column="1" str="fin" scope="1799ddf4c20" type="name"/>
+    <token id="1799e239140" file="c/src/reglas.c" linenr="28" column="4" str=":" scope="1799ddf4c20"/>
+    <token id="1799ddebda0" file="c/src/reglas.c" linenr="28" column="0" str=";" scope="1799ddf4c20"/>
+    <token id="1799e238740" file="c/src/reglas.c" linenr="29" column="5" str="return" scope="1799ddf4c20" type="name" astOperand1="1799e23a3c0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e23a3c0" file="c/src/reglas.c" linenr="29" column="12" str="0" scope="1799ddf4c20" type="number" isInt="true" values="1799de0b960" astParent="1799e238740" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e239cc0" file="c/src/reglas.c" linenr="29" column="13" str=";" scope="1799ddf4c20"/>
+    <token id="1799e238cc0" file="c/src/reglas.c" linenr="30" column="1" str="}" scope="1799ddf4c20" link="1799e236b40"/>
+    <token id="1799e23a440" file="c/src/reglas.c" linenr="32" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799e2387c0" file="c/src/reglas.c" linenr="32" column="5" str="reglas_usa_global" scope="1799ddf4720" type="name" function="1799ddf50d0"/>
+    <token id="1799e239340" file="c/src/reglas.c" linenr="32" column="22" str="(" scope="1799ddf4720" isRemovedVoidParameter="true" link="1799e238bc0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799e238bc0" file="c/src/reglas.c" linenr="32" column="27" str=")" scope="1799ddf4720" link="1799e239340"/>
+    <token id="1799ddce720" file="c/src/reglas.c" linenr="33" column="1" str="{" scope="1799ddf6d60" link="1799ddcf120"/>
+    <token id="1799ddce2a0" file="c/src/reglas.c" linenr="34" column="5" str="const" scope="1799ddf6d60" type="name"/>
+    <token id="1799ddceba0" file="c/src/reglas.c" linenr="34" column="11" str="int" scope="1799ddf6d60" type="name"/>
+    <token id="1799ddce8a0" file="c/src/reglas.c" linenr="34" column="15" str="limite" scope="1799ddf6d60" type="name" varId="12" exprId="12" variable="1799e258ce0" values="1799de0bd80" astParent="1799ddce0a0" valueType-type="int" valueType-sign="signed" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddce0a0" file="c/src/reglas.c" linenr="34" column="22" str="=" scope="1799ddf6d60" type="op" isAssignmentOp="true" values="1799de0bbc0" astOperand1="1799ddce8a0" astOperand2="1799ddcf920" valueType-type="int" valueType-sign="signed" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddcf920" file="c/src/reglas.c" linenr="34" column="24" str="25" scope="1799ddf6d60" type="number" isInt="true" values="1799de0bb40" astParent="1799ddce0a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddcf8a0" file="c/src/reglas.c" linenr="34" column="26" str=";" scope="1799ddf6d60"/>
+    <token id="1799ddce120" file="c/src/reglas.c" linenr="35" column="5" str="solo_una" scope="1799ddf6d60" type="name" varId="7" exprId="7" variable="1799e259990" astParent="1799ddcee20" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddcee20" file="c/src/reglas.c" linenr="35" column="13" str="++" scope="1799ddf6d60" type="op" exprId="1073741879" astOperand1="1799ddce120" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddceea0" file="c/src/reglas.c" linenr="35" column="15" str=";" scope="1799ddf6d60"/>
+    <token id="1799ddce220" file="c/src/reglas.c" linenr="36" column="5" str="veces" scope="1799ddf6d60" type="name" varId="6" exprId="6" variable="1799e258d50" astParent="1799ddce520" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddce520" file="c/src/reglas.c" linenr="36" column="10" str="++" scope="1799ddf6d60" type="op" exprId="1073741880" astOperand1="1799ddce220" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddceda0" file="c/src/reglas.c" linenr="36" column="12" str=";" scope="1799ddf6d60"/>
+    <token id="1799ddcf3a0" file="c/src/reglas.c" linenr="37" column="5" str="return" scope="1799ddf6d60" type="name" astOperand1="1799ddcefa0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddce820" file="c/src/reglas.c" linenr="37" column="12" str="modulo_estado" scope="1799ddf6d60" type="name" varId="1" exprId="1" variable="1799e259920" astParent="1799ddcf520" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddcf520" file="c/src/reglas.c" linenr="37" column="26" str="+" scope="1799ddf6d60" type="op" isArithmeticalOp="true" exprId="1073741881" astParent="1799ddcefa0" astOperand1="1799ddce820" astOperand2="1799ddce420" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddce420" file="c/src/reglas.c" linenr="37" column="28" str="otro_global" scope="1799ddf6d60" type="name" varId="8" exprId="8" variable="1799e258ea0" astParent="1799ddcf520" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddcefa0" file="c/src/reglas.c" linenr="37" column="40" str="+" scope="1799ddf6d60" type="op" isArithmeticalOp="true" exprId="1073741882" astParent="1799ddcf3a0" astOperand1="1799ddcf520" astOperand2="1799ddce320" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddce320" file="c/src/reglas.c" linenr="37" column="42" str="limite" scope="1799ddf6d60" type="name" varId="12" exprId="12" variable="1799e258ce0" values="1799de0ba60" astParent="1799ddcefa0" valueType-type="int" valueType-sign="signed" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddce5a0" file="c/src/reglas.c" linenr="37" column="48" str=";" scope="1799ddf6d60"/>
+    <token id="1799ddcf120" file="c/src/reglas.c" linenr="38" column="1" str="}" scope="1799ddf6d60" link="1799ddce720"/>
+    <token id="1799ddcf0a0" file="c/src/reglas.c" linenr="40" column="1" str="void" scope="1799ddf4720" type="name"/>
+    <token id="1799ddce4a0" file="c/src/reglas.c" linenr="40" column="6" str="reglas_memoria" scope="1799ddf4720" type="name" function="1799ddf4f90"/>
+    <token id="1799ddcec20" file="c/src/reglas.c" linenr="40" column="20" str="(" scope="1799ddf4720" link="1799ddcdfa0" valueType-type="void" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddcfa20" file="c/src/reglas.c" linenr="40" column="21" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddcfca0" file="c/src/reglas.c" linenr="40" column="25" str="n" scope="1799ddf4720" type="name" varId="13" exprId="13" variable="1799e258570" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddcdfa0" file="c/src/reglas.c" linenr="40" column="26" str=")" scope="1799ddf4720" link="1799ddcec20"/>
+    <token id="1799ddcf2a0" file="c/src/reglas.c" linenr="41" column="1" str="{" scope="1799ddf69a0" link="1799ddd0ba0"/>
+    <token id="1799ddce3a0" file="c/src/reglas.c" linenr="42" column="5" str="uint8_t" scope="1799ddf69a0" type="name"/>
+    <token id="1799ddcfd20" file="c/src/reglas.c" linenr="42" column="13" str="pila" scope="1799ddf69a0" type="name" varId="14" exprId="14" variable="1799e259060" values="1799de0fc10" astParent="1799ddcf7a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddcf7a0" file="c/src/reglas.c" linenr="42" column="17" str="[" scope="1799ddf69a0" link="1799ddcef20" exprId="1073741883" astOperand1="1799ddcfd20" astOperand2="1799ddcf5a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddcf5a0" file="c/src/reglas.c" linenr="42" column="18" str="n" scope="1799ddf69a0" type="name" varId="13" exprId="13" variable="1799e258570" astParent="1799ddcf7a0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddcef20" file="c/src/reglas.c" linenr="42" column="19" str="]" scope="1799ddf69a0" link="1799ddcf7a0"/>
+    <token id="1799ddcf620" file="c/src/reglas.c" linenr="42" column="20" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddcf220" file="c/src/reglas.c" linenr="43" column="5" str="uint8_t" scope="1799ddf69a0" type="name"/>
+    <token id="1799ddcf9a0" file="c/src/reglas.c" linenr="43" column="13" str="tabla" scope="1799ddf69a0" type="name" varId="15" exprId="15" variable="1799e258f80" values="1799de0fb30" astParent="1799ddcf420" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddcf420" file="c/src/reglas.c" linenr="43" column="18" str="[" scope="1799ddf69a0" link="1799ddcfaa0" exprId="1073741885" astOperand1="1799ddcf9a0" astOperand2="1799ddceca0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddceca0" file="c/src/reglas.c" linenr="43" column="19" str="4" scope="1799ddf69a0" type="number" isInt="true" values="1799de0b7a0" astParent="1799ddcf420" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddcfaa0" file="c/src/reglas.c" linenr="43" column="20" str="]" scope="1799ddf69a0" link="1799ddcf420"/>
+    <token id="1799ddce620" file="c/src/reglas.c" linenr="43" column="21" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddce6a0" file="c/src/reglas.c" linenr="44" column="5" str="uint8_t" scope="1799ddf69a0" type="name"/>
+    <token id="1799ddce7a0" file="c/src/reglas.c" linenr="44" column="13" str="copia" scope="1799ddf69a0" type="name" varId="16" exprId="16" variable="1799e258ff0" values="1799de0f850" astParent="1799ddcfb20" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddcfb20" file="c/src/reglas.c" linenr="44" column="18" str="[" scope="1799ddf69a0" link="1799ddcf020" exprId="1073741893" astOperand1="1799ddce7a0" astOperand2="1799ddce9a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddce920" file="c/src/reglas.c" linenr="44" column="19" str="sizeof" scope="1799ddf69a0" type="name" macroName="ELEMENTOS" astParent="1799ddce1a0"/>
+    <token id="1799ddce1a0" file="c/src/reglas.c" linenr="44" column="19" str="(" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddced20" exprId="1073741887" values="1799de0fc70" astParent="1799ddce9a0" astOperand1="1799ddce920" astOperand2="1799ddcf320" valueType-type="long" valueType-sign="unsigned" valueType-bits="0" valueType-reference="None" valueType-originalTypeName="size_t"/>
+    <token id="1799ddcf320" file="c/src/reglas.c" linenr="44" column="19" str="tabla" scope="1799ddf69a0" type="name" varId="15" exprId="15" variable="1799e258f80" values="1799de0feb0" astParent="1799ddce1a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddced20" file="c/src/reglas.c" linenr="44" column="19" str=")" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddce1a0"/>
+    <token id="1799ddce9a0" file="c/src/reglas.c" linenr="44" column="19" str="/" scope="1799ddf69a0" type="op" isArithmeticalOp="true" macroName="ELEMENTOS" exprId="1073741892" values="1799de0b7c0" astParent="1799ddcfb20" astOperand1="1799ddce1a0" astOperand2="1799ddcfda0" valueType-type="long" valueType-sign="unsigned" valueType-bits="0" valueType-reference="None" valueType-originalTypeName="size_t"/>
+    <token id="1799ddcf4a0" file="c/src/reglas.c" linenr="44" column="19" str="sizeof" scope="1799ddf69a0" type="name" macroName="ELEMENTOS" astParent="1799ddcfda0"/>
+    <token id="1799ddcfda0" file="c/src/reglas.c" linenr="44" column="19" str="(" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddcf820" exprId="1073741891" values="1799de0bc00" astParent="1799ddce9a0" astOperand1="1799ddcf4a0" astOperand2="1799ddcfba0" valueType-type="long" valueType-sign="unsigned" valueType-bits="0" valueType-reference="None" valueType-originalTypeName="size_t"/>
+    <token id="1799ddcea20" file="c/src/reglas.c" linenr="44" column="19" str="(" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddceaa0"/>
+    <token id="1799ddcf720" file="c/src/reglas.c" linenr="44" column="19" str="tabla" scope="1799ddf69a0" type="name" varId="15" exprId="15" variable="1799e258f80" values="1799de0fed0" astParent="1799ddcfba0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddceaa0" file="c/src/reglas.c" linenr="44" column="19" str=")" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddcea20"/>
+    <token id="1799ddcfba0" file="c/src/reglas.c" linenr="44" column="19" str="[" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddcf1a0" exprId="1073741890" values="1799de0fd50" astParent="1799ddcfda0" astOperand1="1799ddcf720" astOperand2="1799ddcfc20" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddcfc20" file="c/src/reglas.c" linenr="44" column="19" str="0" scope="1799ddf69a0" type="number" isInt="true" macroName="ELEMENTOS" astParent="1799ddcfba0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddcf1a0" file="c/src/reglas.c" linenr="44" column="19" str="]" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddcfba0"/>
+    <token id="1799ddcf820" file="c/src/reglas.c" linenr="44" column="19" str=")" scope="1799ddf69a0" macroName="ELEMENTOS" link="1799ddcfda0"/>
+    <token id="1799ddcf020" file="c/src/reglas.c" linenr="44" column="35" str="]" scope="1799ddf69a0" link="1799ddcfb20"/>
+    <token id="1799ddceb20" file="c/src/reglas.c" linenr="44" column="36" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddcfea0" file="c/src/reglas.c" linenr="45" column="5" str="int" scope="1799ddf69a0" type="name"/>
+    <token id="1799ddcdf20" file="c/src/reglas.c" linenr="45" column="9" str="*" scope="1799ddf69a0" type="op" isArithmeticalOp="true"/>
+    <token id="1799ddce020" file="c/src/reglas.c" linenr="45" column="10" str="p" scope="1799ddf69a0" type="name" varId="17" exprId="17" variable="1799e2590d0" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd05a0" file="c/src/reglas.c" linenr="45" column="12" str=";" scope="1799ddf69a0" isSplittedVarDeclEq="true"/>
+    <token id="1799dded320" file="c/src/reglas.c" linenr="45" column="10" str="p" scope="1799ddf69a0" type="name" varId="17" exprId="17" variable="1799e2590d0" astParent="1799dded9a0" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799dded9a0" file="c/src/reglas.c" linenr="45" column="12" str="=" scope="1799ddf69a0" type="op" isAssignmentOp="true" exprId="1073741899" values="1799de0bc80" astOperand1="1799dded320" astOperand2="1799ddd18a0" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd06a0" file="c/src/reglas.c" linenr="45" column="14" str="malloc" scope="1799ddf69a0" type="name" astParent="1799ddd18a0"/>
+    <token id="1799ddd18a0" file="c/src/reglas.c" linenr="45" column="20" str="(" scope="1799ddf69a0" link="1799ddd1320" exprId="1073741898" values="1799de0ba20" astParent="1799dded9a0" astOperand1="1799ddd06a0" astOperand2="1799ddd0ca0" valueType-type="void" valueType-bits="0" valueType-pointer="1" valueType-reference="None" valueType-originalTypeName="void *"/>
+    <token id="1799ddd09a0" file="c/src/reglas.c" linenr="45" column="21" str="sizeof" scope="1799ddf69a0" type="name" astParent="1799ddd0ca0"/>
+    <token id="1799ddd0ca0" file="c/src/reglas.c" linenr="45" column="27" str="(" scope="1799ddf69a0" link="1799ddd0a20" exprId="1073741897" values="1799de0b9c0" astParent="1799ddd18a0" astOperand1="1799ddd09a0" astOperand2="1799ddcff20" valueType-type="long" valueType-sign="unsigned" valueType-bits="0" valueType-reference="None" valueType-originalTypeName="size_t"/>
+    <token id="1799ddcff20" file="c/src/reglas.c" linenr="45" column="28" str="int" scope="1799ddf69a0" type="name" exprId="1073741896" astParent="1799ddd0ca0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd0a20" file="c/src/reglas.c" linenr="45" column="31" str=")" scope="1799ddf69a0" link="1799ddd0ca0"/>
+    <token id="1799ddd1320" file="c/src/reglas.c" linenr="45" column="32" str=")" scope="1799ddf69a0" link="1799ddd18a0"/>
+    <token id="1799ddd1920" file="c/src/reglas.c" linenr="45" column="33" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddd1c20" file="c/src/reglas.c" linenr="46" column="5" str="pila" scope="1799ddf69a0" type="name" varId="14" exprId="14" variable="1799e259060" values="1799de0fb50" astParent="1799ddd1520" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd1520" file="c/src/reglas.c" linenr="46" column="9" str="[" scope="1799ddf69a0" link="1799ddd08a0" exprId="1073741901" values="1799de0f930" astParent="1799ddd03a0" astOperand1="1799ddd1c20" astOperand2="1799ddd00a0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd00a0" file="c/src/reglas.c" linenr="46" column="10" str="0" scope="1799ddf69a0" type="number" isInt="true" values="1799de0bb80" astParent="1799ddd1520" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd08a0" file="c/src/reglas.c" linenr="46" column="11" str="]" scope="1799ddf69a0" link="1799ddd1520"/>
+    <token id="1799ddd03a0" file="c/src/reglas.c" linenr="46" column="13" str="=" scope="1799ddf69a0" type="op" isAssignmentOp="true" exprId="1073741908" values="1799de0b9e0" astOperand1="1799ddd1520" astOperand2="1799ddd1220" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd0020" file="c/src/reglas.c" linenr="46" column="15" str="tabla" scope="1799ddf69a0" type="name" varId="15" exprId="15" variable="1799e258f80" values="1799de0ff10" astParent="1799ddd0d20" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd0d20" file="c/src/reglas.c" linenr="46" column="20" str="[" scope="1799ddf69a0" link="1799ddd0120" exprId="1073741902" values="1799de0ff50" astParent="1799ddd1220" astOperand1="1799ddd0020" astOperand2="1799ddd0b20" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd0b20" file="c/src/reglas.c" linenr="46" column="21" str="0" scope="1799ddf69a0" type="number" isInt="true" values="1799de0b880" astParent="1799ddd0d20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd0120" file="c/src/reglas.c" linenr="46" column="22" str="]" scope="1799ddf69a0" link="1799ddd0d20"/>
+    <token id="1799ddd1220" file="c/src/reglas.c" linenr="46" column="24" str="=" scope="1799ddf69a0" type="op" isAssignmentOp="true" exprId="1073741907" values="1799de0b8c0" astParent="1799ddd03a0" astOperand1="1799ddd0d20" astOperand2="1799ddd0720" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd19a0" file="c/src/reglas.c" linenr="46" column="26" str="copia" scope="1799ddf69a0" type="name" varId="16" exprId="16" variable="1799e258ff0" values="1799de0ff90" astParent="1799ddd1da0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd1da0" file="c/src/reglas.c" linenr="46" column="31" str="[" scope="1799ddf69a0" link="1799ddd13a0" exprId="1073741905" values="1799de0fb70" astParent="1799ddd0720" astOperand1="1799ddd19a0" astOperand2="1799ddd07a0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd07a0" file="c/src/reglas.c" linenr="46" column="32" str="0" scope="1799ddf69a0" type="number" isInt="true" values="1799de0bb60" astParent="1799ddd1da0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd13a0" file="c/src/reglas.c" linenr="46" column="33" str="]" scope="1799ddf69a0" link="1799ddd1da0"/>
+    <token id="1799ddd0720" file="c/src/reglas.c" linenr="46" column="35" str="=" scope="1799ddf69a0" type="op" isAssignmentOp="true" exprId="1073741906" values="1799de0b8a0" astParent="1799ddd1220" astOperand1="1799ddd1da0" astOperand2="1799ddd0e20" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd0e20" file="c/src/reglas.c" linenr="46" column="37" str="0" scope="1799ddf69a0" type="number" isInt="true" values="1799de0b860" astParent="1799ddd0720" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd1a20" file="c/src/reglas.c" linenr="46" column="38" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddd0220" file="c/src/reglas.c" linenr="47" column="5" str="free" scope="1799ddf69a0" type="name" astParent="1799ddd02a0"/>
+    <token id="1799ddd02a0" file="c/src/reglas.c" linenr="47" column="9" str="(" scope="1799ddf69a0" link="1799ddd01a0" exprId="1073741910" astOperand1="1799ddd0220" astOperand2="1799ddd10a0" valueType-type="void" valueType-bits="0" valueType-reference="None" valueType-originalTypeName="void"/>
+    <token id="1799ddd10a0" file="c/src/reglas.c" linenr="47" column="10" str="p" scope="1799ddf69a0" type="name" varId="17" exprId="17" variable="1799e2590d0" values="1799de10600" astParent="1799ddd02a0" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="1799ddd01a0" file="c/src/reglas.c" linenr="47" column="11" str=")" scope="1799ddf69a0" link="1799ddd02a0"/>
+    <token id="1799ddd0f20" file="c/src/reglas.c" linenr="47" column="12" str=";" scope="1799ddf69a0"/>
+    <token id="1799ddd0ba0" file="c/src/reglas.c" linenr="48" column="1" str="}" scope="1799ddf69a0" link="1799ddcf2a0"/>
+    <token id="1799ddd1aa0" file="c/src/reglas.c" linenr="50" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd15a0" file="c/src/reglas.c" linenr="50" column="5" str="reglas_cadena" scope="1799ddf4720" type="name" function="1799ddf58f0"/>
+    <token id="1799ddcffa0" file="c/src/reglas.c" linenr="50" column="18" str="(" scope="1799ddf4720" link="1799ddd0420" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd0aa0" file="c/src/reglas.c" linenr="50" column="19" str="struct" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd1020" file="c/src/reglas.c" linenr="50" column="26" str="nodo" scope="1799ddf4720" type="name" type-scope="1799ddf49a0"/>
+    <token id="1799ddd1120" file="c/src/reglas.c" linenr="50" column="31" str="*" scope="1799ddf4720" type="op" isArithmeticalOp="true"/>
+    <token id="1799ddd1ba0" file="c/src/reglas.c" linenr="50" column="32" str="n" scope="1799ddf4720" type="name" varId="18" exprId="18" variable="1799e259220" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd0420" file="c/src/reglas.c" linenr="50" column="33" str=")" scope="1799ddf4720" link="1799ddcffa0"/>
+    <token id="1799ddd1ca0" file="c/src/reglas.c" linenr="51" column="1" str="{" scope="1799ddf5fa0" link="1799ddd0ea0"/>
+    <token id="1799ddd1d20" file="c/src/reglas.c" linenr="52" column="5" str="return" scope="1799ddf5fa0" type="name" astOperand1="1799ddd0320" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd17a0" file="c/src/reglas.c" linenr="52" column="12" str="n" scope="1799ddf5fa0" type="name" varId="18" exprId="18" variable="1799e259220" astParent="1799ddd0820" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd0820" file="c/src/reglas.c" linenr="52" column="13" str="." scope="1799ddf5fa0" exprId="1073741911" astParent="1799ddd1820" astOperand1="1799ddd17a0" astOperand2="1799ddd04a0" originalName="->" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd04a0" file="c/src/reglas.c" linenr="52" column="15" str="siguiente" scope="1799ddf5fa0" type="name" varId="19" exprId="19" variable="1799e258f10" astParent="1799ddd0820" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd1820" file="c/src/reglas.c" linenr="52" column="24" str="." scope="1799ddf5fa0" exprId="1073741912" astParent="1799ddd0520" astOperand1="1799ddd0820" astOperand2="1799ddd11a0" originalName="->" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd11a0" file="c/src/reglas.c" linenr="52" column="26" str="siguiente" scope="1799ddf5fa0" type="name" varId="20" exprId="20" variable="1799e258f10" astParent="1799ddd1820" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd0520" file="c/src/reglas.c" linenr="52" column="35" str="." scope="1799ddf5fa0" exprId="1073741913" astParent="1799ddd0320" astOperand1="1799ddd1820" astOperand2="1799ddd0620" originalName="->" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd0620" file="c/src/reglas.c" linenr="52" column="37" str="siguiente" scope="1799ddf5fa0" type="name" varId="21" exprId="21" variable="1799e258f10" astParent="1799ddd0520" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="1799ddf49a0"/>
+    <token id="1799ddd0320" file="c/src/reglas.c" linenr="52" column="46" str="." scope="1799ddf5fa0" exprId="1073741914" astParent="1799ddd1d20" astOperand1="1799ddd0520" astOperand2="1799ddd1e20" originalName="->" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd1e20" file="c/src/reglas.c" linenr="52" column="48" str="valor" scope="1799ddf5fa0" type="name" varId="22" exprId="22" variable="1799e2588f0" astParent="1799ddd0320" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd1620" file="c/src/reglas.c" linenr="52" column="53" str=";" scope="1799ddf5fa0"/>
+    <token id="1799ddd0ea0" file="c/src/reglas.c" linenr="53" column="1" str="}" scope="1799ddf5fa0" link="1799ddd1ca0"/>
+    <token id="1799ddd1420" file="c/src/reglas.c" linenr="55" column="1" str="void" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd1b20" file="c/src/reglas.c" linenr="55" column="6" str="reglas_llama" scope="1799ddf4720" type="name" function="1799ddf5b70"/>
+    <token id="1799ddd1ea0" file="c/src/reglas.c" linenr="55" column="18" str="(" scope="1799ddf4720" isRemovedVoidParameter="true" link="1799ddd0c20" valueType-type="void" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd0c20" file="c/src/reglas.c" linenr="55" column="23" str=")" scope="1799ddf4720" link="1799ddd1ea0"/>
+    <token id="1799ddd0da0" file="c/src/reglas.c" linenr="56" column="1" str="{" scope="1799ddf6220" link="1799ddd24a0"/>
+    <token id="1799ddd0fa0" file="c/src/reglas.c" linenr="57" column="5" str="modulo_cuenta" scope="1799ddf6220" type="name" function="1799ddf4900" astParent="1799ddd12a0"/>
+    <token id="1799ddd12a0" file="c/src/reglas.c" linenr="57" column="18" str="(" scope="1799ddf6220" link="1799ddd3c20" exprId="1073741919" astOperand1="1799ddd0fa0" astOperand2="1799ddd16a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd14a0" file="c/src/reglas.c" linenr="57" column="19" str="1" scope="1799ddf6220" type="number" isInt="true" values="1799de0b8e0" astParent="1799ddd16a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd16a0" file="c/src/reglas.c" linenr="57" column="20" str="," scope="1799ddf6220" exprId="1073741918" astParent="1799ddd12a0" astOperand1="1799ddd14a0" astOperand2="1799ddd1720"/>
+    <token id="1799ddd1720" file="c/src/reglas.c" linenr="57" column="22" str="2" scope="1799ddf6220" type="number" isInt="true" values="1799de0baa0" astParent="1799ddd16a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd3c20" file="c/src/reglas.c" linenr="57" column="23" str=")" scope="1799ddf6220" link="1799ddd12a0"/>
+    <token id="1799ddd2220" file="c/src/reglas.c" linenr="57" column="24" str=";" scope="1799ddf6220"/>
+    <token id="1799ddd39a0" file="c/src/reglas.c" linenr="58" column="5" str="(" scope="1799ddf6220" isCast="true" link="1799ddd2e20" exprId="1073741924" astOperand1="1799ddd3aa0" valueType-type="void" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2420" file="c/src/reglas.c" linenr="58" column="6" str="void" scope="1799ddf6220" type="name"/>
+    <token id="1799ddd2e20" file="c/src/reglas.c" linenr="58" column="10" str=")" scope="1799ddf6220" link="1799ddd39a0"/>
+    <token id="1799ddd1f20" file="c/src/reglas.c" linenr="58" column="11" str="modulo_cuenta" scope="1799ddf6220" type="name" function="1799ddf4900" astParent="1799ddd3aa0"/>
+    <token id="1799ddd3aa0" file="c/src/reglas.c" linenr="58" column="24" str="(" scope="1799ddf6220" link="1799ddd2b20" exprId="1073741923" astParent="1799ddd39a0" astOperand1="1799ddd1f20" astOperand2="1799ddd2c20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd3ca0" file="c/src/reglas.c" linenr="58" column="25" str="3" scope="1799ddf6220" type="number" isInt="true" values="1799de0bde0" astParent="1799ddd2c20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2c20" file="c/src/reglas.c" linenr="58" column="26" str="," scope="1799ddf6220" exprId="1073741922" astParent="1799ddd3aa0" astOperand1="1799ddd3ca0" astOperand2="1799ddd1fa0"/>
+    <token id="1799ddd1fa0" file="c/src/reglas.c" linenr="58" column="28" str="4" scope="1799ddf6220" type="number" isInt="true" values="1799de0b900" astParent="1799ddd2c20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2b20" file="c/src/reglas.c" linenr="58" column="29" str=")" scope="1799ddf6220" link="1799ddd3aa0"/>
+    <token id="1799ddd3e20" file="c/src/reglas.c" linenr="58" column="30" str=";" scope="1799ddf6220"/>
+    <token id="1799ddd2f20" file="c/src/reglas.c" linenr="59" column="5" str="veces" scope="1799ddf6220" type="name" varId="6" exprId="6" variable="1799e258d50" astParent="1799ddd2ca0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd2ca0" file="c/src/reglas.c" linenr="59" column="11" str="=" scope="1799ddf6220" type="op" isAssignmentOp="true" values="1799de0bd40" astOperand1="1799ddd2f20" astOperand2="1799ddd3020" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd3020" file="c/src/reglas.c" linenr="59" column="13" str="0" scope="1799ddf6220" type="number" isInt="true" values="1799de0ba40" astParent="1799ddd2ca0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2ea0" file="c/src/reglas.c" linenr="59" column="14" str=";" scope="1799ddf6220"/>
+    <token id="1799ddd24a0" file="c/src/reglas.c" linenr="60" column="1" str="}" scope="1799ddf6220" link="1799ddd0da0"/>
+    <token id="1799ddd2a20" file="c/src/reglas.c" linenr="62" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd20a0" file="c/src/reglas.c" linenr="62" column="5" str="bandera" scope="1799ddf4720" type="name" function="1799ddf55d0"/>
+    <token id="1799ddd3b20" file="c/src/reglas.c" linenr="62" column="12" str="(" scope="1799ddf4720" link="1799ddd27a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd3420" file="c/src/reglas.c" linenr="62" column="13" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd26a0" file="c/src/reglas.c" linenr="62" column="17" str="con_algo" scope="1799ddf4720" type="name" varId="23" exprId="23" variable="1799e259300" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd2fa0" file="c/src/reglas.c" linenr="62" column="25" str="," scope="1799ddf4720"/>
+    <token id="1799ddd33a0" file="c/src/reglas.c" linenr="62" column="27" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd2aa0" file="c/src/reglas.c" linenr="62" column="31" str="x" scope="1799ddf4720" type="name" varId="24" exprId="24" variable="1799e2593e0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd27a0" file="c/src/reglas.c" linenr="62" column="32" str=")" scope="1799ddf4720" link="1799ddd3b20"/>
+    <token id="1799ddd2d20" file="c/src/reglas.c" linenr="63" column="1" str="{" scope="1799ddf6ae0" link="1799ddd22a0"/>
+    <token id="1799ddd2820" file="c/src/reglas.c" linenr="64" column="5" str="if" scope="1799ddf6ae0" type="name" astParent="1799ddd23a0"/>
+    <token id="1799ddd23a0" file="c/src/reglas.c" linenr="64" column="8" str="(" scope="1799ddf6ae0" link="1799ddd3ea0" astOperand1="1799ddd2820" astOperand2="1799ddd3520"/>
+    <token id="1799ddd3520" file="c/src/reglas.c" linenr="64" column="9" str="con_algo" scope="1799ddf6ae0" type="name" varId="23" exprId="23" variable="1799e259300" astParent="1799ddd23a0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd3ea0" file="c/src/reglas.c" linenr="64" column="17" str=")" scope="1799ddf6ae0" link="1799ddd23a0"/>
+    <token id="1799ddd2920" file="c/src/reglas.c" linenr="64" column="19" str="{" scope="1799ddf60e0" link="1799ddd38a0"/>
+    <token id="1799ddd2ba0" file="c/src/reglas.c" linenr="65" column="9" str="return" scope="1799ddf60e0" type="name" astOperand1="1799ddd2720" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2720" file="c/src/reglas.c" linenr="65" column="16" str="x" scope="1799ddf60e0" type="name" varId="24" exprId="24" variable="1799e2593e0" astParent="1799ddd2ba0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd28a0" file="c/src/reglas.c" linenr="65" column="17" str=";" scope="1799ddf60e0"/>
+    <token id="1799ddd38a0" file="c/src/reglas.c" linenr="66" column="5" str="}" scope="1799ddf60e0" link="1799ddd2920"/>
+    <token id="1799ddd2120" file="c/src/reglas.c" linenr="67" column="5" str="return" scope="1799ddf6ae0" type="name" astOperand1="1799ddd30a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd30a0" file="c/src/reglas.c" linenr="67" column="12" str="0" scope="1799ddf6ae0" type="number" isInt="true" values="1799de0be20" astParent="1799ddd2120" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd3120" file="c/src/reglas.c" linenr="67" column="13" str=";" scope="1799ddf6ae0"/>
+    <token id="1799ddd22a0" file="c/src/reglas.c" linenr="68" column="1" str="}" scope="1799ddf6ae0" link="1799ddd2d20"/>
+    <token id="1799ddd2520" file="c/src/reglas.c" linenr="70" column="1" str="void" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd2da0" file="c/src/reglas.c" linenr="70" column="6" str="reglas_sin_usar" scope="1799ddf4720" type="name" function="1799ddf5670"/>
+    <token id="1799ddd34a0" file="c/src/reglas.c" linenr="70" column="21" str="(" scope="1799ddf4720" link="1799ddd3220" valueType-type="void" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd25a0" file="c/src/reglas.c" linenr="70" column="22" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd2020" file="c/src/reglas.c" linenr="70" column="26" str="usado" scope="1799ddf4720" type="name" varId="25" exprId="25" variable="1799e259450" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd37a0" file="c/src/reglas.c" linenr="70" column="31" str="," scope="1799ddf4720"/>
+    <token id="1799ddd31a0" file="c/src/reglas.c" linenr="70" column="33" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd35a0" file="c/src/reglas.c" linenr="70" column="37" str="ignorado" scope="1799ddf4720" type="name" varId="26" exprId="26" variable="1799e2594c0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd3220" file="c/src/reglas.c" linenr="70" column="45" str=")" scope="1799ddf4720" link="1799ddd34a0"/>
+    <token id="1799ddd32a0" file="c/src/reglas.c" linenr="71" column="1" str="{" scope="1799ddf65e0" link="1799ddd3d20"/>
+    <token id="1799ddd3320" file="c/src/reglas.c" linenr="72" column="5" str="veces" scope="1799ddf65e0" type="name" varId="6" exprId="6" variable="1799e258d50" astParent="1799ddd3620" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd3620" file="c/src/reglas.c" linenr="72" column="11" str="=" scope="1799ddf65e0" type="op" isAssignmentOp="true" exprId="1073741926" astOperand1="1799ddd3320" astOperand2="1799ddd3da0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd3da0" file="c/src/reglas.c" linenr="72" column="13" str="usado" scope="1799ddf65e0" type="name" varId="25" exprId="25" variable="1799e259450" astParent="1799ddd3620" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddd36a0" file="c/src/reglas.c" linenr="72" column="18" str=";" scope="1799ddf65e0"/>
+    <token id="1799ddd3d20" file="c/src/reglas.c" linenr="73" column="1" str="}" scope="1799ddf65e0" link="1799ddd32a0"/>
+    <token id="1799ddd3720" file="c/src/reglas.c" linenr="75" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd3820" file="c/src/reglas.c" linenr="75" column="5" str="reglas_g1" scope="1799ddf4720" type="name" function="1799ddf5e90"/>
+    <token id="1799ddd2320" file="c/src/reglas.c" linenr="75" column="14" str="(" scope="1799ddf4720" link="1799ddd4220" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd2620" file="c/src/reglas.c" linenr="75" column="15" str="const" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd21a0" file="c/src/reglas.c" linenr="75" column="21" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd3920" file="c/src/reglas.c" linenr="75" column="29" str="*" scope="1799ddf4720" type="op" isArithmeticalOp="true"/>
+    <token id="1799ddd3a20" file="c/src/reglas.c" linenr="75" column="30" str="datos" scope="1799ddf4720" type="name" varId="27" exprId="27" variable="1799e259d80" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd29a0" file="c/src/reglas.c" linenr="75" column="35" str="," scope="1799ddf4720"/>
+    <token id="1799ddd3ba0" file="c/src/reglas.c" linenr="75" column="37" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd51a0" file="c/src/reglas.c" linenr="75" column="45" str="longitud" scope="1799ddf4720" type="name" varId="28" exprId="28" variable="1799e259b50" values="1799de0fb90" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd45a0" file="c/src/reglas.c" linenr="75" column="53" str="," scope="1799ddf4720"/>
+    <token id="1799ddd55a0" file="c/src/reglas.c" linenr="75" column="55" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd4b20" file="c/src/reglas.c" linenr="75" column="63" str="desde" scope="1799ddf4720" type="name" varId="29" exprId="29" variable="1799e259530" values="1799de0fd90" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd4220" file="c/src/reglas.c" linenr="75" column="68" str=")" scope="1799ddf4720" link="1799ddd2320"/>
+    <token id="1799ddd41a0" file="c/src/reglas.c" linenr="75" column="70" str="{" scope="1799ddf7c30" link="1799ddd4120"/>
+    <token id="1799ddd47a0" file="c/src/reglas.c" linenr="75" column="72" str="return" scope="1799ddf7c30" type="name" astOperand1="1799ddd40a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5a20" file="c/src/reglas.c" linenr="75" column="79" str="datos" scope="1799ddf7c30" type="name" varId="27" exprId="27" variable="1799e259d80" astParent="1799ddd4720" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd4720" file="c/src/reglas.c" linenr="75" column="84" str="[" scope="1799ddf7c30" link="1799ddd5ca0" exprId="1073741927" values="1799de0f830" astParent="1799ddd40a0" astOperand1="1799ddd5a20" astOperand2="1799ddd5520" valueType-type="char" valueType-sign="unsigned" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd5520" file="c/src/reglas.c" linenr="75" column="85" str="desde" scope="1799ddf7c30" type="name" varId="29" exprId="29" variable="1799e259530" values="1799de0fc90" astParent="1799ddd4720" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd5ca0" file="c/src/reglas.c" linenr="75" column="90" str="]" scope="1799ddf7c30" link="1799ddd4720"/>
+    <token id="1799ddd40a0" file="c/src/reglas.c" linenr="75" column="92" str="+" scope="1799ddf7c30" type="op" isArithmeticalOp="true" exprId="1073741928" astParent="1799ddd47a0" astOperand1="1799ddd4720" astOperand2="1799ddd5da0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5da0" file="c/src/reglas.c" linenr="75" column="94" str="longitud" scope="1799ddf7c30" type="name" varId="28" exprId="28" variable="1799e259b50" values="1799de0fdb0" astParent="1799ddd40a0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd42a0" file="c/src/reglas.c" linenr="75" column="102" str=";" scope="1799ddf7c30"/>
+    <token id="1799ddd4120" file="c/src/reglas.c" linenr="75" column="104" str="}" scope="1799ddf7c30" link="1799ddd41a0"/>
+    <token id="1799ddd5e20" file="c/src/reglas.c" linenr="76" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd4320" file="c/src/reglas.c" linenr="76" column="5" str="reglas_g2" scope="1799ddf4720" type="name" function="1799ddf53f0"/>
+    <token id="1799ddd5420" file="c/src/reglas.c" linenr="76" column="14" str="(" scope="1799ddf4720" link="1799ddd5ba0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd4920" file="c/src/reglas.c" linenr="76" column="15" str="const" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd48a0" file="c/src/reglas.c" linenr="76" column="21" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd43a0" file="c/src/reglas.c" linenr="76" column="29" str="*" scope="1799ddf4720" type="op" isArithmeticalOp="true"/>
+    <token id="1799ddd5d20" file="c/src/reglas.c" linenr="76" column="30" str="datos" scope="1799ddf4720" type="name" varId="30" exprId="30" variable="1799e2595a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd4ba0" file="c/src/reglas.c" linenr="76" column="35" str="," scope="1799ddf4720"/>
+    <token id="1799ddd4420" file="c/src/reglas.c" linenr="76" column="37" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd52a0" file="c/src/reglas.c" linenr="76" column="45" str="longitud" scope="1799ddf4720" type="name" varId="31" exprId="31" variable="1799e259610" values="1799de109c0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd4aa0" file="c/src/reglas.c" linenr="76" column="53" str="," scope="1799ddf4720"/>
+    <token id="1799ddd44a0" file="c/src/reglas.c" linenr="76" column="55" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd4520" file="c/src/reglas.c" linenr="76" column="63" str="desde" scope="1799ddf4720" type="name" varId="32" exprId="32" variable="1799e2596f0" values="1799de10460" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd5ba0" file="c/src/reglas.c" linenr="76" column="68" str=")" scope="1799ddf4720" link="1799ddd5420"/>
+    <token id="1799ddd49a0" file="c/src/reglas.c" linenr="76" column="70" str="{" scope="1799ddf8270" link="1799ddd54a0"/>
+    <token id="1799ddd4620" file="c/src/reglas.c" linenr="76" column="72" str="return" scope="1799ddf8270" type="name" astOperand1="1799ddd4a20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5020" file="c/src/reglas.c" linenr="76" column="79" str="datos" scope="1799ddf8270" type="name" varId="30" exprId="30" variable="1799e2595a0" astParent="1799ddd46a0" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd46a0" file="c/src/reglas.c" linenr="76" column="84" str="[" scope="1799ddf8270" link="1799ddd5120" exprId="1073741929" values="1799de10860" astParent="1799ddd4a20" astOperand1="1799ddd5020" astOperand2="1799ddd53a0" valueType-type="char" valueType-sign="unsigned" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd53a0" file="c/src/reglas.c" linenr="76" column="85" str="longitud" scope="1799ddf8270" type="name" varId="31" exprId="31" variable="1799e259610" values="1799de10940" astParent="1799ddd46a0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd5120" file="c/src/reglas.c" linenr="76" column="93" str="]" scope="1799ddf8270" link="1799ddd46a0"/>
+    <token id="1799ddd4a20" file="c/src/reglas.c" linenr="76" column="95" str="+" scope="1799ddf8270" type="op" isArithmeticalOp="true" exprId="1073741930" astParent="1799ddd4620" astOperand1="1799ddd46a0" astOperand2="1799ddd3f20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd3f20" file="c/src/reglas.c" linenr="76" column="97" str="desde" scope="1799ddf8270" type="name" varId="32" exprId="32" variable="1799e2596f0" values="1799de106e0" astParent="1799ddd4a20" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd5620" file="c/src/reglas.c" linenr="76" column="102" str=";" scope="1799ddf8270"/>
+    <token id="1799ddd54a0" file="c/src/reglas.c" linenr="76" column="104" str="}" scope="1799ddf8270" link="1799ddd49a0"/>
+    <token id="1799ddd4820" file="c/src/reglas.c" linenr="77" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd4c20" file="c/src/reglas.c" linenr="77" column="5" str="reglas_g3" scope="1799ddf4720" type="name" function="1799ddf57b0"/>
+    <token id="1799ddd58a0" file="c/src/reglas.c" linenr="77" column="14" str="(" scope="1799ddf4720" link="1799ddd4f20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd4ca0" file="c/src/reglas.c" linenr="77" column="15" str="const" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd5c20" file="c/src/reglas.c" linenr="77" column="21" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd57a0" file="c/src/reglas.c" linenr="77" column="29" str="*" scope="1799ddf4720" type="op" isArithmeticalOp="true"/>
+    <token id="1799ddd4d20" file="c/src/reglas.c" linenr="77" column="30" str="datos" scope="1799ddf4720" type="name" varId="33" exprId="33" variable="1799e259840" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd4da0" file="c/src/reglas.c" linenr="77" column="35" str="," scope="1799ddf4720"/>
+    <token id="1799ddd5920" file="c/src/reglas.c" linenr="77" column="37" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd3fa0" file="c/src/reglas.c" linenr="77" column="45" str="longitud" scope="1799ddf4720" type="name" varId="34" exprId="34" variable="1799e259ca0" values="1799de106c0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd56a0" file="c/src/reglas.c" linenr="77" column="53" str="," scope="1799ddf4720"/>
+    <token id="1799ddd4e20" file="c/src/reglas.c" linenr="77" column="55" str="uint8_t" scope="1799ddf4720" type="name"/>
+    <token id="1799ddd4ea0" file="c/src/reglas.c" linenr="77" column="63" str="desde" scope="1799ddf4720" type="name" varId="35" exprId="35" variable="1799e259d10" values="1799de10660" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd4f20" file="c/src/reglas.c" linenr="77" column="68" str=")" scope="1799ddf4720" link="1799ddd58a0"/>
+    <token id="1799ddd4fa0" file="c/src/reglas.c" linenr="77" column="70" str="{" scope="1799ddf6fb0" link="1799ddea020"/>
+    <token id="1799ddd50a0" file="c/src/reglas.c" linenr="77" column="72" str="return" scope="1799ddf6fb0" type="name" astOperand1="1799ddd5b20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5720" file="c/src/reglas.c" linenr="77" column="79" str="datos" scope="1799ddf6fb0" type="name" varId="33" exprId="33" variable="1799e259840" astParent="1799ddd5220" valueType-type="char" valueType-sign="unsigned" valueType-pointer="1" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd5220" file="c/src/reglas.c" linenr="77" column="84" str="[" scope="1799ddf6fb0" link="1799ddd5320" exprId="1073741932" values="1799de10920" astParent="1799ddd59a0" astOperand1="1799ddd5720" astOperand2="1799ddd5820" valueType-type="char" valueType-sign="unsigned" valueType-constness="1" valueType-reference="None"/>
+    <token id="1799ddd5820" file="c/src/reglas.c" linenr="77" column="85" str="0" scope="1799ddf6fb0" type="number" isInt="true" values="1799de0bca0" astParent="1799ddd5220" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5320" file="c/src/reglas.c" linenr="77" column="86" str="]" scope="1799ddf6fb0" link="1799ddd5220"/>
+    <token id="1799ddd59a0" file="c/src/reglas.c" linenr="77" column="88" str="+" scope="1799ddf6fb0" type="op" isArithmeticalOp="true" exprId="1073741933" astParent="1799ddd5b20" astOperand1="1799ddd5220" astOperand2="1799ddd5aa0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd5aa0" file="c/src/reglas.c" linenr="77" column="90" str="longitud" scope="1799ddf6fb0" type="name" varId="34" exprId="34" variable="1799e259ca0" values="1799de10880" astParent="1799ddd59a0" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddd5b20" file="c/src/reglas.c" linenr="77" column="99" str="+" scope="1799ddf6fb0" type="op" isArithmeticalOp="true" exprId="1073741934" astParent="1799ddd50a0" astOperand1="1799ddd59a0" astOperand2="1799ddd4020" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddd4020" file="c/src/reglas.c" linenr="77" column="101" str="desde" scope="1799ddf6fb0" type="name" varId="35" exprId="35" variable="1799e259d10" values="1799de10a40" astParent="1799ddd5b20" valueType-type="char" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="1799ddeb420" file="c/src/reglas.c" linenr="77" column="106" str=";" scope="1799ddf6fb0"/>
+    <token id="1799ddea020" file="c/src/reglas.c" linenr="77" column="108" str="}" scope="1799ddf6fb0" link="1799ddd4fa0"/>
+    <token id="1799ddea5a0" file="c/src/reglas.c" linenr="79" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddea2a0" file="c/src/reglas.c" linenr="79" column="5" str="reglas_s1" scope="1799ddf4720" type="name" function="1799ddfa460"/>
+    <token id="1799ddeba20" file="c/src/reglas.c" linenr="79" column="14" str="(" scope="1799ddf4720" link="1799dde9fa0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddea4a0" file="c/src/reglas.c" linenr="79" column="15" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddeaea0" file="c/src/reglas.c" linenr="79" column="19" str="tipo" scope="1799ddf4720" type="name" varId="36" exprId="36" variable="1799e259ed0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799dde9fa0" file="c/src/reglas.c" linenr="79" column="23" str=")" scope="1799ddf4720" link="1799ddeba20"/>
+    <token id="1799ddebb20" file="c/src/reglas.c" linenr="79" column="25" str="{" scope="1799ddf7370" link="1799ddeb520"/>
+    <token id="1799ddebd20" file="c/src/reglas.c" linenr="79" column="27" str="switch" scope="1799ddf7370" type="name" astParent="1799ddeaca0"/>
+    <token id="1799ddeaca0" file="c/src/reglas.c" linenr="79" column="34" str="(" scope="1799ddf7370" link="1799ddea920" astOperand1="1799ddebd20" astOperand2="1799ddea9a0"/>
+    <token id="1799ddea9a0" file="c/src/reglas.c" linenr="79" column="35" str="tipo" scope="1799ddf7370" type="name" varId="36" exprId="36" variable="1799e259ed0" astParent="1799ddeaca0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddea920" file="c/src/reglas.c" linenr="79" column="39" str=")" scope="1799ddf7370" link="1799ddeaca0"/>
+    <token id="1799ddea420" file="c/src/reglas.c" linenr="79" column="41" str="{" scope="1799ddf7eb0" link="1799ddeaa20"/>
+    <token id="1799ddea0a0" file="c/src/reglas.c" linenr="79" column="43" str="case" scope="1799ddf7eb0" type="name" astOperand1="1799ddebba0"/>
+    <token id="1799ddebba0" file="c/src/reglas.c" linenr="79" column="48" str="1" scope="1799ddf7eb0" type="number" isInt="true" values="1799de0b940" astParent="1799ddea0a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeaf20" file="c/src/reglas.c" linenr="79" column="49" str=":" scope="1799ddf7eb0"/>
+    <token id="1799dded720" file="c/src/reglas.c" linenr="79" column="0" str=";" scope="1799ddf7eb0"/>
+    <token id="1799ddeb320" file="c/src/reglas.c" linenr="79" column="51" str="return" scope="1799ddf7eb0" type="name" astOperand1="1799ddead20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddead20" file="c/src/reglas.c" linenr="79" column="58" str="0" scope="1799ddf7eb0" type="number" isInt="true" values="1799de0bba0" astParent="1799ddeb320" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeb620" file="c/src/reglas.c" linenr="79" column="59" str=";" scope="1799ddf7eb0"/>
+    <token id="1799ddeb020" file="c/src/reglas.c" linenr="79" column="61" str="default" scope="1799ddf7eb0" type="name"/>
+    <token id="1799ddea8a0" file="c/src/reglas.c" linenr="79" column="68" str=":" scope="1799ddf7eb0"/>
+    <token id="1799dded0a0" file="c/src/reglas.c" linenr="79" column="0" str=";" scope="1799ddf7eb0"/>
+    <token id="1799ddeb4a0" file="c/src/reglas.c" linenr="79" column="70" str="return" scope="1799ddf7eb0" type="name" astOperand1="1799ddeb6a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeb6a0" file="c/src/reglas.c" linenr="79" column="77" str="1" scope="1799ddf7eb0" type="number" isInt="true" values="1799de0bc60" astParent="1799ddeb4a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddea120" file="c/src/reglas.c" linenr="79" column="78" str=";" scope="1799ddf7eb0"/>
+    <token id="1799ddeaa20" file="c/src/reglas.c" linenr="79" column="80" str="}" scope="1799ddf7eb0" link="1799ddea420"/>
+    <token id="1799ddeb520" file="c/src/reglas.c" linenr="79" column="82" str="}" scope="1799ddf7370" link="1799ddebb20"/>
+    <token id="1799ddeaaa0" file="c/src/reglas.c" linenr="80" column="1" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddea820" file="c/src/reglas.c" linenr="80" column="5" str="reglas_s2" scope="1799ddf4720" type="name" function="1799ddf99c0"/>
+    <token id="1799ddea320" file="c/src/reglas.c" linenr="80" column="14" str="(" scope="1799ddf4720" link="1799ddea3a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddea520" file="c/src/reglas.c" linenr="80" column="15" str="int" scope="1799ddf4720" type="name"/>
+    <token id="1799ddea7a0" file="c/src/reglas.c" linenr="80" column="19" str="tipo" scope="1799ddf4720" type="name" varId="37" exprId="37" variable="1799e259df0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddea3a0" file="c/src/reglas.c" linenr="80" column="23" str=")" scope="1799ddf4720" link="1799ddea320"/>
+    <token id="1799ddeac20" file="c/src/reglas.c" linenr="80" column="25" str="{" scope="1799ddf7d70" link="1799ddeb1a0"/>
+    <token id="1799ddeab20" file="c/src/reglas.c" linenr="80" column="27" str="switch" scope="1799ddf7d70" type="name" astParent="1799ddea6a0"/>
+    <token id="1799ddea6a0" file="c/src/reglas.c" linenr="80" column="34" str="(" scope="1799ddf7d70" link="1799ddea620" astOperand1="1799ddeab20" astOperand2="1799ddea1a0"/>
+    <token id="1799ddea1a0" file="c/src/reglas.c" linenr="80" column="35" str="tipo" scope="1799ddf7d70" type="name" varId="37" exprId="37" variable="1799e259df0" astParent="1799ddea6a0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="1799ddea620" file="c/src/reglas.c" linenr="80" column="39" str=")" scope="1799ddf7d70" link="1799ddea6a0"/>
+    <token id="1799ddeaba0" file="c/src/reglas.c" linenr="80" column="41" str="{" scope="1799ddf7ff0" link="1799ddeb120"/>
+    <token id="1799ddeada0" file="c/src/reglas.c" linenr="80" column="43" str="case" scope="1799ddf7ff0" type="name" astOperand1="1799ddeb920"/>
+    <token id="1799ddeb920" file="c/src/reglas.c" linenr="80" column="48" str="0" scope="1799ddf7ff0" type="number" isInt="true" values="1799de0be00" astParent="1799ddeada0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeb5a0" file="c/src/reglas.c" linenr="80" column="49" str=":" scope="1799ddf7ff0"/>
+    <token id="1799ddedba0" file="c/src/reglas.c" linenr="80" column="0" str=";" scope="1799ddf7ff0"/>
+    <token id="1799ddeb9a0" file="c/src/reglas.c" linenr="80" column="51" str="return" scope="1799ddf7ff0" type="name" astOperand1="1799ddeae20" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeae20" file="c/src/reglas.c" linenr="80" column="58" str="1" scope="1799ddf7ff0" type="number" isInt="true" values="1799de0b980" astParent="1799ddeb9a0" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeafa0" file="c/src/reglas.c" linenr="80" column="59" str=";" scope="1799ddf7ff0"/>
+    <token id="1799ddeb720" file="c/src/reglas.c" linenr="80" column="61" str="default" scope="1799ddf7ff0" type="name"/>
+    <token id="1799ddea720" file="c/src/reglas.c" linenr="80" column="68" str=":" scope="1799ddf7ff0"/>
+    <token id="1799dded3a0" file="c/src/reglas.c" linenr="80" column="0" str=";" scope="1799ddf7ff0"/>
+    <token id="1799ddea220" file="c/src/reglas.c" linenr="80" column="70" str="return" scope="1799ddf7ff0" type="name" astOperand1="1799ddeb820" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeb820" file="c/src/reglas.c" linenr="80" column="77" str="0" scope="1799ddf7ff0" type="number" isInt="true" values="1799de0ba00" astParent="1799ddea220" valueType-type="int" valueType-sign="signed" valueType-bits="0" valueType-reference="None"/>
+    <token id="1799ddeb0a0" file="c/src/reglas.c" linenr="80" column="78" str=";" scope="1799ddf7ff0"/>
+    <token id="1799ddeb120" file="c/src/reglas.c" linenr="80" column="80" str="}" scope="1799ddf7ff0" link="1799ddeaba0"/>
+    <token id="1799ddeb1a0" file="c/src/reglas.c" linenr="80" column="82" str="}" scope="1799ddf7d70" link="1799ddeac20"/>
+  </tokenlist>
+  <scopes>
+    <scope id="1799ddf4720" type="Global">
+      <functionList>
+        <function id="1799ddf4900" token="0" tokenDef="1799e237140" name="modulo_cuenta" type="Function" access="Public">
+          <arg nr="1" variable="1799e259140"/>
+          <arg nr="2" variable="1799e2597d0"/>
+        </function>
+        <function id="1799ddf4b80" token="1799e236640" tokenDef="1799e236640" name="reglas_cognitiva" type="Function" access="Public">
+          <arg nr="1" variable="1799e259ae0"/>
+          <arg nr="2" variable="1799e2591b0"/>
+        </function>
+        <function id="1799ddf50d0" token="1799e2387c0" tokenDef="1799e2387c0" name="reglas_usa_global" type="Function" access="Public"/>
+        <function id="1799ddf4f90" token="1799ddce4a0" tokenDef="1799ddce4a0" name="reglas_memoria" type="Function" access="Public">
+          <arg nr="1" variable="1799e258570"/>
+        </function>
+        <function id="1799ddf58f0" token="1799ddd15a0" tokenDef="1799ddd15a0" name="reglas_cadena" type="Function" access="Public">
+          <arg nr="1" variable="1799e259220"/>
+        </function>
+        <function id="1799ddf5b70" token="1799ddd1b20" tokenDef="1799ddd1b20" name="reglas_llama" type="Function" access="Public"/>
+        <function id="1799ddf55d0" token="1799ddd20a0" tokenDef="1799ddd20a0" name="bandera" type="Function" access="Public">
+          <arg nr="1" variable="1799e259300"/>
+          <arg nr="2" variable="1799e2593e0"/>
+        </function>
+        <function id="1799ddf5670" token="1799ddd2da0" tokenDef="1799ddd2da0" name="reglas_sin_usar" type="Function" access="Public">
+          <arg nr="1" variable="1799e259450"/>
+          <arg nr="2" variable="1799e2594c0"/>
+        </function>
+        <function id="1799ddf5e90" token="1799ddd3820" tokenDef="1799ddd3820" name="reglas_g1" type="Function" access="Public">
+          <arg nr="1" variable="1799e259d80"/>
+          <arg nr="2" variable="1799e259b50"/>
+          <arg nr="3" variable="1799e259530"/>
+        </function>
+        <function id="1799ddf53f0" token="1799ddd4320" tokenDef="1799ddd4320" name="reglas_g2" type="Function" access="Public">
+          <arg nr="1" variable="1799e2595a0"/>
+          <arg nr="2" variable="1799e259610"/>
+          <arg nr="3" variable="1799e2596f0"/>
+        </function>
+        <function id="1799ddf57b0" token="1799ddd4c20" tokenDef="1799ddd4c20" name="reglas_g3" type="Function" access="Public">
+          <arg nr="1" variable="1799e259840"/>
+          <arg nr="2" variable="1799e259ca0"/>
+          <arg nr="3" variable="1799e259d10"/>
+        </function>
+        <function id="1799ddfa460" token="1799ddea2a0" tokenDef="1799ddea2a0" name="reglas_s1" type="Function" access="Public">
+          <arg nr="1" variable="1799e259ed0"/>
+        </function>
+        <function id="1799ddf99c0" token="1799ddea820" tokenDef="1799ddea820" name="reglas_s2" type="Function" access="Public">
+          <arg nr="1" variable="1799e259df0"/>
+        </function>
+      </functionList>
+      <varlist>
+        <var id="1799e259920"/>
+        <var id="1799e258d50"/>
+        <var id="1799e259990"/>
+        <var id="1799e258ea0"/>
+      </varlist>
+    </scope>
+    <scope id="1799ddf49a0" type="Struct" className="nodo" classDef="1799e237340" bodyStart="1799e2367c0" bodyEnd="1799e2375c0" nestedIn="1799ddf4720" definedType="1799dded830">
+      <varlist>
+        <var id="1799e258f10"/>
+        <var id="1799e2588f0"/>
+      </varlist>
+    </scope>
+    <scope id="1799ddf4c20" type="Function" className="reglas_cognitiva" classDef="1799e236640" bodyStart="1799e236b40" bodyEnd="1799e238cc0" nestedIn="1799ddf4720" function="1799ddf4b80"/>
+    <scope id="1799ddf4e00" type="If" classDef="1799e236ec0" bodyStart="1799e23a140" bodyEnd="1799e2393c0" nestedIn="1799ddf4c20"/>
+    <scope id="1799ddf6c20" type="Else" classDef="1799e238a40" bodyStart="1799ddedda0" bodyEnd="1799dded7a0" nestedIn="1799ddf4c20"/>
+    <scope id="1799ddf6720" type="If" classDef="1799e238fc0" bodyStart="1799e239940" bodyEnd="1799e2389c0" nestedIn="1799ddf6c20"/>
+    <scope id="1799ddf6860" type="Else" classDef="1799e239fc0" bodyStart="1799e2394c0" bodyEnd="1799e239bc0" nestedIn="1799ddf6c20"/>
+    <scope id="1799ddf64a0" type="For" classDef="1799e23a0c0" bodyStart="1799e239ec0" bodyEnd="1799e239840" nestedIn="1799ddf6860">
+      <varlist>
+        <var id="1799e258180"/>
+      </varlist>
+    </scope>
+    <scope id="1799ddf6360" type="If" classDef="1799e239dc0" bodyStart="1799e23a2c0" bodyEnd="1799e2392c0" nestedIn="1799ddf64a0"/>
+    <scope id="1799ddf6d60" type="Function" className="reglas_usa_global" classDef="1799e2387c0" bodyStart="1799ddce720" bodyEnd="1799ddcf120" nestedIn="1799ddf4720" function="1799ddf50d0">
+      <varlist>
+        <var id="1799e258ce0"/>
+      </varlist>
+    </scope>
+    <scope id="1799ddf69a0" type="Function" className="reglas_memoria" classDef="1799ddce4a0" bodyStart="1799ddcf2a0" bodyEnd="1799ddd0ba0" nestedIn="1799ddf4720" function="1799ddf4f90">
+      <varlist>
+        <var id="1799e259060"/>
+        <var id="1799e258f80"/>
+        <var id="1799e258ff0"/>
+        <var id="1799e2590d0"/>
+      </varlist>
+    </scope>
+    <scope id="1799ddf5fa0" type="Function" className="reglas_cadena" classDef="1799ddd15a0" bodyStart="1799ddd1ca0" bodyEnd="1799ddd0ea0" nestedIn="1799ddf4720" function="1799ddf58f0"/>
+    <scope id="1799ddf6220" type="Function" className="reglas_llama" classDef="1799ddd1b20" bodyStart="1799ddd0da0" bodyEnd="1799ddd24a0" nestedIn="1799ddf4720" function="1799ddf5b70"/>
+    <scope id="1799ddf6ae0" type="Function" className="bandera" classDef="1799ddd20a0" bodyStart="1799ddd2d20" bodyEnd="1799ddd22a0" nestedIn="1799ddf4720" function="1799ddf55d0"/>
+    <scope id="1799ddf60e0" type="If" classDef="1799ddd2820" bodyStart="1799ddd2920" bodyEnd="1799ddd38a0" nestedIn="1799ddf6ae0"/>
+    <scope id="1799ddf65e0" type="Function" className="reglas_sin_usar" classDef="1799ddd2da0" bodyStart="1799ddd32a0" bodyEnd="1799ddd3d20" nestedIn="1799ddf4720" function="1799ddf5670"/>
+    <scope id="1799ddf7c30" type="Function" className="reglas_g1" classDef="1799ddd3820" bodyStart="1799ddd41a0" bodyEnd="1799ddd4120" nestedIn="1799ddf4720" function="1799ddf5e90"/>
+    <scope id="1799ddf8270" type="Function" className="reglas_g2" classDef="1799ddd4320" bodyStart="1799ddd49a0" bodyEnd="1799ddd54a0" nestedIn="1799ddf4720" function="1799ddf53f0"/>
+    <scope id="1799ddf6fb0" type="Function" className="reglas_g3" classDef="1799ddd4c20" bodyStart="1799ddd4fa0" bodyEnd="1799ddea020" nestedIn="1799ddf4720" function="1799ddf57b0"/>
+    <scope id="1799ddf7370" type="Function" className="reglas_s1" classDef="1799ddea2a0" bodyStart="1799ddebb20" bodyEnd="1799ddeb520" nestedIn="1799ddf4720" function="1799ddfa460"/>
+    <scope id="1799ddf7eb0" type="Switch" classDef="1799ddebd20" bodyStart="1799ddea420" bodyEnd="1799ddeaa20" nestedIn="1799ddf7370"/>
+    <scope id="1799ddf7d70" type="Function" className="reglas_s2" classDef="1799ddea820" bodyStart="1799ddeac20" bodyEnd="1799ddeb1a0" nestedIn="1799ddf4720" function="1799ddf99c0"/>
+    <scope id="1799ddf7ff0" type="Switch" classDef="1799ddeab20" bodyStart="1799ddeaba0" bodyEnd="1799ddeb120" nestedIn="1799ddf7d70"/>
+  </scopes>
+  <types>
+    <type id="1799dded830" classScope="1799ddf49a0"/>
+  </types>
+  <variables>
+    <var id="1799e258180" nameToken="1799e23a340" typeStartToken="1799e23a1c0" typeEndToken="1799e23a1c0" access="Local" scope="1799ddf64a0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258570" nameToken="1799ddcfca0" typeStartToken="1799ddcfa20" typeEndToken="1799ddcfa20" access="Argument" scope="1799ddf69a0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2588f0" nameToken="1799e236540" typeStartToken="1799e237b40" typeEndToken="1799e237b40" access="Public" scope="1799ddf49a0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258ce0" nameToken="1799ddce8a0" typeStartToken="1799ddceba0" typeEndToken="1799ddceba0" access="Local" scope="1799ddf6d60" constness="1" volatileness="0" isArray="false" isClass="false" isConst="true" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258d50" nameToken="1799e238240" typeStartToken="1799e2369c0" typeEndToken="1799e2369c0" access="Global" scope="1799ddf4720" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="true" isVolatile="false"/>
+    <var id="1799e258ea0" nameToken="1799e236dc0" typeStartToken="1799e237ec0" typeEndToken="1799e237ec0" access="Global" scope="1799ddf4720" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="true" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258f10" nameToken="1799e237240" typeStartToken="1799e236740" typeEndToken="1799e237540" access="Public" scope="1799ddf49a0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258f80" nameToken="1799ddcf9a0" typeStartToken="1799ddcf220" typeEndToken="1799ddcf220" access="Local" scope="1799ddf69a0" constness="0" volatileness="0" isArray="true" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e258ff0" nameToken="1799ddce7a0" typeStartToken="1799ddce6a0" typeEndToken="1799ddce6a0" access="Local" scope="1799ddf69a0" constness="0" volatileness="0" isArray="true" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259060" nameToken="1799ddcfd20" typeStartToken="1799ddce3a0" typeEndToken="1799ddce3a0" access="Local" scope="1799ddf69a0" constness="0" volatileness="0" isArray="true" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2590d0" nameToken="1799ddce020" typeStartToken="1799ddcfea0" typeEndToken="1799ddcdf20" access="Local" scope="1799ddf69a0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259140" nameToken="1799e237940" typeStartToken="1799e2366c0" typeEndToken="1799e2366c0" access="Argument" scope="0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2591b0" nameToken="1799e2364c0" typeStartToken="1799e237f40" typeEndToken="1799e237f40" access="Argument" scope="1799ddf4c20" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259220" nameToken="1799ddd1ba0" typeStartToken="1799ddd1020" typeEndToken="1799ddd1120" access="Argument" scope="1799ddf5fa0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259300" nameToken="1799ddd26a0" typeStartToken="1799ddd3420" typeEndToken="1799ddd3420" access="Argument" scope="1799ddf6ae0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2593e0" nameToken="1799ddd2aa0" typeStartToken="1799ddd33a0" typeEndToken="1799ddd33a0" access="Argument" scope="1799ddf6ae0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259450" nameToken="1799ddd2020" typeStartToken="1799ddd25a0" typeEndToken="1799ddd25a0" access="Argument" scope="1799ddf65e0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2594c0" nameToken="1799ddd35a0" typeStartToken="1799ddd31a0" typeEndToken="1799ddd31a0" access="Argument" scope="1799ddf65e0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259530" nameToken="1799ddd4b20" typeStartToken="1799ddd55a0" typeEndToken="1799ddd55a0" access="Argument" scope="1799ddf7c30" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2595a0" nameToken="1799ddd5d20" typeStartToken="1799ddd48a0" typeEndToken="1799ddd43a0" access="Argument" scope="1799ddf8270" constness="1" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259610" nameToken="1799ddd52a0" typeStartToken="1799ddd4420" typeEndToken="1799ddd4420" access="Argument" scope="1799ddf8270" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2596f0" nameToken="1799ddd4520" typeStartToken="1799ddd44a0" typeEndToken="1799ddd44a0" access="Argument" scope="1799ddf8270" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e2597d0" nameToken="1799e237040" typeStartToken="1799e236c40" typeEndToken="1799e236c40" access="Argument" scope="0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259840" nameToken="1799ddd4d20" typeStartToken="1799ddd5c20" typeEndToken="1799ddd57a0" access="Argument" scope="1799ddf6fb0" constness="1" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259920" nameToken="1799e237e40" typeStartToken="1799e2368c0" typeEndToken="1799e2368c0" access="Global" scope="1799ddf4720" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="true" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259990" nameToken="1799e2379c0" typeStartToken="1799e236fc0" typeEndToken="1799e236fc0" access="Global" scope="1799ddf4720" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="true" isVolatile="false"/>
+    <var id="1799e259ae0" nameToken="1799e238440" typeStartToken="1799e2382c0" typeEndToken="1799e2382c0" access="Argument" scope="1799ddf4c20" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259b50" nameToken="1799ddd51a0" typeStartToken="1799ddd3ba0" typeEndToken="1799ddd3ba0" access="Argument" scope="1799ddf7c30" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259ca0" nameToken="1799ddd3fa0" typeStartToken="1799ddd5920" typeEndToken="1799ddd5920" access="Argument" scope="1799ddf6fb0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259d10" nameToken="1799ddd4ea0" typeStartToken="1799ddd4e20" typeEndToken="1799ddd4e20" access="Argument" scope="1799ddf6fb0" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259d80" nameToken="1799ddd3a20" typeStartToken="1799ddd21a0" typeEndToken="1799ddd3920" access="Argument" scope="1799ddf7c30" constness="1" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="true" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259df0" nameToken="1799ddea7a0" typeStartToken="1799ddea520" typeEndToken="1799ddea520" access="Argument" scope="1799ddf7d70" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+    <var id="1799e259ed0" nameToken="1799ddeaea0" typeStartToken="1799ddea4a0" typeEndToken="1799ddea4a0" access="Argument" scope="1799ddf7370" constness="0" volatileness="0" isArray="false" isClass="false" isConst="false" isExtern="false" isPointer="false" isReference="false" isStatic="false" isVolatile="false"/>
+  </variables>
+  <valueflow>
+    <values id="1799de10520">
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de0fa30">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de0b760">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0f9f0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de0fd70">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0b9a0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fe90">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de10480">
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de0fbd0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" condition-line="19" possible="true" path="0"/>
+    </values>
+    <values id="1799de0b820">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0be40">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de109a0">
+      <value intvalue="0" bound="Point" condition-line="20" possible="true" path="0"/>
+      <value intvalue="-1" bound="Upper" condition-line="17" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fbf0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="1" bound="Point" condition-line="20" possible="true" path="0"/>
+    </values>
+    <values id="1799de0ba80">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de104e0">
+      <value intvalue="0" bound="Point" condition-line="19" known="true" path="0"/>
+    </values>
+    <values id="1799de0b800">
+      <value intvalue="3" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bd60">
+      <value intvalue="2" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bbe0">
+      <value intvalue="3" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b780">
+      <value intvalue="3" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bae0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bd00">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de108a0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+      <value intvalue="1" bound="Point" possible="true" path="0"/>
+      <value intvalue="7" bound="Point" condition-line="23" possible="true" path="0"/>
+    </values>
+    <values id="1799de0fb10">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+    </values>
+    <values id="1799de109e0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de10960">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de10800">
+      <value symbolic="1799e238ec0" symbolic-delta="-1" bound="Upper" possible="true" path="0"/>
+      <value symbolic="1799e238ec0" symbolic-delta="0" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de0fa10">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+      <value intvalue="2" bound="Lower" impossible="true" path="0"/>
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de0bb00">
+      <value intvalue="7" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b960">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bd80">
+      <value intvalue="25" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bbc0">
+      <value intvalue="25" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bb40">
+      <value intvalue="25" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ba60">
+      <value intvalue="25" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fc10">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fb30">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0b7a0">
+      <value intvalue="4" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0f850">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fc70">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0feb0">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0b7c0">
+      <value intvalue="4" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bc00">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fed0">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fd50">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0bc80">
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de0ba20">
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+    </values>
+    <values id="1799de0b9c0">
+      <value intvalue="4" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fb50">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+      <value uninit="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0f930">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0bb80">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b9e0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ff10">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+      <value uninit="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ff50">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0b880">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b8c0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ff90">
+      <value intvalue="0" bound="Point" impossible="true" path="0"/>
+      <value uninit="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fb70">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0bb60">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b8a0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b860">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de10600">
+      <value intvalue="0" bound="Point" possible="true" path="0"/>
+      <value buffer-size="4" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b8e0">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0baa0">
+      <value intvalue="2" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bde0">
+      <value intvalue="3" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b900">
+      <value intvalue="4" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bd40">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ba40">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0be20">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0fb90">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fd90">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0f830">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fc90">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0fdb0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de109c0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10460">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10860">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10940">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de106e0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de106c0">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10660">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10920">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0bca0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de10880">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de10a40">
+      <value intvalue="-1" bound="Upper" impossible="true" path="0"/>
+    </values>
+    <values id="1799de0b940">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bba0">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0bc60">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0be00">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0b980">
+      <value intvalue="1" bound="Point" known="true" path="0"/>
+    </values>
+    <values id="1799de0ba00">
+      <value intvalue="0" bound="Point" known="true" path="0"/>
+    </values>
+  </valueflow>
+</dump>
+  <rawtokens>
+    <file index="0" name="c/src/reglas.c"/>
+    <file index="1" name="c/include/modulo.h"/>
+    <file index="2" name="c/include/ciclo_a.h"/>
+    <file index="3" name="c/include/ciclo_b.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="#"/>
+    <tok fileIndex="0" linenr="1" column="2" str="include"/>
+    <tok fileIndex="0" linenr="1" column="10" str="&lt;stdlib.h&gt;"/>
+    <tok fileIndex="0" linenr="2" column="1" str="#"/>
+    <tok fileIndex="0" linenr="2" column="2" str="include"/>
+    <tok fileIndex="0" linenr="2" column="10" str="&lt;stdint.h&gt;"/>
+    <tok fileIndex="0" linenr="3" column="1" str="#"/>
+    <tok fileIndex="0" linenr="3" column="2" str="include"/>
+    <tok fileIndex="0" linenr="3" column="10" str="&quot;modulo.h&quot;"/>
+    <tok fileIndex="0" linenr="4" column="1" str="#"/>
+    <tok fileIndex="0" linenr="4" column="2" str="include"/>
+    <tok fileIndex="0" linenr="4" column="10" str="&quot;ciclo_a.h&quot;"/>
+    <tok fileIndex="0" linenr="6" column="1" str="#"/>
+    <tok fileIndex="0" linenr="6" column="2" str="define"/>
+    <tok fileIndex="0" linenr="6" column="9" str="CUADRADO"/>
+    <tok fileIndex="0" linenr="6" column="17" str="("/>
+    <tok fileIndex="0" linenr="6" column="18" str="x"/>
+    <tok fileIndex="0" linenr="6" column="19" str=")"/>
+    <tok fileIndex="0" linenr="6" column="21" str="("/>
+    <tok fileIndex="0" linenr="6" column="22" str="("/>
+    <tok fileIndex="0" linenr="6" column="23" str="x"/>
+    <tok fileIndex="0" linenr="6" column="24" str=")"/>
+    <tok fileIndex="0" linenr="6" column="26" str="*"/>
+    <tok fileIndex="0" linenr="6" column="28" str="("/>
+    <tok fileIndex="0" linenr="6" column="29" str="x"/>
+    <tok fileIndex="0" linenr="6" column="30" str=")"/>
+    <tok fileIndex="0" linenr="6" column="31" str=")"/>
+    <tok fileIndex="0" linenr="7" column="1" str="#"/>
+    <tok fileIndex="0" linenr="7" column="2" str="define"/>
+    <tok fileIndex="0" linenr="7" column="9" str="ELEMENTOS"/>
+    <tok fileIndex="0" linenr="7" column="18" str="("/>
+    <tok fileIndex="0" linenr="7" column="19" str="a"/>
+    <tok fileIndex="0" linenr="7" column="20" str=")"/>
+    <tok fileIndex="0" linenr="7" column="22" str="("/>
+    <tok fileIndex="0" linenr="7" column="23" str="sizeof"/>
+    <tok fileIndex="0" linenr="7" column="29" str="("/>
+    <tok fileIndex="0" linenr="7" column="30" str="a"/>
+    <tok fileIndex="0" linenr="7" column="31" str=")"/>
+    <tok fileIndex="0" linenr="7" column="33" str="/"/>
+    <tok fileIndex="0" linenr="7" column="35" str="sizeof"/>
+    <tok fileIndex="0" linenr="7" column="41" str="("/>
+    <tok fileIndex="0" linenr="7" column="42" str="("/>
+    <tok fileIndex="0" linenr="7" column="43" str="a"/>
+    <tok fileIndex="0" linenr="7" column="44" str=")"/>
+    <tok fileIndex="0" linenr="7" column="45" str="["/>
+    <tok fileIndex="0" linenr="7" column="46" str="0"/>
+    <tok fileIndex="0" linenr="7" column="47" str="]"/>
+    <tok fileIndex="0" linenr="7" column="48" str=")"/>
+    <tok fileIndex="0" linenr="7" column="49" str=")"/>
+    <tok fileIndex="0" linenr="9" column="1" str="struct"/>
+    <tok fileIndex="0" linenr="9" column="8" str="nodo"/>
+    <tok fileIndex="0" linenr="9" column="13" str="{"/>
+    <tok fileIndex="0" linenr="9" column="15" str="struct"/>
+    <tok fileIndex="0" linenr="9" column="22" str="nodo"/>
+    <tok fileIndex="0" linenr="9" column="27" str="*"/>
+    <tok fileIndex="0" linenr="9" column="28" str="siguiente"/>
+    <tok fileIndex="0" linenr="9" column="37" str=";"/>
+    <tok fileIndex="0" linenr="9" column="39" str="int"/>
+    <tok fileIndex="0" linenr="9" column="43" str="valor"/>
+    <tok fileIndex="0" linenr="9" column="48" str=";"/>
+    <tok fileIndex="0" linenr="9" column="50" str="}"/>
+    <tok fileIndex="0" linenr="9" column="51" str=";"/>
+    <tok fileIndex="0" linenr="11" column="1" str="static"/>
+    <tok fileIndex="0" linenr="11" column="8" str="int"/>
+    <tok fileIndex="0" linenr="11" column="12" str="veces"/>
+    <tok fileIndex="0" linenr="11" column="17" str=";"/>
+    <tok fileIndex="0" linenr="12" column="1" str="static"/>
+    <tok fileIndex="0" linenr="12" column="8" str="int"/>
+    <tok fileIndex="0" linenr="12" column="12" str="solo_una"/>
+    <tok fileIndex="0" linenr="12" column="20" str=";"/>
+    <tok fileIndex="0" linenr="13" column="1" str="extern"/>
+    <tok fileIndex="0" linenr="13" column="8" str="int"/>
+    <tok fileIndex="0" linenr="13" column="12" str="otro_global"/>
+    <tok fileIndex="0" linenr="13" column="23" str=";"/>
+    <tok fileIndex="0" linenr="15" column="1" str="int"/>
+    <tok fileIndex="0" linenr="15" column="5" str="reglas_cognitiva"/>
+    <tok fileIndex="0" linenr="15" column="21" str="("/>
+    <tok fileIndex="0" linenr="15" column="22" str="int"/>
+    <tok fileIndex="0" linenr="15" column="26" str="a"/>
+    <tok fileIndex="0" linenr="15" column="27" str=","/>
+    <tok fileIndex="0" linenr="15" column="29" str="int"/>
+    <tok fileIndex="0" linenr="15" column="33" str="b"/>
+    <tok fileIndex="0" linenr="15" column="34" str=")"/>
+    <tok fileIndex="0" linenr="16" column="1" str="{"/>
+    <tok fileIndex="0" linenr="17" column="5" str="if"/>
+    <tok fileIndex="0" linenr="17" column="8" str="("/>
+    <tok fileIndex="0" linenr="17" column="9" str="a"/>
+    <tok fileIndex="0" linenr="17" column="11" str="&gt;"/>
+    <tok fileIndex="0" linenr="17" column="13" str="0"/>
+    <tok fileIndex="0" linenr="17" column="15" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="17" column="18" str="b"/>
+    <tok fileIndex="0" linenr="17" column="20" str="&gt;"/>
+    <tok fileIndex="0" linenr="17" column="22" str="0"/>
+    <tok fileIndex="0" linenr="17" column="24" str="||"/>
+    <tok fileIndex="0" linenr="17" column="27" str="a"/>
+    <tok fileIndex="0" linenr="17" column="29" str="&lt;"/>
+    <tok fileIndex="0" linenr="17" column="31" str="0"/>
+    <tok fileIndex="0" linenr="17" column="32" str=")"/>
+    <tok fileIndex="0" linenr="17" column="34" str="{"/>
+    <tok fileIndex="0" linenr="18" column="9" str="return"/>
+    <tok fileIndex="0" linenr="18" column="16" str="1"/>
+    <tok fileIndex="0" linenr="18" column="17" str=";"/>
+    <tok fileIndex="0" linenr="19" column="5" str="}"/>
+    <tok fileIndex="0" linenr="19" column="7" str="else"/>
+    <tok fileIndex="0" linenr="19" column="12" str="if"/>
+    <tok fileIndex="0" linenr="19" column="15" str="("/>
+    <tok fileIndex="0" linenr="19" column="16" str="a"/>
+    <tok fileIndex="0" linenr="19" column="18" str="=="/>
+    <tok fileIndex="0" linenr="19" column="21" str="0"/>
+    <tok fileIndex="0" linenr="19" column="22" str=")"/>
+    <tok fileIndex="0" linenr="19" column="24" str="{"/>
+    <tok fileIndex="0" linenr="20" column="9" str="return"/>
+    <tok fileIndex="0" linenr="20" column="16" str="a"/>
+    <tok fileIndex="0" linenr="20" column="18" str="?"/>
+    <tok fileIndex="0" linenr="20" column="20" str="2"/>
+    <tok fileIndex="0" linenr="20" column="22" str=":"/>
+    <tok fileIndex="0" linenr="20" column="24" str="3"/>
+    <tok fileIndex="0" linenr="20" column="25" str=";"/>
+    <tok fileIndex="0" linenr="21" column="5" str="}"/>
+    <tok fileIndex="0" linenr="21" column="7" str="else"/>
+    <tok fileIndex="0" linenr="21" column="12" str="{"/>
+    <tok fileIndex="0" linenr="22" column="9" str="for"/>
+    <tok fileIndex="0" linenr="22" column="13" str="("/>
+    <tok fileIndex="0" linenr="22" column="14" str="int"/>
+    <tok fileIndex="0" linenr="22" column="18" str="i"/>
+    <tok fileIndex="0" linenr="22" column="20" str="="/>
+    <tok fileIndex="0" linenr="22" column="22" str="0"/>
+    <tok fileIndex="0" linenr="22" column="23" str=";"/>
+    <tok fileIndex="0" linenr="22" column="25" str="i"/>
+    <tok fileIndex="0" linenr="22" column="27" str="&lt;"/>
+    <tok fileIndex="0" linenr="22" column="29" str="b"/>
+    <tok fileIndex="0" linenr="22" column="30" str=";"/>
+    <tok fileIndex="0" linenr="22" column="32" str="i"/>
+    <tok fileIndex="0" linenr="22" column="33" str="++"/>
+    <tok fileIndex="0" linenr="22" column="35" str=")"/>
+    <tok fileIndex="0" linenr="22" column="37" str="{"/>
+    <tok fileIndex="0" linenr="23" column="13" str="if"/>
+    <tok fileIndex="0" linenr="23" column="16" str="("/>
+    <tok fileIndex="0" linenr="23" column="17" str="i"/>
+    <tok fileIndex="0" linenr="23" column="19" str="=="/>
+    <tok fileIndex="0" linenr="23" column="22" str="7"/>
+    <tok fileIndex="0" linenr="23" column="23" str=")"/>
+    <tok fileIndex="0" linenr="23" column="25" str="{"/>
+    <tok fileIndex="0" linenr="23" column="27" str="/* MAGICO */"/>
+    <tok fileIndex="0" linenr="24" column="17" str="goto"/>
+    <tok fileIndex="0" linenr="24" column="22" str="fin"/>
+    <tok fileIndex="0" linenr="24" column="25" str=";"/>
+    <tok fileIndex="0" linenr="25" column="13" str="}"/>
+    <tok fileIndex="0" linenr="26" column="9" str="}"/>
+    <tok fileIndex="0" linenr="27" column="5" str="}"/>
+    <tok fileIndex="0" linenr="28" column="1" str="fin"/>
+    <tok fileIndex="0" linenr="28" column="4" str=":"/>
+    <tok fileIndex="0" linenr="29" column="5" str="return"/>
+    <tok fileIndex="0" linenr="29" column="12" str="0"/>
+    <tok fileIndex="0" linenr="29" column="13" str=";"/>
+    <tok fileIndex="0" linenr="30" column="1" str="}"/>
+    <tok fileIndex="0" linenr="32" column="1" str="int"/>
+    <tok fileIndex="0" linenr="32" column="5" str="reglas_usa_global"/>
+    <tok fileIndex="0" linenr="32" column="22" str="("/>
+    <tok fileIndex="0" linenr="32" column="23" str="void"/>
+    <tok fileIndex="0" linenr="32" column="27" str=")"/>
+    <tok fileIndex="0" linenr="33" column="1" str="{"/>
+    <tok fileIndex="0" linenr="34" column="5" str="const"/>
+    <tok fileIndex="0" linenr="34" column="11" str="int"/>
+    <tok fileIndex="0" linenr="34" column="15" str="limite"/>
+    <tok fileIndex="0" linenr="34" column="22" str="="/>
+    <tok fileIndex="0" linenr="34" column="24" str="25"/>
+    <tok fileIndex="0" linenr="34" column="26" str=";"/>
+    <tok fileIndex="0" linenr="34" column="28" str="/* CONST */"/>
+    <tok fileIndex="0" linenr="35" column="5" str="solo_una"/>
+    <tok fileIndex="0" linenr="35" column="13" str="++"/>
+    <tok fileIndex="0" linenr="35" column="15" str=";"/>
+    <tok fileIndex="0" linenr="36" column="5" str="veces"/>
+    <tok fileIndex="0" linenr="36" column="10" str="++"/>
+    <tok fileIndex="0" linenr="36" column="12" str=";"/>
+    <tok fileIndex="0" linenr="37" column="5" str="return"/>
+    <tok fileIndex="0" linenr="37" column="12" str="modulo_estado"/>
+    <tok fileIndex="0" linenr="37" column="26" str="+"/>
+    <tok fileIndex="0" linenr="37" column="28" str="otro_global"/>
+    <tok fileIndex="0" linenr="37" column="40" str="+"/>
+    <tok fileIndex="0" linenr="37" column="42" str="limite"/>
+    <tok fileIndex="0" linenr="37" column="48" str=";"/>
+    <tok fileIndex="0" linenr="38" column="1" str="}"/>
+    <tok fileIndex="0" linenr="40" column="1" str="void"/>
+    <tok fileIndex="0" linenr="40" column="6" str="reglas_memoria"/>
+    <tok fileIndex="0" linenr="40" column="20" str="("/>
+    <tok fileIndex="0" linenr="40" column="21" str="int"/>
+    <tok fileIndex="0" linenr="40" column="25" str="n"/>
+    <tok fileIndex="0" linenr="40" column="26" str=")"/>
+    <tok fileIndex="0" linenr="41" column="1" str="{"/>
+    <tok fileIndex="0" linenr="42" column="5" str="uint8_t"/>
+    <tok fileIndex="0" linenr="42" column="13" str="pila"/>
+    <tok fileIndex="0" linenr="42" column="17" str="["/>
+    <tok fileIndex="0" linenr="42" column="18" str="n"/>
+    <tok fileIndex="0" linenr="42" column="19" str="]"/>
+    <tok fileIndex="0" linenr="42" column="20" str=";"/>
+    <tok fileIndex="0" linenr="42" column="22" str="/* VLA */"/>
+    <tok fileIndex="0" linenr="43" column="5" str="uint8_t"/>
+    <tok fileIndex="0" linenr="43" column="13" str="tabla"/>
+    <tok fileIndex="0" linenr="43" column="18" str="["/>
+    <tok fileIndex="0" linenr="43" column="19" str="4"/>
+    <tok fileIndex="0" linenr="43" column="20" str="]"/>
+    <tok fileIndex="0" linenr="43" column="21" str=";"/>
+    <tok fileIndex="0" linenr="44" column="5" str="uint8_t"/>
+    <tok fileIndex="0" linenr="44" column="13" str="copia"/>
+    <tok fileIndex="0" linenr="44" column="18" str="["/>
+    <tok fileIndex="0" linenr="44" column="19" str="ELEMENTOS"/>
+    <tok fileIndex="0" linenr="44" column="28" str="("/>
+    <tok fileIndex="0" linenr="44" column="29" str="tabla"/>
+    <tok fileIndex="0" linenr="44" column="34" str=")"/>
+    <tok fileIndex="0" linenr="44" column="35" str="]"/>
+    <tok fileIndex="0" linenr="44" column="36" str=";"/>
+    <tok fileIndex="0" linenr="44" column="38" str="/* SIZEOF */"/>
+    <tok fileIndex="0" linenr="45" column="5" str="int"/>
+    <tok fileIndex="0" linenr="45" column="9" str="*"/>
+    <tok fileIndex="0" linenr="45" column="10" str="p"/>
+    <tok fileIndex="0" linenr="45" column="12" str="="/>
+    <tok fileIndex="0" linenr="45" column="14" str="malloc"/>
+    <tok fileIndex="0" linenr="45" column="20" str="("/>
+    <tok fileIndex="0" linenr="45" column="21" str="sizeof"/>
+    <tok fileIndex="0" linenr="45" column="27" str="("/>
+    <tok fileIndex="0" linenr="45" column="28" str="int"/>
+    <tok fileIndex="0" linenr="45" column="31" str=")"/>
+    <tok fileIndex="0" linenr="45" column="32" str=")"/>
+    <tok fileIndex="0" linenr="45" column="33" str=";"/>
+    <tok fileIndex="0" linenr="45" column="35" str="/* MALLOC */"/>
+    <tok fileIndex="0" linenr="46" column="5" str="pila"/>
+    <tok fileIndex="0" linenr="46" column="9" str="["/>
+    <tok fileIndex="0" linenr="46" column="10" str="0"/>
+    <tok fileIndex="0" linenr="46" column="11" str="]"/>
+    <tok fileIndex="0" linenr="46" column="13" str="="/>
+    <tok fileIndex="0" linenr="46" column="15" str="tabla"/>
+    <tok fileIndex="0" linenr="46" column="20" str="["/>
+    <tok fileIndex="0" linenr="46" column="21" str="0"/>
+    <tok fileIndex="0" linenr="46" column="22" str="]"/>
+    <tok fileIndex="0" linenr="46" column="24" str="="/>
+    <tok fileIndex="0" linenr="46" column="26" str="copia"/>
+    <tok fileIndex="0" linenr="46" column="31" str="["/>
+    <tok fileIndex="0" linenr="46" column="32" str="0"/>
+    <tok fileIndex="0" linenr="46" column="33" str="]"/>
+    <tok fileIndex="0" linenr="46" column="35" str="="/>
+    <tok fileIndex="0" linenr="46" column="37" str="0"/>
+    <tok fileIndex="0" linenr="46" column="38" str=";"/>
+    <tok fileIndex="0" linenr="47" column="5" str="free"/>
+    <tok fileIndex="0" linenr="47" column="9" str="("/>
+    <tok fileIndex="0" linenr="47" column="10" str="p"/>
+    <tok fileIndex="0" linenr="47" column="11" str=")"/>
+    <tok fileIndex="0" linenr="47" column="12" str=";"/>
+    <tok fileIndex="0" linenr="48" column="1" str="}"/>
+    <tok fileIndex="0" linenr="50" column="1" str="int"/>
+    <tok fileIndex="0" linenr="50" column="5" str="reglas_cadena"/>
+    <tok fileIndex="0" linenr="50" column="18" str="("/>
+    <tok fileIndex="0" linenr="50" column="19" str="struct"/>
+    <tok fileIndex="0" linenr="50" column="26" str="nodo"/>
+    <tok fileIndex="0" linenr="50" column="31" str="*"/>
+    <tok fileIndex="0" linenr="50" column="32" str="n"/>
+    <tok fileIndex="0" linenr="50" column="33" str=")"/>
+    <tok fileIndex="0" linenr="51" column="1" str="{"/>
+    <tok fileIndex="0" linenr="52" column="5" str="return"/>
+    <tok fileIndex="0" linenr="52" column="12" str="n"/>
+    <tok fileIndex="0" linenr="52" column="13" str="-&gt;"/>
+    <tok fileIndex="0" linenr="52" column="15" str="siguiente"/>
+    <tok fileIndex="0" linenr="52" column="24" str="-&gt;"/>
+    <tok fileIndex="0" linenr="52" column="26" str="siguiente"/>
+    <tok fileIndex="0" linenr="52" column="35" str="-&gt;"/>
+    <tok fileIndex="0" linenr="52" column="37" str="siguiente"/>
+    <tok fileIndex="0" linenr="52" column="46" str="-&gt;"/>
+    <tok fileIndex="0" linenr="52" column="48" str="valor"/>
+    <tok fileIndex="0" linenr="52" column="53" str=";"/>
+    <tok fileIndex="0" linenr="52" column="55" str="/* CADENA */"/>
+    <tok fileIndex="0" linenr="53" column="1" str="}"/>
+    <tok fileIndex="0" linenr="55" column="1" str="void"/>
+    <tok fileIndex="0" linenr="55" column="6" str="reglas_llama"/>
+    <tok fileIndex="0" linenr="55" column="18" str="("/>
+    <tok fileIndex="0" linenr="55" column="19" str="void"/>
+    <tok fileIndex="0" linenr="55" column="23" str=")"/>
+    <tok fileIndex="0" linenr="56" column="1" str="{"/>
+    <tok fileIndex="0" linenr="57" column="5" str="modulo_cuenta"/>
+    <tok fileIndex="0" linenr="57" column="18" str="("/>
+    <tok fileIndex="0" linenr="57" column="19" str="1"/>
+    <tok fileIndex="0" linenr="57" column="20" str=","/>
+    <tok fileIndex="0" linenr="57" column="22" str="2"/>
+    <tok fileIndex="0" linenr="57" column="23" str=")"/>
+    <tok fileIndex="0" linenr="57" column="24" str=";"/>
+    <tok fileIndex="0" linenr="57" column="26" str="/* SIN COMPROBAR */"/>
+    <tok fileIndex="0" linenr="58" column="5" str="("/>
+    <tok fileIndex="0" linenr="58" column="6" str="void"/>
+    <tok fileIndex="0" linenr="58" column="10" str=")"/>
+    <tok fileIndex="0" linenr="58" column="11" str="modulo_cuenta"/>
+    <tok fileIndex="0" linenr="58" column="24" str="("/>
+    <tok fileIndex="0" linenr="58" column="25" str="3"/>
+    <tok fileIndex="0" linenr="58" column="26" str=","/>
+    <tok fileIndex="0" linenr="58" column="28" str="4"/>
+    <tok fileIndex="0" linenr="58" column="29" str=")"/>
+    <tok fileIndex="0" linenr="58" column="30" str=";"/>
+    <tok fileIndex="0" linenr="59" column="5" str="veces"/>
+    <tok fileIndex="0" linenr="59" column="11" str="="/>
+    <tok fileIndex="0" linenr="59" column="13" str="0"/>
+    <tok fileIndex="0" linenr="59" column="14" str=";"/>
+    <tok fileIndex="0" linenr="60" column="1" str="}"/>
+    <tok fileIndex="0" linenr="62" column="1" str="int"/>
+    <tok fileIndex="0" linenr="62" column="5" str="bandera"/>
+    <tok fileIndex="0" linenr="62" column="12" str="("/>
+    <tok fileIndex="0" linenr="62" column="13" str="int"/>
+    <tok fileIndex="0" linenr="62" column="17" str="con_algo"/>
+    <tok fileIndex="0" linenr="62" column="25" str=","/>
+    <tok fileIndex="0" linenr="62" column="27" str="int"/>
+    <tok fileIndex="0" linenr="62" column="31" str="x"/>
+    <tok fileIndex="0" linenr="62" column="32" str=")"/>
+    <tok fileIndex="0" linenr="62" column="34" str="/* BANDERA */"/>
+    <tok fileIndex="0" linenr="63" column="1" str="{"/>
+    <tok fileIndex="0" linenr="64" column="5" str="if"/>
+    <tok fileIndex="0" linenr="64" column="8" str="("/>
+    <tok fileIndex="0" linenr="64" column="9" str="con_algo"/>
+    <tok fileIndex="0" linenr="64" column="17" str=")"/>
+    <tok fileIndex="0" linenr="64" column="19" str="{"/>
+    <tok fileIndex="0" linenr="65" column="9" str="return"/>
+    <tok fileIndex="0" linenr="65" column="16" str="x"/>
+    <tok fileIndex="0" linenr="65" column="17" str=";"/>
+    <tok fileIndex="0" linenr="66" column="5" str="}"/>
+    <tok fileIndex="0" linenr="67" column="5" str="return"/>
+    <tok fileIndex="0" linenr="67" column="12" str="0"/>
+    <tok fileIndex="0" linenr="67" column="13" str=";"/>
+    <tok fileIndex="0" linenr="68" column="1" str="}"/>
+    <tok fileIndex="0" linenr="70" column="1" str="void"/>
+    <tok fileIndex="0" linenr="70" column="6" str="reglas_sin_usar"/>
+    <tok fileIndex="0" linenr="70" column="21" str="("/>
+    <tok fileIndex="0" linenr="70" column="22" str="int"/>
+    <tok fileIndex="0" linenr="70" column="26" str="usado"/>
+    <tok fileIndex="0" linenr="70" column="31" str=","/>
+    <tok fileIndex="0" linenr="70" column="33" str="int"/>
+    <tok fileIndex="0" linenr="70" column="37" str="ignorado"/>
+    <tok fileIndex="0" linenr="70" column="45" str=")"/>
+    <tok fileIndex="0" linenr="70" column="47" str="/* SIN USAR */"/>
+    <tok fileIndex="0" linenr="71" column="1" str="{"/>
+    <tok fileIndex="0" linenr="72" column="5" str="veces"/>
+    <tok fileIndex="0" linenr="72" column="11" str="="/>
+    <tok fileIndex="0" linenr="72" column="13" str="usado"/>
+    <tok fileIndex="0" linenr="72" column="18" str=";"/>
+    <tok fileIndex="0" linenr="73" column="1" str="}"/>
+    <tok fileIndex="0" linenr="75" column="1" str="int"/>
+    <tok fileIndex="0" linenr="75" column="5" str="reglas_g1"/>
+    <tok fileIndex="0" linenr="75" column="14" str="("/>
+    <tok fileIndex="0" linenr="75" column="15" str="const"/>
+    <tok fileIndex="0" linenr="75" column="21" str="uint8_t"/>
+    <tok fileIndex="0" linenr="75" column="29" str="*"/>
+    <tok fileIndex="0" linenr="75" column="30" str="datos"/>
+    <tok fileIndex="0" linenr="75" column="35" str=","/>
+    <tok fileIndex="0" linenr="75" column="37" str="uint8_t"/>
+    <tok fileIndex="0" linenr="75" column="45" str="longitud"/>
+    <tok fileIndex="0" linenr="75" column="53" str=","/>
+    <tok fileIndex="0" linenr="75" column="55" str="uint8_t"/>
+    <tok fileIndex="0" linenr="75" column="63" str="desde"/>
+    <tok fileIndex="0" linenr="75" column="68" str=")"/>
+    <tok fileIndex="0" linenr="75" column="70" str="{"/>
+    <tok fileIndex="0" linenr="75" column="72" str="return"/>
+    <tok fileIndex="0" linenr="75" column="79" str="datos"/>
+    <tok fileIndex="0" linenr="75" column="84" str="["/>
+    <tok fileIndex="0" linenr="75" column="85" str="desde"/>
+    <tok fileIndex="0" linenr="75" column="90" str="]"/>
+    <tok fileIndex="0" linenr="75" column="92" str="+"/>
+    <tok fileIndex="0" linenr="75" column="94" str="longitud"/>
+    <tok fileIndex="0" linenr="75" column="102" str=";"/>
+    <tok fileIndex="0" linenr="75" column="104" str="}"/>
+    <tok fileIndex="0" linenr="76" column="1" str="int"/>
+    <tok fileIndex="0" linenr="76" column="5" str="reglas_g2"/>
+    <tok fileIndex="0" linenr="76" column="14" str="("/>
+    <tok fileIndex="0" linenr="76" column="15" str="const"/>
+    <tok fileIndex="0" linenr="76" column="21" str="uint8_t"/>
+    <tok fileIndex="0" linenr="76" column="29" str="*"/>
+    <tok fileIndex="0" linenr="76" column="30" str="datos"/>
+    <tok fileIndex="0" linenr="76" column="35" str=","/>
+    <tok fileIndex="0" linenr="76" column="37" str="uint8_t"/>
+    <tok fileIndex="0" linenr="76" column="45" str="longitud"/>
+    <tok fileIndex="0" linenr="76" column="53" str=","/>
+    <tok fileIndex="0" linenr="76" column="55" str="uint8_t"/>
+    <tok fileIndex="0" linenr="76" column="63" str="desde"/>
+    <tok fileIndex="0" linenr="76" column="68" str=")"/>
+    <tok fileIndex="0" linenr="76" column="70" str="{"/>
+    <tok fileIndex="0" linenr="76" column="72" str="return"/>
+    <tok fileIndex="0" linenr="76" column="79" str="datos"/>
+    <tok fileIndex="0" linenr="76" column="84" str="["/>
+    <tok fileIndex="0" linenr="76" column="85" str="longitud"/>
+    <tok fileIndex="0" linenr="76" column="93" str="]"/>
+    <tok fileIndex="0" linenr="76" column="95" str="+"/>
+    <tok fileIndex="0" linenr="76" column="97" str="desde"/>
+    <tok fileIndex="0" linenr="76" column="102" str=";"/>
+    <tok fileIndex="0" linenr="76" column="104" str="}"/>
+    <tok fileIndex="0" linenr="77" column="1" str="int"/>
+    <tok fileIndex="0" linenr="77" column="5" str="reglas_g3"/>
+    <tok fileIndex="0" linenr="77" column="14" str="("/>
+    <tok fileIndex="0" linenr="77" column="15" str="const"/>
+    <tok fileIndex="0" linenr="77" column="21" str="uint8_t"/>
+    <tok fileIndex="0" linenr="77" column="29" str="*"/>
+    <tok fileIndex="0" linenr="77" column="30" str="datos"/>
+    <tok fileIndex="0" linenr="77" column="35" str=","/>
+    <tok fileIndex="0" linenr="77" column="37" str="uint8_t"/>
+    <tok fileIndex="0" linenr="77" column="45" str="longitud"/>
+    <tok fileIndex="0" linenr="77" column="53" str=","/>
+    <tok fileIndex="0" linenr="77" column="55" str="uint8_t"/>
+    <tok fileIndex="0" linenr="77" column="63" str="desde"/>
+    <tok fileIndex="0" linenr="77" column="68" str=")"/>
+    <tok fileIndex="0" linenr="77" column="70" str="{"/>
+    <tok fileIndex="0" linenr="77" column="72" str="return"/>
+    <tok fileIndex="0" linenr="77" column="79" str="datos"/>
+    <tok fileIndex="0" linenr="77" column="84" str="["/>
+    <tok fileIndex="0" linenr="77" column="85" str="0"/>
+    <tok fileIndex="0" linenr="77" column="86" str="]"/>
+    <tok fileIndex="0" linenr="77" column="88" str="+"/>
+    <tok fileIndex="0" linenr="77" column="90" str="longitud"/>
+    <tok fileIndex="0" linenr="77" column="99" str="+"/>
+    <tok fileIndex="0" linenr="77" column="101" str="desde"/>
+    <tok fileIndex="0" linenr="77" column="106" str=";"/>
+    <tok fileIndex="0" linenr="77" column="108" str="}"/>
+    <tok fileIndex="0" linenr="79" column="1" str="int"/>
+    <tok fileIndex="0" linenr="79" column="5" str="reglas_s1"/>
+    <tok fileIndex="0" linenr="79" column="14" str="("/>
+    <tok fileIndex="0" linenr="79" column="15" str="int"/>
+    <tok fileIndex="0" linenr="79" column="19" str="tipo"/>
+    <tok fileIndex="0" linenr="79" column="23" str=")"/>
+    <tok fileIndex="0" linenr="79" column="25" str="{"/>
+    <tok fileIndex="0" linenr="79" column="27" str="switch"/>
+    <tok fileIndex="0" linenr="79" column="34" str="("/>
+    <tok fileIndex="0" linenr="79" column="35" str="tipo"/>
+    <tok fileIndex="0" linenr="79" column="39" str=")"/>
+    <tok fileIndex="0" linenr="79" column="41" str="{"/>
+    <tok fileIndex="0" linenr="79" column="43" str="case"/>
+    <tok fileIndex="0" linenr="79" column="48" str="1"/>
+    <tok fileIndex="0" linenr="79" column="49" str=":"/>
+    <tok fileIndex="0" linenr="79" column="51" str="return"/>
+    <tok fileIndex="0" linenr="79" column="58" str="0"/>
+    <tok fileIndex="0" linenr="79" column="59" str=";"/>
+    <tok fileIndex="0" linenr="79" column="61" str="default"/>
+    <tok fileIndex="0" linenr="79" column="68" str=":"/>
+    <tok fileIndex="0" linenr="79" column="70" str="return"/>
+    <tok fileIndex="0" linenr="79" column="77" str="1"/>
+    <tok fileIndex="0" linenr="79" column="78" str=";"/>
+    <tok fileIndex="0" linenr="79" column="80" str="}"/>
+    <tok fileIndex="0" linenr="79" column="82" str="}"/>
+    <tok fileIndex="0" linenr="80" column="1" str="int"/>
+    <tok fileIndex="0" linenr="80" column="5" str="reglas_s2"/>
+    <tok fileIndex="0" linenr="80" column="14" str="("/>
+    <tok fileIndex="0" linenr="80" column="15" str="int"/>
+    <tok fileIndex="0" linenr="80" column="19" str="tipo"/>
+    <tok fileIndex="0" linenr="80" column="23" str=")"/>
+    <tok fileIndex="0" linenr="80" column="25" str="{"/>
+    <tok fileIndex="0" linenr="80" column="27" str="switch"/>
+    <tok fileIndex="0" linenr="80" column="34" str="("/>
+    <tok fileIndex="0" linenr="80" column="35" str="tipo"/>
+    <tok fileIndex="0" linenr="80" column="39" str=")"/>
+    <tok fileIndex="0" linenr="80" column="41" str="{"/>
+    <tok fileIndex="0" linenr="80" column="43" str="case"/>
+    <tok fileIndex="0" linenr="80" column="48" str="0"/>
+    <tok fileIndex="0" linenr="80" column="49" str=":"/>
+    <tok fileIndex="0" linenr="80" column="51" str="return"/>
+    <tok fileIndex="0" linenr="80" column="58" str="1"/>
+    <tok fileIndex="0" linenr="80" column="59" str=";"/>
+    <tok fileIndex="0" linenr="80" column="61" str="default"/>
+    <tok fileIndex="0" linenr="80" column="68" str=":"/>
+    <tok fileIndex="0" linenr="80" column="70" str="return"/>
+    <tok fileIndex="0" linenr="80" column="77" str="0"/>
+    <tok fileIndex="0" linenr="80" column="78" str=";"/>
+    <tok fileIndex="0" linenr="80" column="80" str="}"/>
+    <tok fileIndex="0" linenr="80" column="82" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+</dumps>

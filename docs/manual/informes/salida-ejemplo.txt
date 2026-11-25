@@ -1,0 +1,3 @@
+Avisos sin justificar: 91 · justificados: 2 · contramedidas: 7
+Quality gate: no pasa.
+Informe: F:\w\repos\card-lint\docs\manual\informes\informe-ejemplo.html

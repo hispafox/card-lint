@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><pmd-cpd pmdVersion="7.29.0" timestamp="2026-11-25T19:30:05.2154133+01:00" version="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd" xmlns="https://pmd-code.org/schema/cpd-report">
+    <file path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\include\extracto.h" totalNumberOfTokens="34"/>
+    <file path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\include\utilidades.h" totalNumberOfTokens="241"/>
+    <file path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\pruebas\prueba_extracto.c" totalNumberOfTokens="753"/>
+    <file path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\src\extracto.c" totalNumberOfTokens="443"/>
+    <file path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\src\utilidades.c" totalNumberOfTokens="70"/>
+    <duplication lines="4" tokens="39">
+        <file begintoken="475" column="36" endcolumn="49" endline="39" endtoken="513" line="36" path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\pruebas\prueba_extracto.c"/>
+        <file begintoken="551" column="48" endcolumn="49" endline="48" endtoken="589" line="45" path="F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes\c\pruebas\prueba_extracto.c"/>
+        <codefragment>
+            <![CDATA[static void test_cuatro_movimientos(void)
+{
+    const uint8_t esperado[] = {0x01, 0x04, 'P', 0x03, 0xE8, 'R', 0x07, 0xD0, 'P', 0x00, 0x32,
+                                'D', 0x01, 0x2C, 0x30};
+]]>
+        </codefragment>
+    </duplication>
+</pmd-cpd>
