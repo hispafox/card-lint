@@ -394,7 +394,7 @@ internal static partial class ReglasC
     /// <summary>
     /// Se miran los tokens sin preprocesar, porque en los preprocesados las macros ya están
     /// sustituidas por su número. Solo dentro de las funciones, fuera de las líneas con <c>const</c>,
-    /// y sin contar el 0 y el 1.
+    /// y sin contar el 0, el 1 ni los de partir un valor en bytes o juntarlos (<see cref="DeBytes"/>).
     /// </summary>
     private static IEnumerable<Aviso> NumerosMagicos(VolcadoC v)
     {
@@ -411,13 +411,34 @@ internal static partial class ReglasC
                 continue;
             }
 
-            var numeros = tokens.Select(t => t.Texto).Where(EsNumero).Where(n => !EsCero(n) && !EsUno(n)).Distinct().ToList();
+            var numeros = tokens
+                .Select((t, i) => (t.Texto, i))
+                .Where(x => EsNumero(x.Texto) && !EsCero(x.Texto) && !EsUno(x.Texto) && !DeBytes(tokens, x.i))
+                .Select(x => x.Texto)
+                .Distinct()
+                .ToList();
             if (numeros.Count > 0)
             {
                 yield return new Aviso("c:numero-magico", Gravedad.Informacion, v.Fuente, linea.Key,
                     $"Número escrito a pelo: {string.Join(", ", numeros)}. Dale un nombre con un enum, un static const o un #define", "2.1");
             }
         }
+    }
+
+    /// <summary>
+    /// El 8, el 16 y el 24 de un desplazamiento, y el 0xFF y el 0xFFFF de una máscara: los de partir un valor
+    /// en bytes o juntarlos, que se leen solos. La versión limpia de la 2.1 los deja como están.
+    /// </summary>
+    private static bool DeBytes(List<TokenCrudo> tokens, int i)
+    {
+        var antes = i > 0 ? tokens[i - 1].Texto : null;
+        var despues = i + 1 < tokens.Count ? tokens[i + 1].Texto : null;
+        return Valor(tokens[i].Texto) switch
+        {
+            8 or 16 or 24 => antes is "<<" or ">>" or "<<=" or ">>=",
+            0xFF or 0xFFFF => antes is "&" or "&=" || despues is "&",
+            _ => false,
+        };
     }
 
     // ---- Campo temporal (libro) ---------------------------------------------------------------

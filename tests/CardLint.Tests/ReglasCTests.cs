@@ -142,6 +142,27 @@ public class ReglasCTests
         Assert.DoesNotContain(Linea("#define CUADRADO"), lineas);
     }
 
+    [Fact]
+    public void Los_numeros_de_partir_o_juntar_bytes_no_son_magicos()
+    {
+        // datos/bytes.c y su volcado real de Cppcheck 2.22: desplazamientos de 8, 16 y 24 y máscaras 0xFF y 0xFFFF,
+        // también en asignaciones compuestas y con la máscara delante, y al lado los números que sí avisan.
+        var fuente = Datos.Leer("bytes.c");
+        var volcado = VolcadoC.Leer(Datos.Leer("bytes.c.dump"), "c/src/bytes.c");
+        int En(string marca) => fuente.Split('\n').Select((texto, i) => (texto, i)).First(x => x.texto.Contains(marca)).i + 1;
+
+        var avisos = ReglasC.Analizar([volcado], new Umbrales())
+            .Where(a => a.Regla == "c:numero-magico")
+            .ToDictionary(a => a.Linea, a => a.Mensaje.Split(':')[1].Split('.')[0].Trim());
+
+        Assert.Equal(new Dictionary<int, string>
+        {
+            [En("/* OTROS */")] = "3, 0x0Fu",
+            [En("/* DIRECCION */")] = "0x0040u",
+            [En("/* OCHO SUELTO */")] = "8u",
+        }, avisos);
+    }
+
     private static IEnumerable<Aviso> De(string regla) => Avisos.Where(a => a.Regla == regla);
 
     private static AmbitoC Funcion(string nombre) => Volcado.FuncionesDefinidas().Single(f => f.Funcion.Nombre == nombre).Ambito;
@@ -158,6 +179,7 @@ public class ReglasCEnCardCodeTests
 {
     [ConHerramientasTheory]
     [InlineData("submodulo-2.1/nombres", "c:sin-prefijo")]
+    [InlineData("submodulo-2.1/nombres", "c:numero-magico")]
     [InlineData("submodulo-2.2/funciones", "cppcheck:staticFunction")]
     [InlineData("submodulo-2.2/funciones", "c:parametro-bandera")]
     [InlineData("submodulo-2.3/cabeceras", "c:include-ciclico")]

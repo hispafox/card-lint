@@ -190,7 +190,7 @@ El nombre de cada regla empieza por quien la aplica: `c:` son las reglas propias
 | `c:include-ciclico` | Cabeceras que se incluyen en círculo | Advertencia | 2.3 |
 | `c:global-de-otro-modulo` | Una variable global de otro módulo usada con `extern` | Advertencia | 2.3 |
 | `c:switch-repetido` | El mismo `switch` en varios sitios | Advertencia | 5.1 |
-| `c:numero-magico` | Un número escrito a pelo dentro de una función | Información | 2.1 |
+| `c:numero-magico` | Un número escrito a pelo dentro de una función, salvo el 0, el 1 y los de partir o juntar bytes | Información | 2.1 |
 | `c:parametro-sin-usar` | Un parámetro que la función no usa | Advertencia | olor: código muerto |
 | `c:modulo-grande` | Un `.c` con demasiadas funciones o líneas | Advertencia | olor: clase o módulo grande |
 | `c:campo-temporal` | Una variable de todo el fichero que solo usa una función | Información | olor: campo temporal |
