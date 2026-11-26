@@ -8,6 +8,9 @@ public interface IAnalizador
     /// <param name="carpeta">La carpeta analizada. No se escribe nada en ella.</param>
     /// <param name="trabajo">Una carpeta vacía para los ficheros intermedios del analizador.</param>
     IEnumerable<Aviso> Analizar(string carpeta, string trabajo);
+
+    /// <summary>Las métricas de todas las funciones que ha visto el último <see cref="Analizar"/>; vacío si no mide.</summary>
+    IReadOnlyList<MetricasFuncion> Funciones => [];
 }
 
 public sealed record ResultadoAnalisis(
@@ -17,7 +20,8 @@ public sealed record ResultadoAnalisis(
     IReadOnlyList<AvisoJustificado> Justificados,
     IReadOnlyList<Contramedida> Contramedidas,
     Gravedad GravedadQueFalla,
-    IReadOnlyList<string>? Notas = null)
+    IReadOnlyList<string>? Notas = null,
+    IReadOnlyList<MetricasFuncion>? Funciones = null)
 {
     /// <summary>Pasa si ningún aviso sin justificar llega a la gravedad que falla.</summary>
     public bool GatePasa => !Avisos.Any(a => a.Gravedad >= GravedadQueFalla);
@@ -54,7 +58,8 @@ public static class Analisis
             justificados,
             contramedidas,
             configuracion.GravedadQueFalla,
-            notas ?? []);
+            notas ?? [],
+            analizadores.SelectMany(a => a.Funciones).ToList());
     }
 
     private static List<Contramedida> LeerContramedidas(string carpeta) =>

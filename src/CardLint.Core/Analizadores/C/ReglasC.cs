@@ -42,37 +42,44 @@ internal static partial class ReglasC
 
     // ---- Métricas (1.2, 2.2, 5.1) -------------------------------------------------------------
 
+    /// <summary>Las métricas de todas las funciones definidas en los .c, pasen o no de los umbrales.</summary>
+    public static IReadOnlyList<MetricasFuncion> Medir(IReadOnlyList<VolcadoC> volcados) =>
+        volcados.SelectMany(Medir).ToList();
+
+    private static IEnumerable<MetricasFuncion> Medir(VolcadoC v) =>
+        v.FuncionesDefinidas().Select(f => new MetricasFuncion(
+            MetricasFuncion.C, f.Definicion.Fichero, f.Definicion.Linea, f.Funcion.Nombre,
+            Cognitiva: Cognitiva(v, f.Ambito),
+            Ciclomatica: Ciclomatica(v, f.Ambito),
+            Lineas: Lineas(v, f.Ambito, f.Definicion),
+            Parametros: f.Funcion.Argumentos.Count));
+
     private static IEnumerable<Aviso> Metricas(VolcadoC v, Umbrales u)
     {
-        foreach (var (ambito, funcion, definicion) in v.FuncionesDefinidas())
+        foreach (var m in Medir(v))
         {
-            var nombre = funcion.Nombre;
-            var cognitiva = Cognitiva(v, ambito);
-            var ciclomatica = Ciclomatica(v, ambito);
-            var lineas = Lineas(v, ambito, definicion);
-
-            if (cognitiva > u.Cognitiva)
+            if (m.Cognitiva > u.Cognitiva)
             {
-                yield return Aviso("c:complejidad-cognitiva", Gravedad.Advertencia, definicion,
-                    $"Complejidad cognitiva de {nombre}: {cognitiva} (umbral {u.Cognitiva})", "1.2");
+                yield return Aviso("c:complejidad-cognitiva", Gravedad.Advertencia, m,
+                    $"Complejidad cognitiva de {m.Nombre}: {m.Cognitiva} (umbral {u.Cognitiva})", "1.2");
             }
 
-            if (ciclomatica > u.Ciclomatica)
+            if (m.Ciclomatica > u.Ciclomatica)
             {
-                yield return Aviso("c:complejidad-ciclomatica", Gravedad.Advertencia, definicion,
-                    $"Complejidad ciclomática de {nombre}: {ciclomatica} (umbral {u.Ciclomatica})", "1.2");
+                yield return Aviso("c:complejidad-ciclomatica", Gravedad.Advertencia, m,
+                    $"Complejidad ciclomática de {m.Nombre}: {m.Ciclomatica} (umbral {u.Ciclomatica})", "1.2");
             }
 
-            if (lineas > u.LineasFuncion)
+            if (m.Lineas > u.LineasFuncion)
             {
-                yield return Aviso("c:funcion-larga", Gravedad.Advertencia, definicion,
-                    $"{nombre} tiene {lineas} líneas de código (umbral {u.LineasFuncion})", "1.2, 2.2, 5.1");
+                yield return Aviso("c:funcion-larga", Gravedad.Advertencia, m,
+                    $"{m.Nombre} tiene {m.Lineas} líneas de código (umbral {u.LineasFuncion})", "1.2, 2.2, 5.1");
             }
 
-            if (funcion.Argumentos.Count > u.Parametros)
+            if (m.Parametros > u.Parametros)
             {
-                yield return Aviso("c:demasiados-parametros", Gravedad.Advertencia, definicion,
-                    $"{nombre} tiene {funcion.Argumentos.Count} parámetros (umbral {u.Parametros})", "2.2");
+                yield return Aviso("c:demasiados-parametros", Gravedad.Advertencia, m,
+                    $"{m.Nombre} tiene {m.Parametros} parámetros (umbral {u.Parametros})", "2.2");
             }
         }
     }
@@ -623,6 +630,9 @@ internal static partial class ReglasC
 
     private static Aviso Aviso(string regla, Gravedad gravedad, TokenC token, string mensaje, string? submodulo) =>
         new(regla, gravedad, token.Fichero, token.Linea, mensaje, submodulo);
+
+    private static Aviso Aviso(string regla, Gravedad gravedad, MetricasFuncion funcion, string mensaje, string? submodulo) =>
+        new(regla, gravedad, funcion.Fichero, funcion.Linea, mensaje, submodulo);
 
     private static TokenC? Siguiente(VolcadoC v, TokenC t) => t.Indice + 1 < v.Tokens.Count ? v.Tokens[t.Indice + 1] : null;
 

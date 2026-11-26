@@ -6,10 +6,18 @@
 
     <description>Las reglas de PMD que usa card-lint sobre el código Java Card.</description>
 
-    <!-- Métricas (1.2) y tamaño (2.2, 4.2) -->
-    <rule ref="category/java/design.xml/CognitiveComplexity"/>
-    <rule ref="category/java/design.xml/CyclomaticComplexity"/>
-    <rule ref="category/java/design.xml/NcssCount"/>
+    <!-- Métricas (1.2) y tamaño (2.2, 4.2). Las tres primeras, con el umbral a 1, para que PMD mida todos
+         los métodos: el cuadro de mando los necesita todos. card-lint solo avisa de los que llegan al umbral
+         de serie de PMD (PmdAnalizador.UmbralCognitiva y los otros dos). -->
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+        <properties><property name="reportLevel" value="1"/></properties>
+    </rule>
+    <rule ref="category/java/design.xml/CyclomaticComplexity">
+        <properties><property name="methodReportLevel" value="1"/></properties>
+    </rule>
+    <rule ref="category/java/design.xml/NcssCount">
+        <properties><property name="methodReportLevel" value="1"/></properties>
+    </rule>
     <rule ref="category/java/design.xml/ExcessiveParameterList"/>
     <rule ref="category/java/design.xml/TooManyMethods"/>
     <rule ref="category/java/design.xml/TooManyFields"/>

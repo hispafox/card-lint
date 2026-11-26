@@ -1,0 +1,667 @@
+{
+  "formato": 1,
+  "fecha": "2026-11-25T10:00:00+01:00",
+  "carpeta": "F:/proyectos/card-code/4.1",
+  "gate": "falla",
+  "configuracion": {
+    "gravedadQueFalla": "Fallo",
+    "minimoTokensDuplicado": 50,
+    "umbrales": {
+      "cognitiva": 15,
+      "ciclomatica": 10,
+      "lineasFuncion": 40,
+      "parametros": 5,
+      "funcionesModulo": 20,
+      "lineasModulo": 400
+    }
+  },
+  "umbralesJavaCard": {
+    "cognitiva": 15,
+    "ciclomatica": 10,
+    "instrucciones": 60
+  },
+  "analizadores": [
+    "Cppcheck y reglas de C",
+    "PMD",
+    "CPD"
+  ],
+  "notas": [],
+  "avisos": [
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Limite.java",
+      "linea": 6,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Limite.java",
+      "linea": 8,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Limite.java",
+      "linea": 12,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 6,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 8,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 8,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 8,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 9,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 12,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 14,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 16,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 18,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 25,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 25,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 26,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Saldo.java",
+      "linea": 6,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Saldo.java",
+      "linea": 8,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/Saldo.java",
+      "linea": 12,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardBibliotecaEstandar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 3,
+      "mensaje": "Java Card no tiene la biblioteca estándar de Java (java.util, java.io)",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 19,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:NcssCount",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 26,
+      "mensaje": "process(APDU) tiene 83 instrucciones (NCSS)",
+      "submodulo": "1.2, 2.2",
+      "detalle": "The method 'process(APDU)' has a NCSS line count of 83."
+    },
+    {
+      "regla": "pmd:CognitiveComplexity",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 26,
+      "mensaje": "Complejidad cognitiva de process(APDU): 31 (umbral 15)",
+      "submodulo": "1.2",
+      "detalle": "The method 'process(APDU)' has a cognitive complexity of 31, current threshold is 1"
+    },
+    {
+      "regla": "pmd:CyclomaticComplexity",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 26,
+      "mensaje": "Complejidad ciclomática de process(APDU): 40",
+      "submodulo": "1.2",
+      "detalle": "The method 'process(APDU)' has a cyclomatic complexity of 40."
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 31,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardCadena",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 32,
+      "mensaje": "Java Card no tiene cadenas: los textos van como arrays de bytes",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardCadena",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 32,
+      "mensaje": "Java Card no tiene cadenas: los textos van como arrays de bytes",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 35,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 37,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 39,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 41,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 43,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 49,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 50,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 52,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 54,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 61,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 62,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 64,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 66,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 72,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 74,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 76,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 78,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 80,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 82,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 85,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 91,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 93,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 95,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 97,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 99,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 101,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 107,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 108,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 115,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 117,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardInt",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 119,
+      "mensaje": "int es opcional en Java Card y ocupa el doble que short: usa short o byte",
+      "submodulo": "4.1"
+    },
+    {
+      "regla": "pmd:JavaCardCodigoComoNumero",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 123,
+      "mensaje": "Código de estado o de instrucción escrito como número: dale nombre con una constante (ISO7816 o static final)",
+      "submodulo": "4.4"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 125,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 131,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 138,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "pmd:JavaCardObjetoFueraDeInstalar",
+      "gravedad": "Fallo",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 142,
+      "mensaje": "Objeto creado fuera de la instalación: en Java Card se crean en el constructor o en install",
+      "submodulo": "4.1, 4.2"
+    },
+    {
+      "regla": "cpd:duplicado",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 72,
+      "mensaje": "Código duplicado: 10 líneas (72 tokens), igual que en javacard/src/cardcode/tarjeta/TarjetaApplet.java:91",
+      "submodulo": "1.2, 5.1"
+    },
+    {
+      "regla": "cpd:duplicado",
+      "gravedad": "Advertencia",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 91,
+      "mensaje": "Código duplicado: 10 líneas (72 tokens), igual que en javacard/src/cardcode/tarjeta/TarjetaApplet.java:72",
+      "submodulo": "1.2, 5.1"
+    }
+  ],
+  "justificados": [],
+  "contramedidas": [],
+  "funciones": [
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Limite.java",
+      "linea": 8,
+      "nombre": "Limite(int)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Limite.java",
+      "linea": 12,
+      "nombre": "getMaximo()",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 6,
+      "nombre": "anotar(byte, int)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 1
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 8,
+      "nombre": "copiar(byte[], int)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 1
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Registro.java",
+      "linea": 10,
+      "nombre": "vaciar()",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 1
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 14,
+      "nombre": "anotar(byte, int)",
+      "cognitiva": 1,
+      "ciclomatica": 3,
+      "instrucciones": 8
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 25,
+      "nombre": "copiar(byte[], int)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 4
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/RegistroOperaciones.java",
+      "linea": 31,
+      "nombre": "vaciar()",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Saldo.java",
+      "linea": 8,
+      "nombre": "getValor()",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/Saldo.java",
+      "linea": 12,
+      "nombre": "setValor(int)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 22,
+      "nombre": "install(byte[], short, byte)",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "instrucciones": 2
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 26,
+      "nombre": "process(APDU)",
+      "cognitiva": 31,
+      "ciclomatica": 40,
+      "instrucciones": 83
+    },
+    {
+      "lenguaje": "javacard",
+      "fichero": "javacard/src/cardcode/tarjeta/TarjetaApplet.java",
+      "linea": 136,
+      "nombre": "comprobarPin(byte[])",
+      "cognitiva": 3,
+      "ciclomatica": 6,
+      "instrucciones": 7
+    }
+  ]
+}

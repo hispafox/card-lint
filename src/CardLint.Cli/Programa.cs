@@ -10,7 +10,7 @@ public static class Programa
     public const int GateFalla = 1;
     public const int ErrorDeUso = 2;
 
-    private const string Uso = "Uso: card-lint analizar <carpeta> [--salida <informe.html>]";
+    private const string Uso = "Uso: card-lint analizar <carpeta> [--salida <informe.html>] [--historial <carpeta>]";
     private const string SalidaPorDefecto = "card-lint-informe.html";
 
     /// <param name="herramientas">Dónde están Cppcheck y PMD; si no se da, se buscan.</param>
@@ -24,11 +24,16 @@ public static class Programa
 
         var carpeta = Path.GetFullPath(args[1]);
         var informe = SalidaPorDefecto;
+        string? historial = null;
         for (var i = 2; i < args.Length; i++)
         {
             if (args[i] == "--salida" && i + 1 < args.Length)
             {
                 informe = args[++i];
+            }
+            else if (args[i] == "--historial" && i + 1 < args.Length)
+            {
+                historial = Path.GetFullPath(args[++i]);
             }
             else
             {
@@ -47,9 +52,10 @@ public static class Programa
         informe = Path.GetFullPath(informe);
         var trabajo = Path.Combine(Path.GetDirectoryName(informe)!, $".card-lint-trabajo-{Guid.NewGuid():N}");
         ResultadoAnalisis resultado;
+        Configuracion configuracion;
         try
         {
-            var configuracion = Configuracion.Leer(carpeta);
+            configuracion = Configuracion.Leer(carpeta);
             var (analizadores, notas) = Preparar(herramientas ?? Herramientas.Buscar(), configuracion);
             Directory.CreateDirectory(trabajo);
             resultado = Analisis.Ejecutar(carpeta, configuracion, analizadores, trabajo, notas);
@@ -67,7 +73,15 @@ public static class Programa
             }
         }
 
-        File.WriteAllText(informe, InformeHtml.Generar(resultado, DateTimeOffset.Now));
+        var fecha = DateTimeOffset.Now;
+        File.WriteAllText(informe, InformeHtml.Generar(resultado, fecha));
+        string? json = null;
+        if (historial is not null)
+        {
+            Directory.CreateDirectory(historial);
+            json = Path.Combine(historial, InformeJson.NombreFichero(fecha));
+            File.WriteAllText(json, InformeJson.Generar(resultado, configuracion, fecha));
+        }
 
         foreach (var nota in resultado.Notas ?? [])
         {
@@ -78,6 +92,10 @@ public static class Programa
                          $"contramedidas: {resultado.Contramedidas.Count}");
         salida.WriteLine(resultado.GatePasa ? "Quality gate: pasa." : "Quality gate: no pasa.");
         salida.WriteLine($"Informe: {informe}");
+        if (json is not null)
+        {
+            salida.WriteLine($"Para el cuadro de mando: {json}");
+        }
         return resultado.GatePasa ? GatePasa : GateFalla;
     }
 

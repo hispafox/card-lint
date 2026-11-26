@@ -8,10 +8,29 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
 {
     public static string ConjuntoDeReglas => Path.Combine(AppContext.BaseDirectory, "Reglas", "pmd-javacard.xml");
 
+    // Los umbrales de serie de PMD. PMD avisa desde el propio umbral (una cognitiva de 15 ya avisa), al
+    // contrario que las reglas de C, que avisan cuando se pasa. El conjunto de reglas le pide a PMD que
+    // mida todos los métodos, y aquí se avisa solo de los que llegan.
+    public const int UmbralCognitiva = 15;
+    public const int UmbralCiclomatica = 10;
+    public const int UmbralInstrucciones = 60;
+
+    private static readonly Dictionary<string, int> UmbralesDeSerie = new()
+    {
+        ["CognitiveComplexity"] = UmbralCognitiva,
+        ["CyclomaticComplexity"] = UmbralCiclomatica,
+        ["NcssCount"] = UmbralInstrucciones,
+    };
+
+    private IReadOnlyList<MetricasFuncion> funciones = [];
+
     public string Nombre => "PMD";
+
+    public IReadOnlyList<MetricasFuncion> Funciones => funciones;
 
     public IEnumerable<Aviso> Analizar(string carpeta, string trabajo)
     {
+        funciones = [];
         var fuentes = Path.Combine(carpeta, "javacard", "src");
         if (!Directory.Exists(fuentes))
         {
@@ -29,7 +48,9 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
             throw new InvalidOperationException($"PMD terminó con el código {codigo}: {(error + salida).Trim()}");
         }
 
-        return Leer(File.ReadAllText(xml));
+        var informe = File.ReadAllText(xml);
+        funciones = Medir(informe);
+        return Leer(informe);
     }
 
     /// <summary>Convierte el informe XML de PMD en avisos.</summary>
@@ -46,6 +67,11 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
             {
                 var regla = (string?)violacion.Attribute("rule") ?? "";
                 var original = violacion.Value.Trim();
+                if (UmbralesDeSerie.TryGetValue(regla, out var umbral) && MedidaDeMetodo(original) is { } medida && medida.Valor < umbral)
+                {
+                    continue;
+                }
+
                 var (mensaje, submodulo) = Traducir(regla, original);
                 avisos.Add(new Aviso(
                     $"pmd:{regla}",
@@ -73,6 +99,43 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
         return avisos;
     }
 
+    /// <summary>
+    /// Las métricas de cada método y constructor, del informe de PMD con el conjunto de reglas de card-lint,
+    /// que las pide todas. PMD no da la cognitiva de los métodos sin ninguna ruptura del flujo: es 0.
+    /// </summary>
+    public static IReadOnlyList<MetricasFuncion> Medir(string xml)
+    {
+        var documento = XDocument.Parse(xml);
+        var ns = documento.Root!.Name.Namespace;
+        var funciones = new List<MetricasFuncion>();
+
+        foreach (var fichero in documento.Root.Elements(ns + "file"))
+        {
+            var ruta = Rutas.Normalizar((string?)fichero.Attribute("name") ?? "");
+            var medidas = fichero.Elements(ns + "violation")
+                .Select(v => (Regla: (string?)v.Attribute("rule") ?? "", Linea: (int?)v.Attribute("beginline") ?? 0, Medida: MedidaDeMetodo(v.Value.Trim())))
+                .Where(x => x.Medida is not null && UmbralesDeSerie.ContainsKey(x.Regla))
+                .ToList();
+
+            foreach (var metodo in medidas.GroupBy(x => (x.Linea, x.Medida!.Value.Nombre)))
+            {
+                int? De(string regla) => metodo.FirstOrDefault(x => x.Regla == regla).Medida?.Valor;
+                funciones.Add(new MetricasFuncion(MetricasFuncion.JavaCard, ruta, metodo.Key.Linea, metodo.Key.Nombre,
+                    Cognitiva: De("CognitiveComplexity") ?? 0,
+                    Ciclomatica: De("CyclomaticComplexity"),
+                    Instrucciones: De("NcssCount")));
+            }
+        }
+
+        return funciones;
+    }
+
+    /// <summary>El método y su valor, si el mensaje es la medida de un método o un constructor (no de una clase).</summary>
+    private static (string Nombre, int Valor)? MedidaDeMetodo(string mensaje) =>
+        Medida().Match(mensaje) is { Success: true } m && m.Groups["que"].Value is "method" or "constructor"
+            ? (m.Groups["nombre"].Value, int.Parse(m.Groups["valor"].Value, System.Globalization.CultureInfo.InvariantCulture))
+            : null;
+
     /// <summary>Prioridades de PMD: 1 y 2 son fallo, 3 advertencia, 4 y 5 información.</summary>
     private static Gravedad Gravedad_(int prioridad) => prioridad switch
     {
@@ -86,13 +149,13 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
         var nombre = EntreComillas().Match(original) is { Success: true } m ? m.Groups[1].Value : "";
         var numeros = Numeros().Matches(original).Select(n => n.Value).ToList();
         var primero = numeros.FirstOrDefault() ?? "?";
+        var valor = Medida().Match(original) is { Success: true } medida ? medida.Groups["valor"].Value : primero;
 
         return regla switch
         {
-            "CognitiveComplexity" when numeros.Count >= 2 => ($"Complejidad cognitiva de {nombre}: {numeros[0]} (umbral {numeros[1]})", "1.2"),
-            "CognitiveComplexity" => ($"Complejidad cognitiva de {nombre}: {primero}", "1.2"),
-            "CyclomaticComplexity" => ($"Complejidad ciclomática de {nombre}: {primero}", "1.2"),
-            "NcssCount" => ($"{nombre} tiene {primero} instrucciones (NCSS)", "1.2, 2.2"),
+            "CognitiveComplexity" => ($"Complejidad cognitiva de {nombre}: {valor} (umbral {UmbralCognitiva})", "1.2"),
+            "CyclomaticComplexity" => ($"Complejidad ciclomática de {nombre}: {valor}", "1.2"),
+            "NcssCount" => ($"{nombre} tiene {valor} instrucciones (NCSS)", "1.2, 2.2"),
             "ExcessiveParameterList" => ("Demasiados parámetros", "2.2"),
             "TooManyMethods" => ("La clase tiene demasiados métodos", "4.2"),
             "TooManyFields" => ("La clase tiene demasiados campos", "4.2"),
@@ -120,4 +183,8 @@ public sealed partial class PmdAnalizador(string pmd) : IAnalizador
 
     [GeneratedRegex(@"\d+")]
     private static partial Regex Numeros();
+
+    /// <summary>«The method 'process(APDU)' has a cyclomatic complexity of 26.», o «The class 'X' has a total … of 85».</summary>
+    [GeneratedRegex(@"^The (?<que>\w+) '(?<nombre>[^']+)' has an? .*? of (?<valor>\d+)")]
+    private static partial Regex Medida();
 }

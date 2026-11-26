@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.29.0" timestamp="2026-11-25T19:29:05.240">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.29.0" timestamp="2026-11-25T23:58:53.602">
+<file name="cardcode\tarjeta\Limite.java">
+<violation beginline="8" endline="8" begincolumn="12" endcolumn="18" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Limite" method="Limite" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The constructor 'Limite(short)' has a NCSS line count of 2.
+</violation>
+<violation beginline="8" endline="8" begincolumn="12" endcolumn="18" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Limite" method="Limite" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The constructor 'Limite(short)' has a cyclomatic complexity of 1.
+</violation>
+<violation beginline="12" endline="12" begincolumn="18" endcolumn="27" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Limite" method="getMaximo" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'getMaximo()' has a NCSS line count of 2.
+</violation>
+<violation beginline="12" endline="12" begincolumn="18" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Limite" method="getMaximo" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getMaximo()' has a cyclomatic complexity of 1.
+</violation>
+</file>
+<file name="cardcode\tarjeta\Registro.java">
+<violation beginline="6" endline="6" begincolumn="10" endcolumn="16" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="anotar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'anotar(byte, short)' has a NCSS line count of 1.
+</violation>
+<violation beginline="6" endline="6" begincolumn="10" endcolumn="16" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="anotar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'anotar(byte, short)' has a cyclomatic complexity of 1.
+</violation>
+<violation beginline="8" endline="8" begincolumn="11" endcolumn="17" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="copiar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'copiar(byte[], short)' has a NCSS line count of 1.
+</violation>
+<violation beginline="8" endline="8" begincolumn="11" endcolumn="17" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="copiar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'copiar(byte[], short)' has a cyclomatic complexity of 1.
+</violation>
+<violation beginline="10" endline="10" begincolumn="10" endcolumn="16" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="vaciar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'vaciar()' has a NCSS line count of 1.
+</violation>
+<violation beginline="10" endline="10" begincolumn="10" endcolumn="16" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Registro" method="vaciar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'vaciar()' has a cyclomatic complexity of 1.
+</violation>
+</file>
+<file name="cardcode\tarjeta\RegistroOperaciones.java">
+<violation beginline="15" endline="15" begincolumn="17" endcolumn="23" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="anotar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'anotar(byte, short)' has a NCSS line count of 7.
+</violation>
+<violation beginline="15" endline="15" begincolumn="17" endcolumn="23" rule="CognitiveComplexity" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="anotar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cognitivecomplexity" priority="3">
+The method 'anotar(byte, short)' has a cognitive complexity of 1, current threshold is 1
+</violation>
+<violation beginline="15" endline="15" begincolumn="17" endcolumn="23" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="anotar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'anotar(byte, short)' has a cyclomatic complexity of 2.
+</violation>
+<violation beginline="25" endline="25" begincolumn="18" endcolumn="24" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="copiar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'copiar(byte[], short)' has a NCSS line count of 4.
+</violation>
+<violation beginline="25" endline="25" begincolumn="18" endcolumn="24" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="copiar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'copiar(byte[], short)' has a cyclomatic complexity of 1.
+</violation>
+<violation beginline="31" endline="31" begincolumn="17" endcolumn="23" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="vaciar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'vaciar()' has a NCSS line count of 2.
+</violation>
+<violation beginline="31" endline="31" begincolumn="17" endcolumn="23" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="RegistroOperaciones" method="vaciar" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'vaciar()' has a cyclomatic complexity of 1.
+</violation>
+</file>
+<file name="cardcode\tarjeta\Saldo.java">
+<violation beginline="8" endline="8" begincolumn="18" endcolumn="26" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Saldo" method="getValor" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'getValor()' has a NCSS line count of 2.
+</violation>
+<violation beginline="8" endline="8" begincolumn="18" endcolumn="26" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Saldo" method="getValor" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getValor()' has a cyclomatic complexity of 1.
+</violation>
+<violation beginline="12" endline="12" begincolumn="17" endcolumn="25" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="Saldo" method="setValor" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'setValor(short)' has a NCSS line count of 2.
+</violation>
+<violation beginline="12" endline="12" begincolumn="17" endcolumn="25" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="Saldo" method="setValor" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'setValor(short)' has a cyclomatic complexity of 1.
+</violation>
+</file>
 <file name="cardcode\tarjeta\TarjetaApplet.java">
+<violation beginline="24" endline="24" begincolumn="24" endcolumn="31" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="install" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'install(byte[], short, byte)' has a NCSS line count of 2.
+</violation>
+<violation beginline="24" endline="24" begincolumn="24" endcolumn="31" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="install" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'install(byte[], short, byte)' has a cyclomatic complexity of 1.
+</violation>
 <violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
 The method 'process(APDU)' has a NCSS line count of 77.
 </violation>
 <violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="CognitiveComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cognitivecomplexity" priority="3">
-The method 'process(APDU)' has a cognitive complexity of 31, current threshold is 15
+The method 'process(APDU)' has a cognitive complexity of 31, current threshold is 1
 </violation>
 <violation beginline="28" endline="28" begincolumn="17" endcolumn="24" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="process" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
 The method 'process(APDU)' has a cyclomatic complexity of 26.
+</violation>
+<violation beginline="133" endline="133" begincolumn="18" endcolumn="30" rule="NcssCount" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="comprobarPin" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'comprobarPin()' has a NCSS line count of 7.
+</violation>
+<violation beginline="133" endline="133" begincolumn="18" endcolumn="30" rule="CognitiveComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="comprobarPin" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cognitivecomplexity" priority="3">
+The method 'comprobarPin()' has a cognitive complexity of 3, current threshold is 1
+</violation>
+<violation beginline="133" endline="133" begincolumn="18" endcolumn="30" rule="CyclomaticComplexity" ruleset="Design" package="cardcode.tarjeta" class="TarjetaApplet" method="comprobarPin" externalInfoUrl="https://docs.pmd-code.org/snapshot/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'comprobarPin()' has a cyclomatic complexity of 4.
 </violation>
 </file>
 </pmd>

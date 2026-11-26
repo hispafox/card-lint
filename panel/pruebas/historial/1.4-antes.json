@@ -1,0 +1,819 @@
+{
+  "formato": 1,
+  "fecha": "2026-11-25T10:00:00+01:00",
+  "carpeta": "F:/proyectos/card-code/1.4",
+  "gate": "pasa",
+  "configuracion": {
+    "gravedadQueFalla": "Fallo",
+    "minimoTokensDuplicado": 50,
+    "umbrales": {
+      "cognitiva": 15,
+      "ciclomatica": 10,
+      "lineasFuncion": 40,
+      "parametros": 5,
+      "funcionesModulo": 20,
+      "lineasModulo": 400
+    }
+  },
+  "umbralesJavaCard": {
+    "cognitiva": 15,
+    "ciclomatica": 10,
+    "instrucciones": 60
+  },
+  "analizadores": [
+    "Cppcheck y reglas de C",
+    "PMD",
+    "CPD"
+  ],
+  "notas": [],
+  "avisos": [
+    {
+      "regla": "cppcheck:constParameterPointer",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 28,
+      "mensaje": "Parámetro puntero que podría apuntar a const",
+      "submodulo": "3.3",
+      "detalle": "Parameter 'b' can be declared as pointer to const"
+    },
+    {
+      "regla": "cppcheck:constParameterPointer",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "Parámetro puntero que podría apuntar a const",
+      "submodulo": "3.3",
+      "detalle": "Parameter 'b' can be declared as pointer to const"
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 130,
+      "mensaje": "Función que solo usan las pruebas: comando_procesar",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'comando_procesar' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/memoria.c",
+      "linea": 10,
+      "mensaje": "Función que solo usan las pruebas: memoria_formatear",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_formatear' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/memoria.c",
+      "linea": 36,
+      "mensaje": "Función sin usar: memoria_escribir_byte",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_escribir_byte' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/memoria.c",
+      "linea": 45,
+      "mensaje": "Función sin usar: memoria_leer_byte",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_leer_byte' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/memoria.c",
+      "linea": 53,
+      "mensaje": "Función sin usar: memoria_simular_fallo",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_simular_fallo' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/pin.c",
+      "linea": 7,
+      "mensaje": "Función que solo usan las pruebas: pin_personalizar",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'pin_personalizar' is never used."
+    },
+    {
+      "regla": "cppcheck:staticFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 28,
+      "mensaje": "Función que no sale del fichero y podría ser static",
+      "submodulo": "2.2",
+      "detalle": "The function 'chk' should have static linkage since it is not used outside of its translation unit."
+    },
+    {
+      "regla": "cppcheck:staticFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "Función que no sale del fichero y podría ser static",
+      "submodulo": "2.2",
+      "detalle": "The function 'proc' should have static linkage since it is not used outside of its translation unit."
+    },
+    {
+      "regla": "c:complejidad-cognitiva",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "Complejidad cognitiva de proc: 45 (umbral 15)",
+      "submodulo": "1.2"
+    },
+    {
+      "regla": "c:complejidad-ciclomatica",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "Complejidad ciclomática de proc: 18 (umbral 10)",
+      "submodulo": "1.2"
+    },
+    {
+      "regla": "c:funcion-larga",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "proc tiene 84 líneas de código (umbral 40)",
+      "submodulo": "1.2, 2.2, 5.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 28,
+      "mensaje": "La función chk sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "mensaje": "La función proc sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 12,
+      "mensaje": "La variable global tmp2 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 16,
+      "mensaje": "La variable global imp sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 7,
+      "mensaje": "La variable global buf2 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 11,
+      "mensaje": "La variable global tmp sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 23,
+      "mensaje": "La variable global buf3 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 25,
+      "mensaje": "La variable global aux sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 10,
+      "mensaje": "La variable global n2 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 26,
+      "mensaje": "La variable global modo sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 24,
+      "mensaje": "La variable global res sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 8,
+      "mensaje": "La variable global resp sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 13,
+      "mensaje": "La variable global cnt sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 22,
+      "mensaje": "La variable global flag3 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 15,
+      "mensaje": "La variable global saldo sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 14,
+      "mensaje": "La variable global ok sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 17,
+      "mensaje": "La variable global sw sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:sin-prefijo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 9,
+      "mensaje": "La variable global flag2 sale del fichero y no lleva el prefijo de su módulo",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 32,
+      "mensaje": "Número escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 35,
+      "mensaje": "Número escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 36,
+      "mensaje": "Número escrito a pelo: 0x10. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 46,
+      "mensaje": "Número escrito a pelo: 0x9000. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 48,
+      "mensaje": "Número escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 51,
+      "mensaje": "Número escrito a pelo: 0x20. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 53,
+      "mensaje": "Número escrito a pelo: 16. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 54,
+      "mensaje": "Número escrito a pelo: 0x6700. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 56,
+      "mensaje": "Número escrito a pelo: 5. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 57,
+      "mensaje": "Número escrito a pelo: 0x20. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 59,
+      "mensaje": "Número escrito a pelo: 0x6983. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 61,
+      "mensaje": "Número escrito a pelo: 0x20. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 65,
+      "mensaje": "Número escrito a pelo: 0x20, 3. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 68,
+      "mensaje": "Número escrito a pelo: 0x6300. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 72,
+      "mensaje": "Número escrito a pelo: 0x30. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 74,
+      "mensaje": "Número escrito a pelo: 16. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 75,
+      "mensaje": "Número escrito a pelo: 0x6700. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 77,
+      "mensaje": "Número escrito a pelo: 5. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 79,
+      "mensaje": "Número escrito a pelo: 0x6982. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 80,
+      "mensaje": "Número escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 81,
+      "mensaje": "Número escrito a pelo: 0x6A80. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 83,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 84,
+      "mensaje": "Número escrito a pelo: 0x0040, 8, 0x0041. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 86,
+      "mensaje": "Número escrito a pelo: 0x6985. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 89,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 90,
+      "mensaje": "Número escrito a pelo: 0xFF. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 91,
+      "mensaje": "Número escrito a pelo: 0x0040. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 92,
+      "mensaje": "Número escrito a pelo: 0x0041. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 96,
+      "mensaje": "Número escrito a pelo: 0x32. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 98,
+      "mensaje": "Número escrito a pelo: 16. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 99,
+      "mensaje": "Número escrito a pelo: 0x6700. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 101,
+      "mensaje": "Número escrito a pelo: 5. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 102,
+      "mensaje": "Número escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 103,
+      "mensaje": "Número escrito a pelo: 0x6A80. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 105,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 106,
+      "mensaje": "Número escrito a pelo: 0x0040, 8, 0x0041. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 107,
+      "mensaje": "Número escrito a pelo: 0xFFFF. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 108,
+      "mensaje": "Número escrito a pelo: 0x6A80. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 111,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 112,
+      "mensaje": "Número escrito a pelo: 0xFF. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 113,
+      "mensaje": "Número escrito a pelo: 0x0040. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 114,
+      "mensaje": "Número escrito a pelo: 0x0041. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 119,
+      "mensaje": "Número escrito a pelo: 0x6D00. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 123,
+      "mensaje": "Número escrito a pelo: 0x9000. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 126,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 127,
+      "mensaje": "Número escrito a pelo: 0xFF. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comandos.c",
+      "linea": 133,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/pin.c",
+      "linea": 10,
+      "mensaje": "Número escrito a pelo: 0x0010u. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/pin.c",
+      "linea": 12,
+      "mensaje": "Número escrito a pelo: 0x0020u. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:global-de-otro-modulo",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/pin.c",
+      "linea": 5,
+      "mensaje": "La variable global flag2 de otro módulo se declara con extern dentro de un .c",
+      "submodulo": "2.3"
+    },
+    {
+      "regla": "cpd:duplicado",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 80,
+      "mensaje": "Código duplicado: 6 líneas (58 tokens), igual que en c/src/comandos.c:102",
+      "submodulo": "1.2, 5.1"
+    },
+    {
+      "regla": "cpd:duplicado",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/comandos.c",
+      "linea": 102,
+      "mensaje": "Código duplicado: 6 líneas (58 tokens), igual que en c/src/comandos.c:80",
+      "submodulo": "1.2, 5.1"
+    }
+  ],
+  "justificados": [],
+  "contramedidas": [],
+  "funciones": [
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comandos.c",
+      "linea": 28,
+      "nombre": "chk",
+      "cognitiva": 4,
+      "ciclomatica": 4,
+      "lineas": 13,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comandos.c",
+      "linea": 43,
+      "nombre": "proc",
+      "cognitiva": 45,
+      "ciclomatica": 18,
+      "lineas": 84,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comandos.c",
+      "linea": 130,
+      "nombre": "comando_procesar",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 5,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 10,
+      "nombre": "memoria_formatear",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 5,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 16,
+      "nombre": "mem_leer",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 7,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 24,
+      "nombre": "mem_escribir",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 6,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 31,
+      "nombre": "direccion_registro",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 36,
+      "nombre": "memoria_escribir_byte",
+      "cognitiva": 2,
+      "ciclomatica": 4,
+      "lineas": 8,
+      "parametros": 3
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 45,
+      "nombre": "memoria_leer_byte",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 7,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 53,
+      "nombre": "memoria_simular_fallo",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 7,
+      "nombre": "pin_personalizar",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 8,
+      "parametros": 1
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 # Deja en una carpeta todo lo que hay que llevar al equipo del cliente para usar card-lint sin conexión:
-# el ejecutable, Cppcheck (solo la línea de comandos), PMD y las licencias.
+# el ejecutable, Cppcheck (solo la línea de comandos), PMD, el cuadro de mando y las licencias.
 #
 #   .\publicar.ps1                      # autocontenido: el equipo de destino no necesita .NET
 #   .\publicar.ps1 -Autocontenido:$false   # necesita .NET 10 instalado en el destino
 #
-# Los paquetes de NuGet que haga falta descargar van a .paquetes\, dentro del repositorio.
+# Los paquetes de NuGet que haga falta descargar van a .paquetes\, dentro del repositorio, y los de npm
+# del cuadro de mando, a panel\node_modules\, con su caché en .npm-cache\ (lo dice panel\.npmrc).
 
 param(
     [string]$Salida = (Join-Path $PSScriptRoot 'publicacion'),
@@ -51,5 +52,26 @@ New-Item -ItemType Directory -Force $licencias | Out-Null
 Copy-Item (Join-Path $origen 'GPLv3.txt') (Join-Path $licencias 'cppcheck-GPLv3.txt')
 Copy-Item (Join-Path $pmd.FullName 'LICENSE') (Join-Path $licencias "$($pmd.Name)-LICENSE.txt")
 Copy-Item (Join-Path $PSScriptRoot 'docs\licencias-herramientas.md') (Join-Path $licencias 'LEEME.md')
+
+# 5. El cuadro de mando: un solo HTML que se abre sin servidor. Necesita Node.js en el equipo que publica,
+#    no en el de destino.
+$panel = Join-Path $PSScriptRoot 'panel'
+Push-Location $panel
+try {
+    if (-not (Test-Path 'node_modules')) {
+        & npm ci
+        if ($LASTEXITCODE -ne 0) {
+            throw "npm ci terminó con el código $LASTEXITCODE."
+        }
+    }
+    & npm run build
+    if ($LASTEXITCODE -ne 0) {
+        throw "La compilación del cuadro de mando terminó con el código $LASTEXITCODE."
+    }
+}
+finally {
+    Pop-Location
+}
+Copy-Item (Join-Path $panel 'dist\index.html') (Join-Path $Salida 'cuadro-de-mando.html')
 
 Write-Host "Publicado en $Salida"

@@ -58,10 +58,15 @@ public sealed partial class CppcheckAnalizador(string cppcheck, Umbrales? umbral
     /// <summary>Los de código muerto suben a advertencia aunque Cppcheck los dé como estilo.</summary>
     private static readonly HashSet<string> CodigoMuerto = ["unusedFunction", "unusedVariable", "unreadVariable", "unusedStructMember"];
 
+    private IReadOnlyList<MetricasFuncion> funciones = [];
+
     public string Nombre => "Cppcheck y reglas de C";
+
+    public IReadOnlyList<MetricasFuncion> Funciones => funciones;
 
     public IEnumerable<Aviso> Analizar(string carpeta, string trabajo)
     {
+        funciones = [];
         var origen = Path.Combine(carpeta, Codigo);
         if (!Directory.Exists(origen))
         {
@@ -99,6 +104,7 @@ public sealed partial class CppcheckAnalizador(string cppcheck, Umbrales? umbral
             .Select(d => C.VolcadoC.Leer(File.ReadAllText(d), Path.GetRelativePath(trabajo, d[..^".dump".Length])))
             .ToList();
         avisos.AddRange(C.ReglasC.Analizar(volcados, umbrales ?? new Umbrales()));
+        funciones = C.ReglasC.Medir(volcados);
         return avisos;
     }
 

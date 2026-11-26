@@ -153,3 +153,27 @@ La primera versión quedó hecha el 25-11-2026, con 70 pruebas en verde. Estas s
 - **Las reglas propias de Java Card van en XPath** dentro de `Reglas/pmd-javacard.xml`. La lista larga de llamadas encadenadas tiene la suya, y el campo que solo usa un método lo da `SingularField`, de PMD.
 - **El informe lleva un resumen por regla** antes de la lista de avisos, y debajo de cada mensaje, en pequeño, el original de la herramienta.
 - **La publicación la hace `publicar.ps1`.** Copia de Cppcheck solo la línea de comandos, sin la interfaz gráfica.
+
+## El historial para el cuadro de mando
+
+Desde el 26-11-2026, `--historial <carpeta>` deja además un JSON por análisis en esa carpeta, con la fecha y la hora en el nombre (`card-lint-20261126-093000.json`) para que se ordenen solos. Si se lanza siempre con la misma carpeta, va formando la serie que pinta el cuadro de mando.
+
+```powershell
+card-lint analizar <carpeta> --salida informe.html --historial historial
+```
+
+El JSON lleva lo mismo que el informe HTML (los avisos, los justificados, las contramedidas y el gate) y dos cosas que el HTML no tiene. Una es la configuración con la que se hizo el análisis, escrita con los nombres de `card-lint.json`: copiada a la carpeta analizada, card-lint la lee tal cual. La otra son las métricas de todas las funciones, también las que no llegan a ningún umbral, porque el cuadro de mando las necesita para recalcular los avisos cuando se mueve un umbral. La clave `formato` sube cuando cambia la forma del fichero.
+
+En C las métricas ya se calculaban todas. En Java Card, PMD solo da las que llegan a su umbral, así que el conjunto de reglas le pone el umbral a 1 en `CognitiveComplexity`, `CyclomaticComplexity` y `NcssCount`, y card-lint avisa solo de las que llegan a los de serie (15, 10 y 60). Con los 44 análisis de card-code, el antes y el después de las 22 ramas, los avisos salen idénticos a los de antes del cambio.
+
+Hay una diferencia que el cuadro de mando tiene que respetar. PMD avisa desde el propio umbral, de modo que en Java Card una cognitiva de 15 ya avisa, mientras que las reglas de C avisan cuando se pasa, y ahí hace falta un 16. Por eso el JSON lleva aparte los umbrales de Java Card, que no se configuran.
+
+## El cuadro de mando
+
+Vive en `panel/`: React y Vite, compilado a un solo HTML con el JavaScript y el CSS dentro. Chrome no carga módulos desde `file://`, y el panel tiene que abrirse como el informe, sin servidor y sin conexión. `publicar.ps1` lo deja en la entrega como `cuadro-de-mando.html`.
+
+Se le abre la carpeta del historial, o se suelta encima, y agrupa los JSON por la carpeta analizada. De cada proyecto enseña el último análisis: las cifras con la diferencia frente al anterior, una columna por análisis con el gate encima, los avisos por regla o por submódulo, los ficheros donde se concentran, las funciones que pasan sus umbrales y la tabla de avisos, que se filtra pulsando en los gráficos. Los ficheros se leen en el navegador y no salen del equipo.
+
+La configuración se prueba en vivo. Los cuatro umbrales de las funciones de C y la gravedad que hace fallar el gate se recalculan con las métricas del JSON, con los mismos mensajes que card-lint. Lo demás (CPD, el tamaño de los módulos, Java Card) se queda como se analizó, y el panel lo pone aparte, bajo «se aplica al volver a analizar». Cuando la configuración convence, se descarga el `card-lint.json`.
+
+Todo eso se sostiene en una prueba: con la configuración de cada análisis, el panel tiene que recalcular los mismos avisos, los mismos justificados y el mismo gate que dio card-lint. Pasa con los cinco análisis reales de `panel/pruebas/historial` y, apuntando `CARDLINT_HISTORIAL` a otra carpeta, con los 44 de card-code.

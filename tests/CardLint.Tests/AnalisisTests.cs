@@ -75,6 +75,20 @@ public class AnalisisTests
         Assert.Equal("c/include/seguridad.h", Assert.Single(r.Contramedidas).Fichero);
         Assert.Equal(["una nota"], r.Notas);
     }
+
+    [Fact]
+    public void Junta_las_metricas_de_todos_los_analizadores_que_miden()
+    {
+        using var carpeta = new CarpetaTemporal();
+        using var trabajo = new CarpetaTemporal();
+        var deC = new MetricasFuncion(MetricasFuncion.C, "c/src/a.c", 3, "a_leer", 1, 2, 10, 1);
+        var deJava = new MetricasFuncion(MetricasFuncion.JavaCard, "javacard/src/A.java", 9, "process(APDU)", 31, 40, Instrucciones: 83);
+
+        var r = Analisis.Ejecutar(carpeta.Ruta, new Configuracion(),
+            [new AnalizadorQueMide(deC), new AnalizadorFijo(), new AnalizadorQueMide(deJava)], trabajo.Ruta);
+
+        Assert.Equal([deC, deJava], r.Funciones);
+    }
 }
 
 public class ConfiguracionTests

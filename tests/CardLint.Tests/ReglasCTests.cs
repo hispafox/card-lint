@@ -30,6 +30,21 @@ public class ReglasCTests
     }
 
     [Fact]
+    public void Mide_todas_las_funciones_aunque_no_pasen_de_los_umbrales()
+    {
+        var funciones = ReglasC.Medir([Volcado]);
+
+        Assert.Equal(Volcado.FuncionesDefinidas().Count(), funciones.Count);
+        var f = Assert.Single(funciones, x => x.Nombre == "reglas_cognitiva");
+        Assert.Equal((MetricasFuncion.C, "c/src/reglas.c", Linea("int reglas_cognitiva("), 13, 8, 2, null),
+            (f.Lenguaje, f.Fichero, f.Linea, f.Cognitiva, f.Ciclomatica, f.Parametros, f.Instrucciones));
+        Assert.True(f.Lineas > 0);
+
+        // Con 13 no llega al umbral de serie (15): se mide, pero no avisa.
+        Assert.DoesNotContain(De("c:complejidad-cognitiva"), a => a.Mensaje.Contains("reglas_cognitiva"));
+    }
+
+    [Fact]
     public void Las_macros_con_parametros_avisan_salvo_las_de_sizeof()
     {
         var macro = Assert.Single(De("c:macro-con-parametros"));

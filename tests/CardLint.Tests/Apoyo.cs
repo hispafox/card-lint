@@ -37,6 +37,16 @@ internal sealed class AnalizadorFijo(params Aviso[] avisos) : IAnalizador
     public IEnumerable<Aviso> Analizar(string carpeta, string trabajo) => avisos;
 }
 
+/// <summary>Un analizador de mentira que no avisa de nada y da las métricas que se le dan.</summary>
+internal sealed class AnalizadorQueMide(params MetricasFuncion[] funciones) : IAnalizador
+{
+    public string Nombre => "mide";
+
+    public IEnumerable<Aviso> Analizar(string carpeta, string trabajo) => [];
+
+    public IReadOnlyList<MetricasFuncion> Funciones => funciones;
+}
+
 /// <summary>Las salidas reales de las herramientas guardadas en <c>datos/</c>.</summary>
 internal static class Datos
 {

@@ -49,6 +49,63 @@ public class LectoresTests
     }
 
     [Fact]
+    public void Pmd_mide_todos_los_metodos_aunque_no_lleguen_al_umbral()
+    {
+        var funciones = PmdAnalizador.Medir(Datos.Leer("pmd-4.2-antes.xml"));
+
+        Assert.Equal(13, funciones.Count);
+        Assert.All(funciones, f => Assert.Equal((MetricasFuncion.JavaCard, null, null), (f.Lenguaje, f.Lineas, f.Parametros)));
+        var process = Assert.Single(funciones, f => f.Nombre == "process(APDU)");
+        Assert.Equal(("cardcode/tarjeta/TarjetaApplet.java", 28, 31, 26, 77),
+            (process.Fichero, process.Linea, process.Cognitiva, process.Ciclomatica, process.Instrucciones));
+
+        // PMD no da la cognitiva de un método sin rupturas del flujo: es 0.
+        var constructor = Assert.Single(funciones, f => f.Nombre == "Limite(short)");
+        Assert.Equal((0, 1, 2), (constructor.Cognitiva, constructor.Ciclomatica, constructor.Instrucciones));
+    }
+
+    [Fact]
+    public void Pmd_avisa_desde_el_umbral_de_serie_y_no_confunde_los_numeros_del_nombre()
+    {
+        // Mensajes reales de PMD 7.29 con el umbral a 1, en la frontera de cada umbral de serie.
+        var xml = InformePmd(
+            ("CyclomaticComplexity", "The method 'paso2(short)' has a cyclomatic complexity of 9."),
+            ("CyclomaticComplexity", "The method 'paso3(short)' has a cyclomatic complexity of 10."),
+            ("CognitiveComplexity", "The method 'cuenta4(short)' has a cognitive complexity of 14, current threshold is 1"),
+            ("CognitiveComplexity", "The method 'cuenta5(short)' has a cognitive complexity of 15, current threshold is 1"),
+            ("NcssCount", "The method 'suma6(short)' has a NCSS line count of 59."),
+            ("NcssCount", "The method 'suma7(short)' has a NCSS line count of 60."),
+            ("CyclomaticComplexity", "The class 'Frontera' has a total cyclomatic complexity of 82 (highest 17)."));
+
+        var avisos = PmdAnalizador.Leer(xml);
+        var funciones = PmdAnalizador.Medir(xml);
+
+        Assert.Equal(
+        [
+            "Complejidad ciclomática de paso3(short): 10",
+            "Complejidad cognitiva de cuenta5(short): 15 (umbral 15)",
+            "suma7(short) tiene 60 instrucciones (NCSS)",
+            "Complejidad ciclomática de Frontera: 82",
+        ], avisos.Select(a => a.Mensaje));
+        Assert.Equal(["paso2(short)", "paso3(short)", "cuenta4(short)", "cuenta5(short)", "suma6(short)", "suma7(short)"], funciones.Select(f => f.Nombre));
+    }
+
+    /// <summary>Un informe de PMD con un fichero y una violación por línea, en el orden en que se dan.</summary>
+    private static string InformePmd(params (string Regla, string Mensaje)[] violaciones)
+    {
+        var filas = violaciones.Select((v, i) =>
+            $"<violation beginline=\"{i + 1}\" endline=\"{i + 1}\" rule=\"{v.Regla}\" ruleset=\"Design\" priority=\"3\">{v.Mensaje}</violation>");
+        return $"""
+            <?xml version="1.0" encoding="UTF-8"?>
+            <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" version="7.29.0">
+            <file name="p\Frontera.java">
+            {string.Join('\n', filas)}
+            </file>
+            </pmd>
+            """;
+    }
+
+    [Fact]
     public void Cpd_da_un_aviso_por_aparicion_con_la_otra_al_lado()
     {
         const string carpeta = @"F:\w\repos\card-lint\herramientas\_muestras\submodulo-5.1\antes";

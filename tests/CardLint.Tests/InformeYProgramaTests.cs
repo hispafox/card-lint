@@ -128,4 +128,31 @@ public class ProgramaTests
         Assert.Contains("canal lateral", File.ReadAllText(informe));
         Assert.Equal([informe], Directory.GetFileSystemEntries(salidaInforme.Ruta));
     }
+
+    [Fact]
+    public void Con_historial_deja_el_json_del_analisis_en_esa_carpeta()
+    {
+        using var carpeta = new CarpetaTemporal();
+        using var salidas = new CarpetaTemporal();
+        carpeta.Escribir("c/src/seguridad.c", "/* CONTRAMEDIDA (canal lateral): x */\nint a;\n");
+        var historial = Path.Combine(salidas.Ruta, "historial", "card-code");
+        var salida = new StringWriter();
+
+        var codigo = Programa.Ejecutar(["analizar", carpeta.Ruta, "--salida", Path.Combine(salidas.Ruta, "i.html"), "--historial", historial],
+            salida, TextWriter.Null, Ninguna);
+
+        Assert.Equal(Programa.GatePasa, codigo);
+        var json = Assert.Single(Directory.GetFiles(historial));
+        Assert.Matches(@"card-lint-\d{8}-\d{6}\.json$", json);
+        Assert.Contains("canal lateral", File.ReadAllText(json));
+        Assert.Contains($"Para el cuadro de mando: {json}", salida.ToString());
+    }
+
+    [Fact]
+    public void Historial_sin_carpeta_es_error_de_uso()
+    {
+        using var carpeta = new CarpetaTemporal();
+
+        Assert.Equal(Programa.ErrorDeUso, Programa.Ejecutar(["analizar", carpeta.Ruta, "--historial"], TextWriter.Null, TextWriter.Null, Ninguna));
+    }
 }

@@ -487,3 +487,7 @@ herramientas/
 # Publicación y paquetes de NuGet locales
 publicacion/
 .paquetes/
+
+# Cuadro de mando: dependencias, caché de npm en F: y compilación
+panel/dist/
+.npm-cache/

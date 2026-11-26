@@ -1,0 +1,950 @@
+{
+  "formato": 1,
+  "fecha": "2026-11-25T10:00:00+01:00",
+  "carpeta": "F:/proyectos/card-code/3.5",
+  "gate": "pasa",
+  "configuracion": {
+    "gravedadQueFalla": "Fallo",
+    "minimoTokensDuplicado": 50,
+    "umbrales": {
+      "cognitiva": 15,
+      "ciclomatica": 10,
+      "lineasFuncion": 40,
+      "parametros": 5,
+      "funcionesModulo": 20,
+      "lineasModulo": 400
+    }
+  },
+  "umbralesJavaCard": {
+    "cognitiva": 15,
+    "ciclomatica": 10,
+    "instrucciones": 60
+  },
+  "analizadores": [
+    "Cppcheck y reglas de C",
+    "PMD",
+    "CPD"
+  ],
+  "notas": [],
+  "avisos": [
+    {
+      "regla": "cppcheck:variableScope",
+      "gravedad": "Informacion",
+      "fichero": "c/src/pin.c",
+      "linea": 39,
+      "mensaje": "El ámbito de la variable se puede reducir",
+      "detalle": "The scope of the variable 'pin_guardado' can be reduced."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/include/utilidades.h",
+      "linea": 16,
+      "mensaje": "Función que solo usan las pruebas: util_minimo",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'util_minimo' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comando.c",
+      "linea": 336,
+      "mensaje": "Función que solo usan las pruebas: comando_procesar",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'comando_procesar' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/comando.c",
+      "linea": 358,
+      "mensaje": "Función que solo usan las pruebas: comando_ultima_respuesta",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'comando_ultima_respuesta' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 5,
+      "mensaje": "Función que solo usan las pruebas: sumar_cien",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'sumar_cien' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 13,
+      "mensaje": "Función que solo usan las pruebas: leer_primero",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'leer_primero' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/memoria.c",
+      "linea": 19,
+      "mensaje": "Función que solo usan las pruebas: memoria_inicializar",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_inicializar' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/memoria.c",
+      "linea": 82,
+      "mensaje": "Función que solo usan las pruebas: memoria_fallar_siguiente_escritura",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_fallar_siguiente_escritura' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/memoria.c",
+      "linea": 87,
+      "mensaje": "Función que solo usan las pruebas: memoria_fallar_escritura_en",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_fallar_escritura_en' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/memoria.c",
+      "linea": 92,
+      "mensaje": "Función que solo usan las pruebas: memoria_huella",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'memoria_huella' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 95,
+      "mensaje": "Función que solo usan las pruebas: registro_contar",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'registro_contar' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/utilidades.c",
+      "linea": 14,
+      "mensaje": "Función que solo usan las pruebas: util_fallos",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'util_fallos' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Advertencia",
+      "fichero": "c/src/utilidades.c",
+      "linea": 19,
+      "mensaje": "Función sin usar: util_ultimo_fallo_linea",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'util_ultimo_fallo_linea' is never used."
+    },
+    {
+      "regla": "cppcheck:unusedFunction",
+      "gravedad": "Informacion",
+      "fichero": "c/src/utilidades.c",
+      "linea": 24,
+      "mensaje": "Función que solo usan las pruebas: util_reiniciar_fallos",
+      "submodulo": "olor: código muerto",
+      "detalle": "The function 'util_reiniciar_fallos' is never used."
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/crc.c",
+      "linea": 44,
+      "mensaje": "Número escrito a pelo: 0xFFFFu. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/crc.c",
+      "linea": 47,
+      "mensaje": "Número escrito a pelo: 8. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 7,
+      "mensaje": "Número escrito a pelo: 100. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 10,
+      "mensaje": "Número escrito a pelo: 100. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:campo-temporal",
+      "gravedad": "Informacion",
+      "fichero": "c/src/operaciones.c",
+      "linea": 9,
+      "mensaje": "La variable operaciones_totales es de todo el fichero, pero solo la usa operaciones_contar: puede ser una variable static dentro de esa función",
+      "submodulo": "olor: campo temporal"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 24,
+      "mensaje": "Número escrito a pelo: 3. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 41,
+      "mensaje": "Número escrito a pelo: 2u. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 47,
+      "mensaje": "Número escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 48,
+      "mensaje": "Número escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 60,
+      "mensaje": "Número escrito a pelo: 2u. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 69,
+      "mensaje": "Número escrito a pelo: 2. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 70,
+      "mensaje": "Número escrito a pelo: 4. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    },
+    {
+      "regla": "c:numero-magico",
+      "gravedad": "Informacion",
+      "fichero": "c/src/registro.c",
+      "linea": 83,
+      "mensaje": "Número escrito a pelo: 3. Dale un nombre con un enum, un static const o un #define",
+      "submodulo": "2.1"
+    }
+  ],
+  "justificados": [
+    {
+      "aviso": {
+        "regla": "cppcheck:identicalConditionAfterEarlyExit",
+        "gravedad": "Advertencia",
+        "fichero": "c/src/comando.c",
+        "linea": 125,
+        "mensaje": "Condición repetida: si es a propósito, márcala como CONTRAMEDIDA",
+        "submodulo": "3.5",
+        "detalle": "Identical condition 'resultado!=0xA5C3u', second condition is always false"
+      },
+      "contramedida": {
+        "fichero": "c/src/comando.c",
+        "lineaComentario": 123,
+        "desde": 125,
+        "hasta": 128,
+        "motivo": "fallos provocados"
+      }
+    },
+    {
+      "aviso": {
+        "regla": "c:numero-magico",
+        "gravedad": "Informacion",
+        "fichero": "c/src/pin.c",
+        "linea": 79,
+        "mensaje": "Número escrito a pelo: 0xFFu. Dale un nombre con un enum, un static const o un #define",
+        "submodulo": "2.1"
+      },
+      "contramedida": {
+        "fichero": "c/src/pin.c",
+        "lineaComentario": 68,
+        "desde": 73,
+        "hasta": 85,
+        "motivo": "canal lateral"
+      }
+    }
+  ],
+  "contramedidas": [
+    {
+      "fichero": "c/include/seguridad.h",
+      "lineaComentario": 13,
+      "desde": 18,
+      "hasta": 18,
+      "motivo": "fallos provocados"
+    },
+    {
+      "fichero": "c/include/seguridad.h",
+      "lineaComentario": 20,
+      "desde": 21,
+      "hasta": 21,
+      "motivo": "canal lateral"
+    },
+    {
+      "fichero": "c/include/seguridad.h",
+      "lineaComentario": 23,
+      "desde": 24,
+      "hasta": 24,
+      "motivo": "datos sensibles en memoria"
+    },
+    {
+      "fichero": "c/src/comando.c",
+      "lineaComentario": 123,
+      "desde": 125,
+      "hasta": 128,
+      "motivo": "fallos provocados"
+    },
+    {
+      "fichero": "c/src/pin.c",
+      "lineaComentario": 68,
+      "desde": 73,
+      "hasta": 85,
+      "motivo": "canal lateral"
+    },
+    {
+      "fichero": "c/src/seguridad.c",
+      "lineaComentario": 5,
+      "desde": 6,
+      "hasta": 14,
+      "motivo": "canal lateral"
+    },
+    {
+      "fichero": "c/src/seguridad.c",
+      "lineaComentario": 16,
+      "desde": 17,
+      "hasta": 24,
+      "motivo": "datos sensibles en memoria"
+    }
+  ],
+  "funciones": [
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 55,
+      "nombre": "comando_respuesta_vaciar",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 60,
+      "nombre": "comando_respuesta_tomar",
+      "cognitiva": 3,
+      "ciclomatica": 3,
+      "lineas": 11,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 72,
+      "nombre": "comando_respuesta_soltar",
+      "cognitiva": 3,
+      "ciclomatica": 3,
+      "lineas": 8,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 82,
+      "nombre": "comando_anadir",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 8,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 93,
+      "nombre": "comando_sw_de",
+      "cognitiva": 1,
+      "ciclomatica": 4,
+      "lineas": 9,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 103,
+      "nombre": "comando_verificar_pin",
+      "cognitiva": 5,
+      "ciclomatica": 6,
+      "lineas": 25,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 132,
+      "nombre": "comando_cambiar_pin",
+      "cognitiva": 6,
+      "ciclomatica": 5,
+      "lineas": 29,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 165,
+      "nombre": "comando_pagar",
+      "cognitiva": 7,
+      "ciclomatica": 8,
+      "lineas": 31,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 198,
+      "nombre": "comando_recargar",
+      "cognitiva": 5,
+      "ciclomatica": 6,
+      "lineas": 24,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 225,
+      "nombre": "comando_consultar",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 17,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 257,
+      "nombre": "comando_leer_campo",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 11,
+      "parametros": 3
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 270,
+      "nombre": "comando_leer_personalizacion",
+      "cognitiva": 3,
+      "ciclomatica": 4,
+      "lineas": 13,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 286,
+      "nombre": "comando_leer_datos",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 7,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 296,
+      "nombre": "comando_personalizar",
+      "cognitiva": 5,
+      "ciclomatica": 6,
+      "lineas": 24,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 322,
+      "nombre": "comando_despachar",
+      "cognitiva": 1,
+      "ciclomatica": 8,
+      "lineas": 13,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 336,
+      "nombre": "comando_procesar",
+      "cognitiva": 4,
+      "ciclomatica": 5,
+      "lineas": 20,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/comando.c",
+      "linea": 358,
+      "nombre": "comando_ultima_respuesta",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 9,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/crc.c",
+      "linea": 42,
+      "nombre": "crc_calcular",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 8,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/datos.c",
+      "linea": 7,
+      "nombre": "datos_publicos_leer",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 8,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 5,
+      "nombre": "sumar_cien",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 7,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/ejemplos.c",
+      "linea": 13,
+      "nombre": "leer_primero",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 7,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 19,
+      "nombre": "memoria_inicializar",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 7,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 27,
+      "nombre": "memoria_leer",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 7,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 35,
+      "nombre": "memoria_interrupcion",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 40,
+      "nombre": "memoria_esperar",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 5,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 47,
+      "nombre": "memoria_controlador_escribir",
+      "cognitiva": 3,
+      "ciclomatica": 3,
+      "lineas": 12,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 60,
+      "nombre": "memoria_escribir",
+      "cognitiva": 3,
+      "ciclomatica": 4,
+      "lineas": 19,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 82,
+      "nombre": "memoria_fallar_siguiente_escritura",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 87,
+      "nombre": "memoria_fallar_escritura_en",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/memoria.c",
+      "linea": 92,
+      "nombre": "memoria_huella",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 8,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/operaciones.c",
+      "linea": 11,
+      "nombre": "operaciones_leer",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 8,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/operaciones.c",
+      "linea": 21,
+      "nombre": "operaciones_contar",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 12,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 17,
+      "nombre": "pin_guardar_intentos",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 6,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 25,
+      "nombre": "pin_rechazar",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 30,
+      "nombre": "pin_copiar_guardado",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 6,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 37,
+      "nombre": "pin_personalizar",
+      "cognitiva": 9,
+      "ciclomatica": 7,
+      "lineas": 24,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 63,
+      "nombre": "pin_personalizado",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 73,
+      "nombre": "pin_diferencia",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 12,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 87,
+      "nombre": "pin_verificar",
+      "cognitiva": 5,
+      "ciclomatica": 5,
+      "lineas": 20,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 109,
+      "nombre": "pin_intentos_restantes",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 114,
+      "nombre": "pin_bloquear",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 6,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 121,
+      "nombre": "pin_verificado",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 126,
+      "nombre": "pin_modo_personalizacion",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/pin.c",
+      "linea": 131,
+      "nombre": "pin_cambiar",
+      "cognitiva": 9,
+      "ciclomatica": 6,
+      "lineas": 12,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 11,
+      "nombre": "registro_volcar",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 8,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 22,
+      "nombre": "registro_sumar_pago",
+      "cognitiva": 3,
+      "ciclomatica": 4,
+      "lineas": 15,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 39,
+      "nombre": "registro_guardar_pago",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 17,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 58,
+      "nombre": "registro_leer_pago",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 14,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 74,
+      "nombre": "registro_hay_pago",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 5,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 81,
+      "nombre": "registro_leer_cuenta",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 12,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/registro.c",
+      "linea": 95,
+      "nombre": "registro_contar",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 8,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/saldo.c",
+      "linea": 9,
+      "nombre": "saldo_leer",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 12,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/saldo.c",
+      "linea": 23,
+      "nombre": "saldo_escribir",
+      "cognitiva": 2,
+      "ciclomatica": 3,
+      "lineas": 11,
+      "parametros": 1
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/seguridad.c",
+      "linea": 6,
+      "nombre": "seguridad_diferencia",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 8,
+      "parametros": 3
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/seguridad.c",
+      "linea": 17,
+      "nombre": "seguridad_borrar",
+      "cognitiva": 1,
+      "ciclomatica": 2,
+      "lineas": 7,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/seguridad.c",
+      "linea": 26,
+      "nombre": "tarjeta_bloquear",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/utilidades.c",
+      "linea": 7,
+      "nombre": "util_fallo",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 6,
+      "parametros": 2
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/utilidades.c",
+      "linea": 14,
+      "nombre": "util_fallos",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/utilidades.c",
+      "linea": 19,
+      "nombre": "util_ultimo_fallo_linea",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 4,
+      "parametros": 0
+    },
+    {
+      "lenguaje": "c",
+      "fichero": "c/src/utilidades.c",
+      "linea": 24,
+      "nombre": "util_reiniciar_fallos",
+      "cognitiva": 0,
+      "ciclomatica": 1,
+      "lineas": 5,
+      "parametros": 0
+    }
+  ]
+}

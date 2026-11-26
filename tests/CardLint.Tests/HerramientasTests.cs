@@ -43,6 +43,28 @@ public class HerramientasTests
     }
 
     [ConHerramientasFact]
+    public void Cppcheck_y_Pmd_miden_todas_las_funciones_aunque_no_pasen_de_los_umbrales()
+    {
+        using var c = new CarpetaTemporal();
+        using var java = new CarpetaTemporal();
+        using var trabajo = new CarpetaTemporal();
+        CardCode.Extraer("submodulo-1.2/metricas", c.Ruta, "antes");
+        CardCode.Extraer("submodulo-4.1/lo-que-cambia", java.Ruta, "antes");
+
+        var deC = Analisis.Ejecutar(Path.Combine(c.Ruta, "antes"), new Configuracion(), [new CppcheckAnalizador(H.Cppcheck!)], trabajo.Ruta).Funciones!;
+        var analizador = new PmdAnalizador(H.Pmd!);
+        var avisosJava = Analizar(analizador, Path.Combine(java.Ruta, "antes"));
+
+        // 23 líneas en el antes de registro_escribir, como las cuenta la 1.2; no llega al umbral de 40.
+        var registro = Assert.Single(deC, f => f.Nombre == "registro_escribir");
+        Assert.Equal((MetricasFuncion.C, 23), (registro.Lenguaje, registro.Lineas));
+        var process = Assert.Single(analizador.Funciones, f => f.Nombre == "process(APDU)");
+        Assert.Equal((31, 40, 83), (process.Cognitiva, process.Ciclomatica, process.Instrucciones));
+        Assert.Contains(analizador.Funciones, f => f.Ciclomatica < PmdAnalizador.UmbralCiclomatica);
+        Assert.DoesNotContain(avisosJava, a => a.Regla == "pmd:CyclomaticComplexity" && !a.Mensaje.Contains("process(APDU)"));
+    }
+
+    [ConHerramientasFact]
     public void Cpd_encuentra_una_funcion_copiada_en_dos_ficheros()
     {
         using var carpeta = new CarpetaTemporal();
