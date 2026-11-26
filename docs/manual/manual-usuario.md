@@ -6,6 +6,8 @@ card-lint revisa el código C y Java Card de una carpeta y te deja un informe en
 
 Lleva dentro dos herramientas conocidas que hacen parte del trabajo, Cppcheck para el C y PMD para el Java Card, y les añade reglas propias para lo que ninguna de las dos mira.
 
+Si guardas los análisis, el cuadro de mando que viene con card-lint los pone en fila: ves cómo cambian los avisos de un análisis al siguiente, en qué ficheros se acumulan y qué pasaría con otros umbrales.
+
 ## 1. Qué necesitas
 
 - **Windows de 64 bits.**
@@ -19,6 +21,7 @@ card-lint se entrega como una carpeta. Cópiala donde quieras, por ejemplo en `F
 | En la carpeta | Qué es |
 |---|---|
 | `card-lint.exe` | El programa |
+| `cuadro-de-mando.html` | El cuadro de mando, que se abre en el navegador (capítulo 9) |
 | `Reglas\` | Las reglas de PMD para Java Card que usa card-lint |
 | `herramientas\cppcheck\` | Cppcheck, solo la parte de línea de comandos |
 | `herramientas\pmd-bin-7.29.0\` | PMD |
@@ -44,6 +47,8 @@ La carpeta que le das tiene que tener la forma del repositorio del curso:
 | `javacard\src\` | El código del applet |
 
 Si falta alguna, card-lint analiza lo que haya. Si no le das `--salida`, el informe se llama `card-lint-informe.html` y se queda en la carpeta desde la que lo lanzas. Mientras trabaja, card-lint crea una carpeta de trabajo al lado del informe y la borra al terminar. En la carpeta que analizas no escribe nada.
+
+Si además le das `--historial` con una carpeta, card-lint guarda allí cada análisis en un JSON, y el cuadro de mando del capítulo 9 los junta para que veas cómo evoluciona el código.
 
 Al acabar, te resume el análisis en la consola. Esta es la salida del análisis del que salen las capturas de este manual, hecho sobre una carpeta de ejemplo con el repositorio del curso:
 
@@ -160,7 +165,9 @@ Si en la carpeta analizada hay un fichero `card-lint.json`, card-lint lo lee. To
 | `funcionesModulo` | 20 | Funciones de un `.c` |
 | `lineasModulo` | 400 | Líneas de un `.c` |
 
-Los umbrales de Java Card son los de PMD: 15 de cognitiva y 10 de ciclomática por método, los mismos que en C. Ninguna cifra dice por sí sola que un código esté mal, como recuerda la 1.2. Úsalas para comparar una función con su versión anterior, o para encontrar las cinco más complicadas de un módulo.
+En Java Card los umbrales se quedan fijos, porque son los de serie de PMD: 15 de complejidad cognitiva, 10 de ciclomática y 60 instrucciones por método. Las dos primeras cifras coinciden con las de C, pero se leen distinto. PMD avisa al llegar al umbral y las reglas de C al pasarlo, así que un método Java Card con 15 de cognitiva ya da aviso y una función C con 15 no lo da.
+
+Ninguna cifra dice por sí sola que un código esté mal, como recuerda la 1.2. Úsalas para comparar una función con su versión anterior, o para encontrar las cinco más complicadas de un módulo. Y antes de escribir el fichero puedes probar otros umbrales de C en el cuadro de mando, que te enseña al momento qué avisos salen y cuáles desaparecen (capítulo 9).
 
 ## 7. Las reglas
 
@@ -228,7 +235,79 @@ F:\herramientas\card-lint\card-lint.exe analizar . --salida informe.html
 if ($LASTEXITCODE -ne 0) { throw "card-lint: el quality gate no pasa. Mira informe.html." }
 ```
 
-## 9. Si algo no va
+## 9. Seguir la evolución en el cuadro de mando
+
+El informe cuenta cómo está el código el día que lo analizas. Para saber si mejora de un cambio a otro te hacen falta los análisis anteriores, y eso es lo que guarda `--historial`.
+
+### Guardar el historial
+
+Añade `--historial` con la carpeta donde quieres guardar los análisis:
+
+```powershell
+F:\herramientas\card-lint\card-lint.exe analizar F:\proyectos\monedero --salida F:\informes\monedero.html --historial F:\informes\historial
+```
+
+Cada vez que lo lances, card-lint deja en esa carpeta un JSON con la fecha y la hora en el nombre, como `card-lint-20261125-120000.json`, y la última línea de la consola te dice dónde:
+
+```text
+Para el cuadro de mando: F:\informes\historial\card-lint-20261125-120000.json
+```
+
+Si la carpeta no existe, la crea. Puedes guardar en ella los análisis de varios proyectos, porque el cuadro de mando los separa por la carpeta analizada. Cada JSON lleva lo mismo que el informe y además las métricas de todas las funciones, avisen o no.
+
+### Abrirlo
+
+`cuadro-de-mando.html` está en la carpeta de card-lint. Ábrelo con doble clic, pulsa **Abrir la carpeta del historial** y elige la carpeta, o suéltala encima de la página. Los ficheros se leen en el navegador y no salen de tu equipo.
+
+Arriba, el selector de **Análisis** te lleva a cualquier fecha de la serie, y de entrada se abre la última. Si la carpeta tiene análisis de varios proyectos, al lado aparece otro selector para elegir el proyecto.
+
+Las capturas de este capítulo salen de dos análisis del código de la 1.4 del repositorio del curso: uno antes de limpiarlo y otro después.
+
+### La cabecera y las cifras
+
+![La cabecera del cuadro de mando con sus cifras](capturas/07-panel-cabecera.png)
+
+Arriba está el análisis que estás viendo y si pasa el quality gate. Debajo, cuántos avisos quedan sin justificar y cuántos hay de más o de menos que en el análisis anterior, los de cada gravedad, los de código duplicado y las contramedidas, con los avisos que justifican. En la captura, el análisis de después deja 10 avisos, 73 menos que el de antes.
+
+### La evolución
+
+![La evolución de los avisos, un análisis por columna](capturas/08-panel-evolucion.png)
+
+Hay una columna por análisis, con los avisos sin justificar repartidos por gravedad y, encima, ✓ si el gate pasa o ✕ si no pasa. Pulsa una columna y el resto de la página pasa a ese análisis.
+
+Las columnas se calculan con la configuración que tengas abajo en la página. Si mueves un umbral de C, cambia la serie entera, también los análisis viejos, y comparas toda la historia con la misma vara.
+
+### Dónde están los avisos
+
+![Los avisos por regla y los ficheros donde se concentran](capturas/09-panel-reparto.png)
+
+Primero, los avisos por regla, las más graves arriba y, dentro de cada gravedad, las que más avisos dan. Con **Por submódulo** los agrupas por el sitio del curso donde se explica cada aviso, un submódulo o un olor del catálogo, y sabes qué te toca repasar. En la otra tarjeta están los diez ficheros con más avisos, con una celda por gravedad: cuanto más intenso el azul, más avisos. En la captura, el análisis de antes tiene casi todo en `comandos.c`. Si la ventana es ancha, las dos tarjetas salen una al lado de la otra.
+
+Pulsa una regla o una celda de un fichero, y la tabla del final de la página se queda solo con esos avisos. Los filtros salen encima de la tabla, y cada uno se quita con su ✕.
+
+### Las funciones
+
+![Las funciones que pasan de algún umbral](capturas/10-panel-funciones.png)
+
+Aquí están las métricas de cada función. En C, la complejidad cognitiva y la ciclomática, las líneas y los parámetros; en Java Card, la cognitiva, la ciclomática y las instrucciones. Cada barra compara una cifra con su umbral, que es la raya vertical, y lo que pasa de ella sale en naranja. En la captura, `proc` tiene una complejidad cognitiva de 45, tres veces el umbral.
+
+De entrada ves solo las funciones que avisan, de la que más se pasa a la que menos. Con **Todas** ves también el resto, y ahí encuentras las que se están acercando al umbral antes de que avisen.
+
+### La configuración
+
+![La configuración, con el card-lint.json que sale de ella](capturas/11-panel-configuracion.png)
+
+Los deslizadores cambian los umbrales de las funciones C, y el selector de debajo, la gravedad desde la que falla el gate. Todo el panel se recalcula al momento: las cifras, la evolución, los gráficos y la tabla. Debajo del JSON, una frase te dice cuántos avisos salen de más o de menos que en el análisis.
+
+Los tres valores de abajo, los tokens de un duplicado y las funciones y las líneas de un módulo, se aplican cuando vuelves a analizar: el panel los escribe en el JSON, pero no recalcula sus avisos. Los umbrales de Java Card se quedan como están, porque son los de PMD.
+
+Cuando la configuración te convenza, pulsa **Descargar card-lint.json** y pon el fichero en la carpeta que analizas, como explica el capítulo 6. **Volver a la del análisis** deshace los cambios.
+
+### La tabla de avisos
+
+Al final de la página está la lista de avisos sin justificar, con las mismas columnas que la del informe y con los filtros que hayas elegido en los gráficos. Si el análisis tiene avisos justificados por una contramedida, un botón encima de la tabla los enseña aparte. Cuando pasan de 300, la tabla enseña los primeros y te pide que filtres para ver el resto.
+
+## 10. Si algo no va
 
 | Lo que ves | Qué pasa | Qué hacer |
 |---|---|---|
@@ -236,7 +315,10 @@ if ($LASTEXITCODE -ne 0) { throw "card-lint: el quality gate no pasa. Mira infor
 | «PMD terminó con el código…» | PMD no arranca, casi siempre porque no encuentra Java | Instala un JDK, o pon su ruta en `JAVA_HOME` |
 | «card-lint.json no se puede leer» | El fichero tiene un error de formato | El mensaje dice la línea; revisa comas y comillas |
 | El informe sale sin avisos de C | La carpeta no tiene `c\src` ni `c\` | Lánzalo sobre la carpeta que contiene `c\` y `javacard\` |
+| En el cuadro de mando, «…: no es un JSON válido» | Ese fichero de la carpeta no se puede leer como JSON | El cuadro de mando carga los demás. Saca ese fichero de la carpeta del historial |
+| En el cuadro de mando, «…: no es un análisis de card-lint en formato 1» | Ese JSON no lo ha escrito card-lint | Deja en la carpeta solo los análisis de card-lint |
+| En el cuadro de mando, «No había ningún fichero .json.» | La carpeta que has abierto no tiene análisis | Abre la carpeta que le diste a card-lint para el historial |
 
-## 10. Lo que lleva dentro
+## 11. Lo que lleva dentro
 
 card-lint usa Cppcheck 2.22.0, con licencia GPL versión 3, y PMD 7.29.0, con licencia BSD. Las dos licencias van en la carpeta `licencias`, junto con la página de cada proyecto, donde está su código fuente. card-lint no modifica ninguna de las dos: las lanza como programas aparte.

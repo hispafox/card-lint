@@ -17,6 +17,7 @@ Analizador de código C y Java Card para el curso de código limpio: olores, mé
 | Compilar el cuadro de mando | `npm run build`, desde `panel\`: deja un solo HTML en `panel\dist\` |
 | Rehacer el PDF del manual | `python docs\manual\_maqueta\build_pdf.py`, la maqueta de la casa (WeasyPrint con GTK y las fuentes Poppins y Lora) |
 | Rehacer sus capturas | `python docs\manual\_maqueta\capturar.py docs\manual\informes\informe-ejemplo.html docs\manual\capturas` (Playwright) |
+| Rehacer las del cuadro de mando | `python docs\manual\_maqueta\capturar_panel.py panel\dist\index.html panel\pruebas\historial 1.4 docs\manual\capturas`, con el panel ya compilado |
 
 Necesita .NET 10. Las pruebas de integración usan Cppcheck y PMD de `herramientas\` y el repositorio card-code, que buscan al lado de este (o en `CARDLINT_HERRAMIENTAS` y `CARDLINT_CARDCODE`). Si no los encuentran, se saltan y dicen por qué.
 
